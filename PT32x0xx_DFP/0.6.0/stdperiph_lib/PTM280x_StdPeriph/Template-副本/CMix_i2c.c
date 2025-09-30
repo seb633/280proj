@@ -3,46 +3,8 @@
 #include "PT32x0xx.h"
 #include "PT32x0xx_i2c.h"
 #include "CMix_i2c.h"
+#include "PT32x0xx_config.h"
 
-// 设置PWM占空比
-uint8_t CMix_I2C_SetPWMDuty(uint16_t duty, uint16_t slave_addr)
-{
-    uint8_t buf[3] = {0x01, (duty >> 8) & 0xFF, duty & 0xFF};
-    CMix_I2C_Master_Write(buf, 0x00, slave_addr, 3);
-    uint8_t response = 0;
-    CMix_I2C_Master_Read(&response, 0x00, slave_addr, 1);
-    return response;
-}
-
-// 设置PWM频率
-uint8_t CMix_I2C_SetPWMFreq(uint16_t freq, uint16_t slave_addr)
-{
-    uint8_t buf[3] = {0x02, (freq >> 8) & 0xFF, freq & 0xFF};
-    CMix_I2C_Master_Write(buf, 0x00, slave_addr, 3);
-    uint8_t response = 0;
-    CMix_I2C_Master_Read(&response, 0x00, slave_addr, 1);
-    return response;
-}
-
-// 启动PWM
-uint8_t CMix_I2C_StartPWM(uint16_t slave_addr)
-{
-    uint8_t cmd = 0x03;
-    CMix_I2C_Master_Write(&cmd, 0x00, slave_addr, 1);
-    uint8_t response = 0;
-    CMix_I2C_Master_Read(&response, 0x00, slave_addr, 1);
-    return response;
-}
-
-// 停止PWM
-uint8_t CMix_I2C_StopPWM(uint16_t slave_addr)
-{
-    uint8_t cmd = 0x04;
-    CMix_I2C_Master_Write(&cmd, 0x00, slave_addr, 1);
-    uint8_t response = 0;
-    CMix_I2C_Master_Read(&response, 0x00, slave_addr, 1);
-    return response;
-}
 
 // 查询状态
 uint8_t CMix_I2C_QueryStatus(uint16_t slave_addr, uint8_t* status_buf)
@@ -103,31 +65,134 @@ void CMix_I2C_Init(void)
     I2C_Cmd(I2C0, ENABLE);
 }
 
-void CMix_I2C_Master_Write(uint8_t* pBuffer, uint32_t WriteAddr, uint16_t DeviceAddr, uint16_t data_size)
+/**
+* @brief I2C写函数
+* @param pBuffer：需要写入的数据
+* @param WriteAddr：从机地址
+* @param NumByteToWrite：需要写入的数据长度
+* @retval 无
+*/
+//void CMix_I2C_Master_Write(u8* pBuffer, u32 WriteAddr,u16 DeviceAddr, u16 data_size)
+void CMix_I2C_Master_Write(uint8_t *pBuffer, uint32_t WriteAddr, uint16_t DeviceAddr, uint16_t data_size)
 {
-    int i;
-    I2C_GenerateEvent(I2C0, I2C_Event_Start, DISABLE);
-    I2C0->CCR |= I2C_CCR_SI | I2C_CCR_ACK;
-    I2C_Cmd(I2C0, DISABLE);
-    I2C_Cmd(I2C0, ENABLE);
-    I2C_GenerateEvent(I2C0, I2C_Event_Start, ENABLE);
-    while (I2C_GetFlagStatus(I2C0, I2C_FLAG_StartOk) != SET);
-    I2C_SendAddress(I2C0, DeviceAddr);
-    while (I2C_GetFlagStatus(I2C0, I2C_FLAG_MASGetAckW) != SET);
-    I2C_SendData(I2C0, WriteAddr);
-    while (I2C_GetFlagStatus(I2C0, I2C_FLAG_MDSGetAck) != SET);
-    for (i = 0; i < data_size; i++) {
-        I2C_SendData(I2C0, *pBuffer);
-        while (I2C_GetFlagStatus(I2C0, I2C_FLAG_MDSGetAck) != SET);
-        pBuffer++;
-    }
-    I2C_GenerateEvent(I2C0, I2C_Event_Stop, ENABLE);
+	static  uint32_t count;
+	int i;
+/******************等待从机ready***************/		
+	I2C_GenerateEvent(I2Cn,I2C_Event_Start,DISABLE);
+	I2Cn->CCR |= I2C_CCR_SI | I2C_CCR_ACK;
+	I2C_Cmd(I2Cn,DISABLE);
+	I2C_Cmd(I2Cn,ENABLE);
+	I2C_GenerateEvent(I2Cn,I2C_Event_Start,ENABLE);	
+	while(I2C_GetFlagStatus(I2Cn,I2C_FLAG_StartOk)!= SET);
+	I2C_SendAddress(I2Cn, DeviceAddr);//器件地址，写
+	while(I2C_GetFlagStatus(I2Cn,I2C_FLAG_MASGetAckW)!=SET)
+	{
+        count ++;
+        if(count >64000)
+        {
+            I2C_GenerateEvent(I2Cn,I2C_Event_Stop,ENABLE);	
+            count = 0;
+            return;
+        }
+	};
+	I2C_SendData(I2Cn,*pBuffer);//发送要写的字地址
+	pBuffer++;
+	while(I2C_GetFlagStatus(I2Cn,I2C_FLAG_MDSGetAck)!=SET)
+	{
+        count ++;
+        if(count >64000)
+        {
+            I2C_GenerateEvent(I2Cn,I2C_Event_Stop,ENABLE);	
+            count = 0;
+            return;
+        }
+	};
+	for(i=0;(i<data_size-1);i++)
+	{
+		I2C_SendData(I2Cn, *pBuffer);
+		while(I2C_GetFlagStatus(I2Cn,I2C_FLAG_MDSGetAck) != SET)
+		{
+			count ++;
+			if(count >640000)
+			{
+				I2C_GenerateEvent(I2Cn,I2C_Event_Stop,ENABLE);	
+				count = 0;
+				return;
+			}
+		};
+		pBuffer++;
+	}
+	/******************发送停止位***************/
+	I2C_GenerateEvent(I2Cn,I2C_Event_Stop,ENABLE);	
 }
-
-void CMix_I2C_Slave_Proc(void)
+// void CMix_I2C_Master_Write(uint8_t* pBuffer, uint32_t WriteAddr, uint16_t DeviceAddr, uint16_t data_size)
+// {
+//     int i;
+//     I2C_GenerateEvent(I2C0, I2C_Event_Start, DISABLE);
+//     I2C0->CCR |= I2C_CCR_SI | I2C_CCR_ACK;
+//     I2C_Cmd(I2C0, DISABLE);
+//     I2C_Cmd(I2C0, ENABLE);
+//     I2C_GenerateEvent(I2C0, I2C_Event_Start, ENABLE);
+//     while (I2C_GetFlagStatus(I2C0, I2C_FLAG_StartOk) != SET);
+//     I2C_SendAddress(I2C0, DeviceAddr);
+//     while (I2C_GetFlagStatus(I2C0, I2C_FLAG_MASGetAckW) != SET);
+//     I2C_SendData(I2C0, WriteAddr);
+//     while (I2C_GetFlagStatus(I2C0, I2C_FLAG_MDSGetAck) != SET);
+//     for (i = 0; i < data_size; i++) {
+//         I2C_SendData(I2C0, *pBuffer);
+//         while (I2C_GetFlagStatus(I2C0, I2C_FLAG_MDSGetAck) != SET);
+//         pBuffer++;
+//     }
+//     I2C_GenerateEvent(I2C0, I2C_Event_Stop, ENABLE);
+// }
+int i=0;
+u8 addr=0x0;
+static uint16_t duty, prd;
+static uint8_t onoff, dead;
+void CMix_I2C_Proc(void)
 {
     // 参考Template\i2c协议实现I2C从机读写
     // 这里只做协议框架，具体命令和数据处理可根据实际需求扩展
     // 例如：轮询或在中断服务函数中处理I2C_GetFlagStatus和I2C_ReceiveData
     // 用户可根据实际协议补充
+    duty = 20;
+    onoff = 1;
+    prd = 160;
+    dead = 0;//1-16
+    i2c_tx_buffer[0] = 0x06;
+    i2c_tx_buffer[1] = onoff;
+    i2c_tx_buffer[2] = (duty>>8)&0xFF;
+    i2c_tx_buffer[3] = (duty & 0xFF);
+    i2c_tx_buffer[4] = (prd>>8)&0xFF;
+    i2c_tx_buffer[5] = (prd & 0xFF);
+    i2c_tx_buffer[6] = dead;
+    i2c_tx_buffer[7] = 0;
+    for(int i = 0; i<7;i++)
+    {
+        i2c_tx_buffer[7] += i2c_tx_buffer[i];
+    }
+    i2c_tx_buffer[7] = ~(i2c_tx_buffer[7]);
+    i2c_tx_buffer[7] += 1; 
+    
+    CMix_I2C_Master_Write(i2c_tx_buffer, addr,0xA0, 8);
+		
+//			CMix_Hardware_Delay_ms(500);
+//			arry_write[0] = 0x01;
+//			arry_write[1] = 0x00;
+//			arry_write[2] = 0x50;
+//			arry_write[3] = (~(arry_write[0]+arry_write[1]+arry_write[2]))+1;
+
+//			I2C_EE_Write(arry_write, addr,0xA0, 4);
+//		
+//			arry_write[0] = 0x02;
+//			arry_write[1] = 0x01;
+//			arry_write[2] = 0x04;
+//			arry_write[3] = (~(arry_write[0]+arry_write[1]+arry_write[2]))+1;
+//			CMix_Hardware_Delay_ms(500);
+//			I2C_EE_Write(arry_write, addr,0xA0, 4);
+//			CMix_Hardware_Delay_ms(20);
+//			arry_write[0] = 0x03;
+//			I2C_EE_Write(arry_write, addr,0xA0, 1);
+//			I2C_EE_Read(arry_read,addr,0xA0,/*sizeof(arry_read)*/1);
+//    CMix_Hardware_Delay_ms(50);
 }

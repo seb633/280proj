@@ -40,23 +40,11 @@ int main(void)
     //    CMix_ControlInit(&control_ctx);
     while (1)
     {
-        GPIO_ReverseBits(GPIOA, GPIO_Pin_3);
-        // 设置PWM占空比
-        uint16_t duty = 194;
-        uint8_t resp = CMix_I2C_SetPWMDuty(duty, CMIX_I2C_SLAVE_ADDR);
-        // 设置PWM频率
-        uint16_t freq = 320;
-        resp = CMix_I2C_SetPWMFreq(freq, CMIX_I2C_SLAVE_ADDR);
-        // 启动PWM
-        resp = CMix_I2C_StartPWM(CMIX_I2C_SLAVE_ADDR);
-        // 查询状态
-        uint8_t status_buf[6] = {0};
-        resp = CMix_I2C_QueryStatus(CMIX_I2C_SLAVE_ADDR, status_buf);
-        // 停止PWM
-        resp = CMix_I2C_StopPWM(CMIX_I2C_SLAVE_ADDR);
+ //       GPIO_ReverseBits(GPIOA, GPIO_Pin_3);
+        
         // 可选：如需支持I2C从机协议处理，可在主循环中调用
-        // CMix_I2C_Slave_Proc();
-        CMix_Hardware_Delay_ms(1000);
+         CMix_I2C_Proc();
+        CMix_Hardware_Delay_ms(500);
     }
     //    CMix_MainLoop(&control_ctx);
 

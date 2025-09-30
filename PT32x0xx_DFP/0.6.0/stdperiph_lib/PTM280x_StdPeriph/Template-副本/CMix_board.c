@@ -10,6 +10,8 @@
 #include "PT32x0xx_uart.h"
 #include "PT32x0xx_nvic.h"
 #include "system_PT32x0xx.h"
+#include "PT32x0xx_i2c.h"
+#include "PT32x0xx_config.h"
 
 #define CMIX_PWM_FREQUENCY_HZ        100000U
 #define CMIX_DEADTIME_TICKS          80U
@@ -56,25 +58,48 @@ static void CMix_ConfigDebugPins(void);
 static void CMix_ConfigMuxPins(void);
 static void CMix_WaitForAdcReady(void);
 static uint16_t CMix_ClampDutyTicks(uint16_t duty_ticks);
-void CMix_InitIIC(void)
+
+/**
+* @brief 配置I2C的复用引脚
+* @param 无
+* @retval 无
+*/
+void I2C_GPIO_Config(void)
 {
+	/* ????????? + ??(I2C????),??????? */
+	GPIO_InitTypeDef GPIO_InitStruct;
+
+	/* SDA: PA12,SCL: PA11(? PT32x0xx_config.h ???)*/
+	GPIO_InitStruct.GPIO_Pin  = I2C_SDA_PIN | I2C_SCL_PIN;
+	GPIO_InitStruct.GPIO_Mode = GPIO_Mode_OutOD;   /* ???? */
+	GPIO_InitStruct.GPIO_Pull = GPIO_Pull_Up;      /* ??(?????????) */
+	GPIO_Init(GPIOA, &GPIO_InitStruct);
+//	GPIO_SetBits(GPIOA, I2C_SDA_PIN);
+//	GPIO_SetBits(GPIOA, I2C_SCL_PIN);
+	/* ??I2C??????? */
+	GPIO_DigitalRemapConfig(I2C_SDA_AFIO, I2C_SDA_PIN, I2C_SDA_AFx, ENABLE); /* I2C0 SDA */
+	GPIO_DigitalRemapConfig(I2C_SCL_AFIO, I2C_SCL_PIN, I2C_SCL_AFx, ENABLE); /* I2C0 SCL */
+}
+
+/**
+* @brief 配置I2C的工作模式
+* @param 无
+* @retval 无
+*/
+void I2C_Mode_Config(I2C_TypeDef *I2Cx)
+{  
 	I2C_InitTypeDef I2C_InitStruct;
 	
 	I2C_InitStruct.I2C_Acknowledge = I2C_Acknowledge_Disable;
 	I2C_InitStruct.I2C_Broadcast = I2C_Broadcast_Enable;
 	I2C_InitStruct.I2C_OwnAddress = 0x00;
-	I2C_InitStruct.I2C_Prescaler = 640;
-	I2C_Init(I2C0,&I2C_InitStruct);  
-    
-    GPIO_InitTypeDef init;
-    GPIO_StructInit(&init);
-
-    init.GPIO_Pin = GPIO_Pin_10 | GPIO_Pin_11;
-    init.GPIO_Mode = GPIO_Mode_OutOD;
-    init.GPIO_Pull = GPIO_Pull_Up;
-    GPIO_Init(GPIOA, &init);
-	GPIO_DigitalRemapConfig(AFIOA, GPIO_Pin_10, AFIO_AF_6, ENABLE);	//I2C0 SDA
-	GPIO_DigitalRemapConfig(AFIOA, GPIO_Pin_11, AFIO_AF_6, ENABLE);	//I2C0 SCL
+	I2C_InitStruct.I2C_Prescaler = 4096;
+	I2C_Init(I2Cx,&I2C_InitStruct);   
+}
+void CMix_InitIIC(void)
+{
+	I2C_GPIO_Config();
+	I2C_Mode_Config(I2Cn);
 }
 void CMix_SystemInit(void)
 {
