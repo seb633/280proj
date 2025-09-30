@@ -312,7 +312,7 @@ int main (void)
 	while(1)
 	{
 			duty = 20;
-			onoff = 0;
+			onoff = 1;
 			prd = 160;
 			dead = 0;//1-16
 			arry_write[0] = 0x06;
@@ -330,7 +330,7 @@ int main (void)
 			arry_write[7] = ~(arry_write[7]);
 			arry_write[7] += 1; 
 			
-			I2C_EE_Write(arry_write, addr,0xA0, 8);
+			I2C_EE_Write(arry_write, addr,0xA2, 8);
 		
 //			CMix_Hardware_Delay_ms(500);
 //			arry_write[0] = 0x01;

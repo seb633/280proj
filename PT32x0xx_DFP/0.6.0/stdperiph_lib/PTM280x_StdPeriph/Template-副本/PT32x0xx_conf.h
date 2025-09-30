@@ -43,7 +43,7 @@
 #define UART_Periph_GPIOx     			(RCC_AHBPeriph_GPIOA|RCC_AHBPeriph_GPIOB)
 
 #define UART_TX_PORT					AFIOA
-#define UART_TX_PIN						GPIO_Pin_15
+#define UART_TX_PIN						GPIO_Pin_8
 
 #define UART_RX_PORT					AFIOB
 #define UART_RX_PIN						GPIO_Pin_2

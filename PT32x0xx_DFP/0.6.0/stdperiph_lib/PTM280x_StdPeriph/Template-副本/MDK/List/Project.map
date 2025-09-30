@@ -33,10 +33,14 @@ Section Cross References
     cmix_board.o(.text.CMix_InitIIC) refers to pt32x0xx_i2c.o(.text.I2C_Init) for I2C_Init
     cmix_board.o(.ARM.exidx.text.CMix_InitIIC) refers to cmix_board.o(.text.CMix_InitIIC) for [Anonymous Symbol]
     cmix_board.o(.text.CMix_SystemInit) refers to cmix_board.o(.text.CMix_InitClocks) for CMix_InitClocks
-    cmix_board.o(.text.CMix_SystemInit) refers to pt32x0xx_gpio.o(.text.GPIO_StructInit) for GPIO_StructInit
     cmix_board.o(.text.CMix_SystemInit) refers to pt32x0xx_gpio.o(.text.GPIO_Init) for GPIO_Init
     cmix_board.o(.text.CMix_SystemInit) refers to pt32x0xx_gpio.o(.text.GPIO_DigitalRemapConfig) for GPIO_DigitalRemapConfig
     cmix_board.o(.text.CMix_SystemInit) refers to pt32x0xx_i2c.o(.text.I2C_Init) for I2C_Init
+    cmix_board.o(.text.CMix_SystemInit) refers to cmix_board.o(.text.CMix_InitADCSequence) for CMix_InitADCSequence
+    cmix_board.o(.text.CMix_SystemInit) refers to pt32x0xx_uart.o(.text.UART_Init) for UART_Init
+    cmix_board.o(.text.CMix_SystemInit) refers to pt32x0xx_uart.o(.text.UART_Cmd) for UART_Cmd
+    cmix_board.o(.text.CMix_SystemInit) refers to cmix_pinmap.o(.rodata.CMix_Pin_UART_Tx) for CMix_Pin_UART_Tx
+    cmix_board.o(.text.CMix_SystemInit) refers to cmix_pinmap.o(.rodata.CMix_Pin_UART_Rx) for CMix_Pin_UART_Rx
     cmix_board.o(.ARM.exidx.text.CMix_SystemInit) refers to cmix_board.o(.text.CMix_SystemInit) for [Anonymous Symbol]
     cmix_board.o(.text.CMix_InitClocks) refers to pt32x0xx_rcc.o(.text.RCC_AHBPeriphClockCmd) for RCC_AHBPeriphClockCmd
     cmix_board.o(.text.CMix_InitClocks) refers to pt32x0xx_rcc.o(.text.RCC_APBPeriph1ClockCmd) for RCC_APBPeriph1ClockCmd
@@ -46,6 +50,20 @@ Section Cross References
     cmix_board.o(.text.CMix_InitClocks) refers to pt32x0xx_rcc.o(.text.RCC_APBPeriph3ResetCmd) for RCC_APBPeriph3ResetCmd
     cmix_board.o(.text.CMix_InitClocks) refers to pt32x0xx_rcc.o(.text.RCC_APBPeriph2ResetCmd) for RCC_APBPeriph2ResetCmd
     cmix_board.o(.ARM.exidx.text.CMix_InitClocks) refers to cmix_board.o(.text.CMix_InitClocks) for [Anonymous Symbol]
+    cmix_board.o(.text.CMix_InitADCSequence) refers to pt32x0xx_adc.o(.text.ADC_Init) for ADC_Init
+    cmix_board.o(.text.CMix_InitADCSequence) refers to pt32x0xx_adc.o(.text.ADC_SampleTimeConfig) for ADC_SampleTimeConfig
+    cmix_board.o(.text.CMix_InitADCSequence) refers to pt32x0xx_adc.o(.text.ADC_ChannelSetupTimeConfig) for ADC_ChannelSetupTimeConfig
+    cmix_board.o(.text.CMix_InitADCSequence) refers to pt32x0xx_adc.o(.text.ADC_RegularTriggerSource) for ADC_RegularTriggerSource
+    cmix_board.o(.text.CMix_InitADCSequence) refers to pt32x0xx_adc.o(.text.ADC_RegularScanCmd) for ADC_RegularScanCmd
+    cmix_board.o(.text.CMix_InitADCSequence) refers to pt32x0xx_adc.o(.text.ADC_RSCNTConfig) for ADC_RSCNTConfig
+    cmix_board.o(.text.CMix_InitADCSequence) refers to pt32x0xx_adc.o(.text.ADC_ScanChannelConfig) for ADC_ScanChannelConfig
+    cmix_board.o(.text.CMix_InitADCSequence) refers to pt32x0xx_adc.o(.text.ADC_Cmd) for ADC_Cmd
+    cmix_board.o(.text.CMix_InitADCSequence) refers to pt32x0xx_adc.o(.text.ADC_GetFlagStatus) for ADC_GetFlagStatus
+    cmix_board.o(.text.CMix_InitADCSequence) refers to cmix_board.o(.rodata.s_adc_sequence) for [Anonymous Symbol]
+    cmix_board.o(.ARM.exidx.text.CMix_InitADCSequence) refers to cmix_board.o(.text.CMix_InitADCSequence) for [Anonymous Symbol]
+    cmix_board.o(.text.CMix_InitUART) refers to pt32x0xx_uart.o(.text.UART_Init) for UART_Init
+    cmix_board.o(.text.CMix_InitUART) refers to pt32x0xx_uart.o(.text.UART_Cmd) for UART_Cmd
+    cmix_board.o(.ARM.exidx.text.CMix_InitUART) refers to cmix_board.o(.text.CMix_InitUART) for [Anonymous Symbol]
     cmix_board.o(.text.CMix_InitGPIO) refers to pt32x0xx_gpio.o(.text.GPIO_StructInit) for GPIO_StructInit
     cmix_board.o(.text.CMix_InitGPIO) refers to pt32x0xx_gpio.o(.text.GPIO_Init) for GPIO_Init
     cmix_board.o(.ARM.exidx.text.CMix_InitGPIO) refers to cmix_board.o(.text.CMix_InitGPIO) for [Anonymous Symbol]
@@ -72,22 +90,8 @@ Section Cross References
     cmix_board.o(.text.CMix_EnablePWMOutputs) refers to pt32x0xx_tim.o(.text.TIM_SoftwareBreakCMD) for TIM_SoftwareBreakCMD
     cmix_board.o(.text.CMix_EnablePWMOutputs) refers to cmix_board.o(.bss.s_pwm_outputs_requested) for [Anonymous Symbol]
     cmix_board.o(.ARM.exidx.text.CMix_EnablePWMOutputs) refers to cmix_board.o(.text.CMix_EnablePWMOutputs) for [Anonymous Symbol]
-    cmix_board.o(.text.CMix_InitADCSequence) refers to pt32x0xx_adc.o(.text.ADC_Init) for ADC_Init
-    cmix_board.o(.text.CMix_InitADCSequence) refers to pt32x0xx_adc.o(.text.ADC_SampleTimeConfig) for ADC_SampleTimeConfig
-    cmix_board.o(.text.CMix_InitADCSequence) refers to pt32x0xx_adc.o(.text.ADC_ChannelSetupTimeConfig) for ADC_ChannelSetupTimeConfig
-    cmix_board.o(.text.CMix_InitADCSequence) refers to pt32x0xx_adc.o(.text.ADC_RegularTriggerSource) for ADC_RegularTriggerSource
-    cmix_board.o(.text.CMix_InitADCSequence) refers to pt32x0xx_adc.o(.text.ADC_RegularScanCmd) for ADC_RegularScanCmd
-    cmix_board.o(.text.CMix_InitADCSequence) refers to pt32x0xx_adc.o(.text.ADC_RSCNTConfig) for ADC_RSCNTConfig
-    cmix_board.o(.text.CMix_InitADCSequence) refers to pt32x0xx_adc.o(.text.ADC_ScanChannelConfig) for ADC_ScanChannelConfig
-    cmix_board.o(.text.CMix_InitADCSequence) refers to pt32x0xx_adc.o(.text.ADC_Cmd) for ADC_Cmd
-    cmix_board.o(.text.CMix_InitADCSequence) refers to pt32x0xx_adc.o(.text.ADC_GetFlagStatus) for ADC_GetFlagStatus
-    cmix_board.o(.text.CMix_InitADCSequence) refers to cmix_board.o(.rodata.s_adc_sequence) for [Anonymous Symbol]
-    cmix_board.o(.ARM.exidx.text.CMix_InitADCSequence) refers to cmix_board.o(.text.CMix_InitADCSequence) for [Anonymous Symbol]
     cmix_board.o(.text.CMix_ScheduleADCConversion) refers to pt32x0xx_adc.o(.text.ADC_StartOfRegularConversion) for ADC_StartOfRegularConversion
     cmix_board.o(.ARM.exidx.text.CMix_ScheduleADCConversion) refers to cmix_board.o(.text.CMix_ScheduleADCConversion) for [Anonymous Symbol]
-    cmix_board.o(.text.CMix_InitUART) refers to pt32x0xx_uart.o(.text.UART_Init) for UART_Init
-    cmix_board.o(.text.CMix_InitUART) refers to pt32x0xx_uart.o(.text.UART_Cmd) for UART_Cmd
-    cmix_board.o(.ARM.exidx.text.CMix_InitUART) refers to cmix_board.o(.text.CMix_InitUART) for [Anonymous Symbol]
     cmix_board.o(.text.CMix_InitNTCMux) refers to pt32x0xx_gpio.o(.text.GPIO_ResetBits) for GPIO_ResetBits
     cmix_board.o(.text.CMix_InitNTCMux) refers to cmix_pinmap.o(.rodata.CMix_Pin_NTC3_Gpio) for CMix_Pin_NTC3_Gpio
     cmix_board.o(.text.CMix_InitNTCMux) refers to cmix_board.o(.bss.s_ntc_mux_selects_ntc4) for [Anonymous Symbol]
@@ -149,6 +153,7 @@ Section Cross References
     cmix_main.o(.ARM.exidx.text.I2C_Master_Write) refers to cmix_main.o(.text.I2C_Master_Write) for [Anonymous Symbol]
     cmix_main.o(.text.main) refers to cmix_board.o(.text.CMix_SystemInit) for CMix_SystemInit
     cmix_main.o(.text.main) refers to pt32x0xx_gpio.o(.text.GPIO_SetBits) for GPIO_SetBits
+    cmix_main.o(.text.main) refers to pt32x0xx_uart.o(.text.UART_SendData) for UART_SendData
     cmix_main.o(.text.main) refers to cmix_i2c.o(.text.CMix_I2C_Proc) for CMix_I2C_Proc
     cmix_main.o(.ARM.exidx.text.main) refers to cmix_main.o(.text.main) for [Anonymous Symbol]
     cmix_pinmap.o(.rodata.CMix_Pin_PhaseA_PWM) refers to cmix_pinmap.o(.rodata.str1.1) for [Anonymous Symbol]
@@ -1084,7 +1089,6 @@ Removing Unused input sections from the image.
     Removing system_ptm280x.o(.ARM.exidx.text.CLOCK_SystemClockConfig), (8 bytes).
     Removing system_ptm280x.o(.text.CLOCK_MCOConfig), (10 bytes).
     Removing system_ptm280x.o(.ARM.exidx.text.CLOCK_MCOConfig), (8 bytes).
-    Removing system_ptm280x.o(.text.GetClockFreq), (132 bytes).
     Removing system_ptm280x.o(.ARM.exidx.text.GetClockFreq), (8 bytes).
     Removing system_ptm280x.o(.ARM.exidx.text.SystemInit), (8 bytes).
     Removing startup_ptm280x.o(HEAP), (0 bytes).
@@ -1097,6 +1101,9 @@ Removing Unused input sections from the image.
     Removing cmix_board.o(.ARM.exidx.text.CMix_InitIIC), (8 bytes).
     Removing cmix_board.o(.ARM.exidx.text.CMix_SystemInit), (8 bytes).
     Removing cmix_board.o(.ARM.exidx.text.CMix_InitClocks), (8 bytes).
+    Removing cmix_board.o(.ARM.exidx.text.CMix_InitADCSequence), (8 bytes).
+    Removing cmix_board.o(.text.CMix_InitUART), (52 bytes).
+    Removing cmix_board.o(.ARM.exidx.text.CMix_InitUART), (8 bytes).
     Removing cmix_board.o(.text.CMix_InitGPIO), (34 bytes).
     Removing cmix_board.o(.ARM.exidx.text.CMix_InitGPIO), (8 bytes).
     Removing cmix_board.o(.text.CMix_InitPWMTimers), (280 bytes).
@@ -1107,12 +1114,8 @@ Removing Unused input sections from the image.
     Removing cmix_board.o(.ARM.exidx.text.CMix_UpdateBridgeDuty), (8 bytes).
     Removing cmix_board.o(.text.CMix_EnablePWMOutputs), (60 bytes).
     Removing cmix_board.o(.ARM.exidx.text.CMix_EnablePWMOutputs), (8 bytes).
-    Removing cmix_board.o(.text.CMix_InitADCSequence), (140 bytes).
-    Removing cmix_board.o(.ARM.exidx.text.CMix_InitADCSequence), (8 bytes).
     Removing cmix_board.o(.text.CMix_ScheduleADCConversion), (16 bytes).
     Removing cmix_board.o(.ARM.exidx.text.CMix_ScheduleADCConversion), (8 bytes).
-    Removing cmix_board.o(.text.CMix_InitUART), (52 bytes).
-    Removing cmix_board.o(.ARM.exidx.text.CMix_InitUART), (8 bytes).
     Removing cmix_board.o(.text.CMix_InitNTCMux), (80 bytes).
     Removing cmix_board.o(.ARM.exidx.text.CMix_InitNTCMux), (8 bytes).
     Removing cmix_board.o(.text.CMix_SelectNTCChannel), (96 bytes).
@@ -1126,7 +1129,6 @@ Removing Unused input sections from the image.
     Removing cmix_board.o(.ARM.exidx.text.assert_failed), (8 bytes).
     Removing cmix_board.o(.bss.s_pwm_period_ticks), (2 bytes).
     Removing cmix_board.o(.bss.s_pwm_outputs_requested), (1 bytes).
-    Removing cmix_board.o(.rodata.s_adc_sequence), (80 bytes).
     Removing cmix_board.o(.bss.s_ntc_mux_selects_ntc4), (1 bytes).
     Removing cmix_board.o(.bss.s_measurement_cache), (44 bytes).
     Removing cmix_board.o(.bss.s_ntc_mux_cached), (8 bytes).
@@ -1147,25 +1149,12 @@ Removing Unused input sections from the image.
     Removing cmix_main.o(.ARM.exidx.text.main), (8 bytes).
     Removing cmix_main.o(.ARM.use_no_argv), (4 bytes).
     Removing cmix_pinmap.o(.text), (0 bytes).
-    Removing cmix_pinmap.o(.rodata.str1.1), (528 bytes).
     Removing cmix_pinmap.o(.rodata.CMix_Pin_PhaseA_PWM), (12 bytes).
     Removing cmix_pinmap.o(.rodata.CMix_Pin_PhaseA_PWMN), (12 bytes).
     Removing cmix_pinmap.o(.rodata.CMix_Pin_PhaseB_PWM), (12 bytes).
     Removing cmix_pinmap.o(.rodata.CMix_Pin_PhaseB_PWMN), (12 bytes).
     Removing cmix_pinmap.o(.rodata.CMix_Pin_BKIN), (12 bytes).
-    Removing cmix_pinmap.o(.rodata.CMix_Pin_IBat_Sense), (12 bytes).
-    Removing cmix_pinmap.o(.rodata.CMix_Pin_IOut_Sense), (12 bytes).
-    Removing cmix_pinmap.o(.rodata.CMix_Pin_Cell1_Tap), (12 bytes).
-    Removing cmix_pinmap.o(.rodata.CMix_Pin_Cell2_Tap), (12 bytes).
-    Removing cmix_pinmap.o(.rodata.CMix_Pin_Cell3_Tap), (12 bytes).
-    Removing cmix_pinmap.o(.rodata.CMix_Pin_VOut_Bus), (12 bytes).
-    Removing cmix_pinmap.o(.rodata.CMix_Pin_VPack_Total), (12 bytes).
-    Removing cmix_pinmap.o(.rodata.CMix_Pin_NTC1), (12 bytes).
-    Removing cmix_pinmap.o(.rodata.CMix_Pin_NTC2), (12 bytes).
     Removing cmix_pinmap.o(.rodata.CMix_Pin_NTC3_Gpio), (12 bytes).
-    Removing cmix_pinmap.o(.rodata.CMix_Pin_NTC_Mux_Out), (12 bytes).
-    Removing cmix_pinmap.o(.rodata.CMix_Pin_UART_Tx), (12 bytes).
-    Removing cmix_pinmap.o(.rodata.CMix_Pin_UART_Rx), (12 bytes).
     Removing cmix_pinmap.o(.rodata.CMix_Pin_SWDIO), (12 bytes).
     Removing cmix_pinmap.o(.rodata.CMix_Pin_SWCLK), (12 bytes).
     Removing cmix_pinmap.o(.rodata.CMix_Pin_NTC4_External), (12 bytes).
@@ -1193,11 +1182,9 @@ Removing Unused input sections from the image.
     Removing pt32x0xx_retarget.o(.ARM.exidx.text.fgetc), (8 bytes).
     Removing pt32x0xx_retarget.o(.bss.__stdout), (84 bytes).
     Removing pt32x0xx_adc.o(.text), (0 bytes).
-    Removing pt32x0xx_adc.o(.text.ADC_Init), (220 bytes).
     Removing pt32x0xx_adc.o(.ARM.exidx.text.ADC_Init), (8 bytes).
     Removing pt32x0xx_adc.o(.text.ADC_StructInit), (20 bytes).
     Removing pt32x0xx_adc.o(.ARM.exidx.text.ADC_StructInit), (8 bytes).
-    Removing pt32x0xx_adc.o(.text.ADC_Cmd), (56 bytes).
     Removing pt32x0xx_adc.o(.ARM.exidx.text.ADC_Cmd), (8 bytes).
     Removing pt32x0xx_adc.o(.text.ADC_StartOfRegularConversion), (36 bytes).
     Removing pt32x0xx_adc.o(.ARM.exidx.text.ADC_StartOfRegularConversion), (8 bytes).
@@ -1213,13 +1200,11 @@ Removing Unused input sections from the image.
     Removing pt32x0xx_adc.o(.ARM.exidx.text.ADC_ConversionControlConfig), (8 bytes).
     Removing pt32x0xx_adc.o(.text.ADC_SingleConversionCountControl), (60 bytes).
     Removing pt32x0xx_adc.o(.ARM.exidx.text.ADC_SingleConversionCountControl), (8 bytes).
-    Removing pt32x0xx_adc.o(.text.ADC_RegularTriggerSource), (72 bytes).
     Removing pt32x0xx_adc.o(.ARM.exidx.text.ADC_RegularTriggerSource), (8 bytes).
     Removing pt32x0xx_adc.o(.text.ADC_RegularTimerTriggerSource), (72 bytes).
     Removing pt32x0xx_adc.o(.ARM.exidx.text.ADC_RegularTimerTriggerSource), (8 bytes).
     Removing pt32x0xx_adc.o(.text.ADC_DigitalFilterConfig), (76 bytes).
     Removing pt32x0xx_adc.o(.ARM.exidx.text.ADC_DigitalFilterConfig), (8 bytes).
-    Removing pt32x0xx_adc.o(.text.ADC_RegularScanCmd), (60 bytes).
     Removing pt32x0xx_adc.o(.ARM.exidx.text.ADC_RegularScanCmd), (8 bytes).
     Removing pt32x0xx_adc.o(.text.ADC_InjectedScanCmd), (64 bytes).
     Removing pt32x0xx_adc.o(.ARM.exidx.text.ADC_InjectedScanCmd), (8 bytes).
@@ -1227,7 +1212,6 @@ Removing Unused input sections from the image.
     Removing pt32x0xx_adc.o(.ARM.exidx.text.ADC_InjectedTriggerSource), (8 bytes).
     Removing pt32x0xx_adc.o(.text.ADC_InjectedTimerTriggerSource), (72 bytes).
     Removing pt32x0xx_adc.o(.ARM.exidx.text.ADC_InjectedTimerTriggerSource), (8 bytes).
-    Removing pt32x0xx_adc.o(.text.ADC_RSCNTConfig), (24 bytes).
     Removing pt32x0xx_adc.o(.ARM.exidx.text.ADC_RSCNTConfig), (8 bytes).
     Removing pt32x0xx_adc.o(.text.ADC_JSCNTConfig), (72 bytes).
     Removing pt32x0xx_adc.o(.ARM.exidx.text.ADC_JSCNTConfig), (8 bytes).
@@ -1259,13 +1243,10 @@ Removing Unused input sections from the image.
     Removing pt32x0xx_adc.o(.ARM.exidx.text.ADC_Prescaler), (8 bytes).
     Removing pt32x0xx_adc.o(.text.ADC_ReadyTimeConfig), (60 bytes).
     Removing pt32x0xx_adc.o(.ARM.exidx.text.ADC_ReadyTimeConfig), (8 bytes).
-    Removing pt32x0xx_adc.o(.text.ADC_ChannelSetupTimeConfig), (64 bytes).
     Removing pt32x0xx_adc.o(.ARM.exidx.text.ADC_ChannelSetupTimeConfig), (8 bytes).
-    Removing pt32x0xx_adc.o(.text.ADC_SampleTimeConfig), (64 bytes).
     Removing pt32x0xx_adc.o(.ARM.exidx.text.ADC_SampleTimeConfig), (8 bytes).
     Removing pt32x0xx_adc.o(.text.ADC_ITConfig), (100 bytes).
     Removing pt32x0xx_adc.o(.ARM.exidx.text.ADC_ITConfig), (8 bytes).
-    Removing pt32x0xx_adc.o(.text.ADC_GetFlagStatus), (68 bytes).
     Removing pt32x0xx_adc.o(.ARM.exidx.text.ADC_GetFlagStatus), (8 bytes).
     Removing pt32x0xx_adc.o(.text.ADC_ClearFlag), (52 bytes).
     Removing pt32x0xx_adc.o(.ARM.exidx.text.ADC_ClearFlag), (8 bytes).
@@ -1283,7 +1264,6 @@ Removing Unused input sections from the image.
     Removing pt32x0xx_adc.o(.ARM.exidx.text.ADC_AnalogWatchdogHigherThreshold), (8 bytes).
     Removing pt32x0xx_adc.o(.text.ADC_GetConversionValue), (36 bytes).
     Removing pt32x0xx_adc.o(.ARM.exidx.text.ADC_GetConversionValue), (8 bytes).
-    Removing pt32x0xx_adc.o(.text.ADC_ScanChannelConfig), (30 bytes).
     Removing pt32x0xx_adc.o(.ARM.exidx.text.ADC_ScanChannelConfig), (8 bytes).
     Removing pt32x0xx_adc.o(.text.ADC_InjectScanChannelConfig), (136 bytes).
     Removing pt32x0xx_adc.o(.ARM.exidx.text.ADC_InjectScanChannelConfig), (8 bytes).
@@ -1291,7 +1271,6 @@ Removing Unused input sections from the image.
     Removing pt32x0xx_adc.o(.ARM.exidx.text.ADC_GetRegularScanConversionValue), (8 bytes).
     Removing pt32x0xx_adc.o(.text.ADC_GetInjectScanConversionValue), (60 bytes).
     Removing pt32x0xx_adc.o(.ARM.exidx.text.ADC_GetInjectScanConversionValue), (8 bytes).
-    Removing pt32x0xx_adc.o(.rodata.str1.1), (53 bytes).
     Removing pt32x0xx_cmp.o(.text), (0 bytes).
     Removing pt32x0xx_cmp.o(.text.CMP_Init), (176 bytes).
     Removing pt32x0xx_cmp.o(.ARM.exidx.text.CMP_Init), (8 bytes).
@@ -1402,6 +1381,7 @@ Removing Unused input sections from the image.
     Removing pt32x0xx_exti.o(.rodata.str1.1), (54 bytes).
     Removing pt32x0xx_gpio.o(.text), (0 bytes).
     Removing pt32x0xx_gpio.o(.ARM.exidx.text.GPIO_Init), (8 bytes).
+    Removing pt32x0xx_gpio.o(.text.GPIO_StructInit), (10 bytes).
     Removing pt32x0xx_gpio.o(.ARM.exidx.text.GPIO_StructInit), (8 bytes).
     Removing pt32x0xx_gpio.o(.text.GPIO_ReadData), (44 bytes).
     Removing pt32x0xx_gpio.o(.ARM.exidx.text.GPIO_ReadData), (8 bytes).
@@ -1737,9 +1717,7 @@ Removing Unused input sections from the image.
     Removing pt32x0xx_tim.o(.ARM.exidx.text.TIM_GetICxValue), (8 bytes).
     Removing pt32x0xx_tim.o(.rodata.str1.1), (53 bytes).
     Removing pt32x0xx_uart.o(.text), (0 bytes).
-    Removing pt32x0xx_uart.o(.text.UART_Init), (312 bytes).
     Removing pt32x0xx_uart.o(.ARM.exidx.text.UART_Init), (8 bytes).
-    Removing pt32x0xx_uart.o(.text.UART_BaudRateConfig), (168 bytes).
     Removing pt32x0xx_uart.o(.ARM.exidx.text.UART_BaudRateConfig), (8 bytes).
     Removing pt32x0xx_uart.o(.text.UART_SmartCardInit), (156 bytes).
     Removing pt32x0xx_uart.o(.ARM.exidx.text.UART_SmartCardInit), (8 bytes).
@@ -1747,7 +1725,6 @@ Removing Unused input sections from the image.
     Removing pt32x0xx_uart.o(.ARM.exidx.text.UART_StructInit), (8 bytes).
     Removing pt32x0xx_uart.o(.text.UART_SmartCardStructInit), (22 bytes).
     Removing pt32x0xx_uart.o(.ARM.exidx.text.UART_SmartCardStructInit), (8 bytes).
-    Removing pt32x0xx_uart.o(.text.UART_Cmd), (100 bytes).
     Removing pt32x0xx_uart.o(.ARM.exidx.text.UART_Cmd), (8 bytes).
     Removing pt32x0xx_uart.o(.text.UART_ReceiverCmd), (104 bytes).
     Removing pt32x0xx_uart.o(.ARM.exidx.text.UART_ReceiverCmd), (8 bytes).
@@ -1785,7 +1762,6 @@ Removing Unused input sections from the image.
     Removing pt32x0xx_uart.o(.ARM.exidx.text.UART_ClearFlag), (8 bytes).
     Removing pt32x0xx_uart.o(.text.UART_GetITStatus), (76 bytes).
     Removing pt32x0xx_uart.o(.ARM.exidx.text.UART_GetITStatus), (8 bytes).
-    Removing pt32x0xx_uart.o(.text.UART_SendData), (72 bytes).
     Removing pt32x0xx_uart.o(.ARM.exidx.text.UART_SendData), (8 bytes).
     Removing pt32x0xx_uart.o(.text.UART_ReceiveData), (44 bytes).
     Removing pt32x0xx_uart.o(.ARM.exidx.text.UART_ReceiveData), (8 bytes).
@@ -1799,7 +1775,6 @@ Removing Unused input sections from the image.
     Removing pt32x0xx_uart.o(.ARM.exidx.text.UART_SmartCardCmd), (8 bytes).
     Removing pt32x0xx_uart.o(.text.UART_SmartCardDirectionConfig), (56 bytes).
     Removing pt32x0xx_uart.o(.ARM.exidx.text.UART_SmartCardDirectionConfig), (8 bytes).
-    Removing pt32x0xx_uart.o(.rodata.str1.1), (54 bytes).
     Removing fadd.o(.text), (178 bytes).
     Removing fmul.o(.text), (122 bytes).
     Removing fdiv.o(.text), (124 bytes).
@@ -1810,7 +1785,7 @@ Removing Unused input sections from the image.
     Removing ffixi.o(.text), (50 bytes).
     Removing fepilogue.o(.text), (130 bytes).
 
-734 unused section(s) (total 28111 bytes) removed from the image.
+704 unused section(s) (total 25680 bytes) removed from the image.
 
 ==============================================================================
 
@@ -1893,75 +1868,126 @@ Image Symbol Table
     .ARM.Collect$$$$0000000F                 0x000000d0   Section        0  entry11a.o(.ARM.Collect$$$$0000000F)
     .ARM.Collect$$$$00002712                 0x000000d0   Section        4  entry2.o(.ARM.Collect$$$$00002712)
     .text                                    0x000000d4   Section       28  startup_ptm280x.o(.text)
-    .text                                    0x000000f0   Section       48  init.o(.text)
-    [Anonymous Symbol]                       0x00000120   Section        0  cmix_i2c.o(.text.CMix_I2C_Master_Write)
-    __arm_cp.1_1                             0x00000210   Number         4  cmix_i2c.o(.text.CMix_I2C_Master_Write)
-    __arm_cp.1_2                             0x00000214   Number         4  cmix_i2c.o(.text.CMix_I2C_Master_Write)
-    [Anonymous Symbol]                       0x00000218   Section        0  cmix_i2c.o(.text.CMix_I2C_Proc)
-    __arm_cp.4_0                             0x00000254   Number         4  cmix_i2c.o(.text.CMix_I2C_Proc)
-    [Anonymous Symbol]                       0x00000258   Section        0  cmix_board.o(.text.CMix_InitClocks)
-    [Anonymous Symbol]                       0x000002bc   Section        0  cmix_board.o(.text.CMix_SystemInit)
-    __arm_cp.3_0                             0x00000328   Number         4  cmix_board.o(.text.CMix_SystemInit)
-    [Anonymous Symbol]                       0x0000032c   Section        0  pt32x0xx_gpio.o(.text.GPIO_DigitalRemapConfig)
-    __arm_cp.10_0                            0x000003b8   Number         4  pt32x0xx_gpio.o(.text.GPIO_DigitalRemapConfig)
-    [Anonymous Symbol]                       0x000003bc   Section        0  pt32x0xx_gpio.o(.text.GPIO_Init)
-    __arm_cp.0_0                             0x0000043c   Number         4  pt32x0xx_gpio.o(.text.GPIO_Init)
-    __arm_cp.0_1                             0x00000440   Number         4  pt32x0xx_gpio.o(.text.GPIO_Init)
-    __arm_cp.0_2                             0x00000444   Number         4  pt32x0xx_gpio.o(.text.GPIO_Init)
-    [Anonymous Symbol]                       0x00000468   Section        0  pt32x0xx_gpio.o(.text.GPIO_SetBits)
-    __arm_cp.5_0                             0x00000498   Number         4  pt32x0xx_gpio.o(.text.GPIO_SetBits)
-    __arm_cp.5_1                             0x0000049c   Number         4  pt32x0xx_gpio.o(.text.GPIO_SetBits)
-    __arm_cp.5_2                             0x000004a0   Number         4  pt32x0xx_gpio.o(.text.GPIO_SetBits)
-    [Anonymous Symbol]                       0x000004a4   Section        0  pt32x0xx_gpio.o(.text.GPIO_StructInit)
-    [Anonymous Symbol]                       0x000004b0   Section        0  pt32x0xx_i2c.o(.text.I2C_Cmd)
-    __arm_cp.2_0                             0x000004dc   Number         4  pt32x0xx_i2c.o(.text.I2C_Cmd)
-    [Anonymous Symbol]                       0x000004e0   Section        0  pt32x0xx_i2c.o(.text.I2C_GenerateEvent)
-    [Anonymous Symbol]                       0x0000054c   Section        0  pt32x0xx_i2c.o(.text.I2C_GetFlagStatus)
-    [Anonymous Symbol]                       0x00000578   Section        0  pt32x0xx_i2c.o(.text.I2C_Init)
-    __arm_cp.0_2                             0x000005f0   Number         4  pt32x0xx_i2c.o(.text.I2C_Init)
-    __arm_cp.0_3                             0x000005f4   Number         4  pt32x0xx_i2c.o(.text.I2C_Init)
-    __arm_cp.0_4                             0x000005f8   Number         4  pt32x0xx_i2c.o(.text.I2C_Init)
-    [Anonymous Symbol]                       0x000005fc   Section        0  pt32x0xx_i2c.o(.text.I2C_SendAddress)
-    [Anonymous Symbol]                       0x0000061c   Section        0  pt32x0xx_i2c.o(.text.I2C_SendData)
-    __arm_cp.7_0                             0x0000063c   Number         4  pt32x0xx_i2c.o(.text.I2C_SendData)
-    __arm_cp.7_1                             0x00000640   Number         4  pt32x0xx_i2c.o(.text.I2C_SendData)
-    [Anonymous Symbol]                       0x00000644   Section        0  pt32x0xx_ifmc.o(.text.IFMC_SetLatency)
-    __arm_cp.1_0                             0x00000664   Number         4  pt32x0xx_ifmc.o(.text.IFMC_SetLatency)
-    [Anonymous Symbol]                       0x00000668   Section        0  pt32x0xx_rcc.o(.text.RCC_AHBPeriphClockCmd)
-    __arm_cp.13_0                            0x000006a8   Number         4  pt32x0xx_rcc.o(.text.RCC_AHBPeriphClockCmd)
-    __arm_cp.13_2                            0x000006ac   Number         4  pt32x0xx_rcc.o(.text.RCC_AHBPeriphClockCmd)
-    [Anonymous Symbol]                       0x000006b0   Section        0  pt32x0xx_rcc.o(.text.RCC_APBPeriph1ClockCmd)
-    __arm_cp.9_1                             0x000006f4   Number         4  pt32x0xx_rcc.o(.text.RCC_APBPeriph1ClockCmd)
-    [Anonymous Symbol]                       0x000006f8   Section        0  pt32x0xx_rcc.o(.text.RCC_APBPeriph1ResetCmd)
-    __arm_cp.0_1                             0x00000738   Number         4  pt32x0xx_rcc.o(.text.RCC_APBPeriph1ResetCmd)
-    [Anonymous Symbol]                       0x0000073c   Section        0  pt32x0xx_rcc.o(.text.RCC_APBPeriph2ClockCmd)
-    __arm_cp.10_2                            0x0000077c   Number         4  pt32x0xx_rcc.o(.text.RCC_APBPeriph2ClockCmd)
-    [Anonymous Symbol]                       0x00000780   Section        0  pt32x0xx_rcc.o(.text.RCC_APBPeriph2ResetCmd)
-    __arm_cp.1_0                             0x000007bc   Number         4  pt32x0xx_rcc.o(.text.RCC_APBPeriph2ResetCmd)
-    __arm_cp.1_2                             0x000007c0   Number         4  pt32x0xx_rcc.o(.text.RCC_APBPeriph2ResetCmd)
-    [Anonymous Symbol]                       0x000007c4   Section        0  pt32x0xx_rcc.o(.text.RCC_APBPeriph3ClockCmd)
-    __arm_cp.11_2                            0x00000804   Number         4  pt32x0xx_rcc.o(.text.RCC_APBPeriph3ClockCmd)
-    [Anonymous Symbol]                       0x00000808   Section        0  pt32x0xx_rcc.o(.text.RCC_APBPeriph3ResetCmd)
-    __arm_cp.2_0                             0x00000844   Number         4  pt32x0xx_rcc.o(.text.RCC_APBPeriph3ResetCmd)
-    __arm_cp.2_2                             0x00000848   Number         4  pt32x0xx_rcc.o(.text.RCC_APBPeriph3ResetCmd)
-    [Anonymous Symbol]                       0x0000084c   Section        0  pt32x0xx_rcc.o(.text.RCC_HCLKSetPrescaler)
-    __arm_cp.17_1                            0x00000870   Number         4  pt32x0xx_rcc.o(.text.RCC_HCLKSetPrescaler)
-    [Anonymous Symbol]                       0x00000874   Section        0  pt32x0xx_rcc.o(.text.RCC_PCLKSetPrescaler)
-    __arm_cp.18_1                            0x00000898   Number         4  pt32x0xx_rcc.o(.text.RCC_PCLKSetPrescaler)
-    [Anonymous Symbol]                       0x0000089c   Section        0  pt32x0xx_rcc.o(.text.RCC_SetMCOSource)
-    __arm_cp.19_0                            0x000008cc   Number         4  pt32x0xx_rcc.o(.text.RCC_SetMCOSource)
-    __arm_cp.19_1                            0x000008d0   Number         4  pt32x0xx_rcc.o(.text.RCC_SetMCOSource)
-    __arm_cp.19_2                            0x000008d4   Number         4  pt32x0xx_rcc.o(.text.RCC_SetMCOSource)
-    [Anonymous Symbol]                       0x000008d8   Section        0  system_ptm280x.o(.text.SystemInit)
-    [Anonymous Symbol]                       0x000008f6   Section        0  cmix_board.o(.text.assert_failed)
-    [Anonymous Symbol]                       0x000008fa   Section        0  cmix_main.o(.text.main)
-    i.__scatterload_copy                     0x00000922   Section       14  handlers.o(i.__scatterload_copy)
-    i.__scatterload_null                     0x00000930   Section        2  handlers.o(i.__scatterload_null)
-    i.__scatterload_zeroinit                 0x00000932   Section       14  handlers.o(i.__scatterload_zeroinit)
-    [Anonymous Symbol]                       0x00000940   Section        0  pt32x0xx_gpio.o(.rodata.str1.1)
-    [Anonymous Symbol]                       0x00000976   Section        0  pt32x0xx_i2c.o(.rodata.str1.1)
-    [Anonymous Symbol]                       0x000009ab   Section        0  pt32x0xx_ifmc.o(.rodata.str1.1)
-    [Anonymous Symbol]                       0x000009e1   Section        0  pt32x0xx_rcc.o(.rodata.str1.1)
+    .text                                    0x000000f0   Section        0  uidiv_div0.o(.text)
+    .text                                    0x00000130   Section       48  init.o(.text)
+    [Anonymous Symbol]                       0x00000160   Section        0  pt32x0xx_adc.o(.text.ADC_ChannelSetupTimeConfig)
+    __arm_cp.33_0                            0x00000194   Number         4  pt32x0xx_adc.o(.text.ADC_ChannelSetupTimeConfig)
+    [Anonymous Symbol]                       0x00000198   Section        0  pt32x0xx_adc.o(.text.ADC_Cmd)
+    [Anonymous Symbol]                       0x000001c8   Section        0  pt32x0xx_adc.o(.text.ADC_GetFlagStatus)
+    __arm_cp.36_0                            0x00000200   Number         4  pt32x0xx_adc.o(.text.ADC_GetFlagStatus)
+    [Anonymous Symbol]                       0x00000204   Section        0  pt32x0xx_adc.o(.text.ADC_Init)
+    __arm_cp.0_2                             0x000002cc   Number         4  pt32x0xx_adc.o(.text.ADC_Init)
+    __arm_cp.0_3                             0x000002d0   Number         4  pt32x0xx_adc.o(.text.ADC_Init)
+    __arm_cp.0_4                             0x000002d4   Number         4  pt32x0xx_adc.o(.text.ADC_Init)
+    [Anonymous Symbol]                       0x000002d8   Section        0  pt32x0xx_adc.o(.text.ADC_RSCNTConfig)
+    __arm_cp.17_0                            0x000002ec   Number         4  pt32x0xx_adc.o(.text.ADC_RSCNTConfig)
+    [Anonymous Symbol]                       0x000002f0   Section        0  pt32x0xx_adc.o(.text.ADC_RegularScanCmd)
+    [Anonymous Symbol]                       0x00000324   Section        0  pt32x0xx_adc.o(.text.ADC_RegularTriggerSource)
+    [Anonymous Symbol]                       0x00000364   Section        0  pt32x0xx_adc.o(.text.ADC_SampleTimeConfig)
+    __arm_cp.34_0                            0x00000398   Number         4  pt32x0xx_adc.o(.text.ADC_SampleTimeConfig)
+    __arm_cp.34_1                            0x0000039c   Number         4  pt32x0xx_adc.o(.text.ADC_SampleTimeConfig)
+    __arm_cp.34_2                            0x000003a0   Number         4  pt32x0xx_adc.o(.text.ADC_SampleTimeConfig)
+    [Anonymous Symbol]                       0x000003a4   Section        0  pt32x0xx_adc.o(.text.ADC_ScanChannelConfig)
+    [Anonymous Symbol]                       0x000003c4   Section        0  cmix_i2c.o(.text.CMix_I2C_Master_Write)
+    __arm_cp.1_1                             0x000004b4   Number         4  cmix_i2c.o(.text.CMix_I2C_Master_Write)
+    __arm_cp.1_2                             0x000004b8   Number         4  cmix_i2c.o(.text.CMix_I2C_Master_Write)
+    [Anonymous Symbol]                       0x000004bc   Section        0  cmix_i2c.o(.text.CMix_I2C_Proc)
+    __arm_cp.4_0                             0x000004fc   Number         4  cmix_i2c.o(.text.CMix_I2C_Proc)
+    [Anonymous Symbol]                       0x00000500   Section        0  cmix_board.o(.text.CMix_InitADCSequence)
+    __arm_cp.5_0                             0x00000580   Number         4  cmix_board.o(.text.CMix_InitADCSequence)
+    __arm_cp.5_1                             0x00000584   Number         4  cmix_board.o(.text.CMix_InitADCSequence)
+    __arm_cp.5_2                             0x00000588   Number         4  cmix_board.o(.text.CMix_InitADCSequence)
+    [Anonymous Symbol]                       0x0000058c   Section        0  cmix_board.o(.text.CMix_InitClocks)
+    [Anonymous Symbol]                       0x000005f0   Section        0  cmix_board.o(.text.CMix_SystemInit)
+    __arm_cp.3_0                             0x000006e8   Number         4  cmix_board.o(.text.CMix_SystemInit)
+    __arm_cp.3_1                             0x000006ec   Number         4  cmix_board.o(.text.CMix_SystemInit)
+    __arm_cp.3_2                             0x000006f0   Number         4  cmix_board.o(.text.CMix_SystemInit)
+    __arm_cp.3_4                             0x000006f4   Number         4  cmix_board.o(.text.CMix_SystemInit)
+    __arm_cp.3_5                             0x000006f8   Number         4  cmix_board.o(.text.CMix_SystemInit)
+    [Anonymous Symbol]                       0x000006fc   Section        0  pt32x0xx_gpio.o(.text.GPIO_DigitalRemapConfig)
+    __arm_cp.10_0                            0x00000788   Number         4  pt32x0xx_gpio.o(.text.GPIO_DigitalRemapConfig)
+    [Anonymous Symbol]                       0x0000078c   Section        0  pt32x0xx_gpio.o(.text.GPIO_Init)
+    __arm_cp.0_0                             0x0000080c   Number         4  pt32x0xx_gpio.o(.text.GPIO_Init)
+    __arm_cp.0_1                             0x00000810   Number         4  pt32x0xx_gpio.o(.text.GPIO_Init)
+    __arm_cp.0_2                             0x00000814   Number         4  pt32x0xx_gpio.o(.text.GPIO_Init)
+    [Anonymous Symbol]                       0x00000838   Section        0  pt32x0xx_gpio.o(.text.GPIO_SetBits)
+    __arm_cp.5_0                             0x00000868   Number         4  pt32x0xx_gpio.o(.text.GPIO_SetBits)
+    __arm_cp.5_1                             0x0000086c   Number         4  pt32x0xx_gpio.o(.text.GPIO_SetBits)
+    __arm_cp.5_2                             0x00000870   Number         4  pt32x0xx_gpio.o(.text.GPIO_SetBits)
+    [Anonymous Symbol]                       0x00000874   Section        0  system_ptm280x.o(.text.GetClockFreq)
+    __arm_cp.4_1                             0x000008f0   Number         4  system_ptm280x.o(.text.GetClockFreq)
+    __arm_cp.4_2                             0x000008f4   Number         4  system_ptm280x.o(.text.GetClockFreq)
+    [Anonymous Symbol]                       0x000008f8   Section        0  pt32x0xx_i2c.o(.text.I2C_Cmd)
+    [Anonymous Symbol]                       0x00000924   Section        0  pt32x0xx_i2c.o(.text.I2C_GenerateEvent)
+    [Anonymous Symbol]                       0x00000990   Section        0  pt32x0xx_i2c.o(.text.I2C_GetFlagStatus)
+    __arm_cp.6_0                             0x000009bc   Number         4  pt32x0xx_i2c.o(.text.I2C_GetFlagStatus)
+    [Anonymous Symbol]                       0x000009c0   Section        0  pt32x0xx_i2c.o(.text.I2C_Init)
+    __arm_cp.0_2                             0x00000a38   Number         4  pt32x0xx_i2c.o(.text.I2C_Init)
+    __arm_cp.0_3                             0x00000a3c   Number         4  pt32x0xx_i2c.o(.text.I2C_Init)
+    __arm_cp.0_4                             0x00000a40   Number         4  pt32x0xx_i2c.o(.text.I2C_Init)
+    [Anonymous Symbol]                       0x00000a44   Section        0  pt32x0xx_i2c.o(.text.I2C_SendAddress)
+    [Anonymous Symbol]                       0x00000a64   Section        0  pt32x0xx_i2c.o(.text.I2C_SendData)
+    __arm_cp.7_0                             0x00000a84   Number         4  pt32x0xx_i2c.o(.text.I2C_SendData)
+    __arm_cp.7_1                             0x00000a88   Number         4  pt32x0xx_i2c.o(.text.I2C_SendData)
+    [Anonymous Symbol]                       0x00000a8c   Section        0  pt32x0xx_ifmc.o(.text.IFMC_SetLatency)
+    __arm_cp.1_0                             0x00000aac   Number         4  pt32x0xx_ifmc.o(.text.IFMC_SetLatency)
+    [Anonymous Symbol]                       0x00000ab0   Section        0  pt32x0xx_rcc.o(.text.RCC_AHBPeriphClockCmd)
+    __arm_cp.13_0                            0x00000af0   Number         4  pt32x0xx_rcc.o(.text.RCC_AHBPeriphClockCmd)
+    __arm_cp.13_2                            0x00000af4   Number         4  pt32x0xx_rcc.o(.text.RCC_AHBPeriphClockCmd)
+    [Anonymous Symbol]                       0x00000af8   Section        0  pt32x0xx_rcc.o(.text.RCC_APBPeriph1ClockCmd)
+    __arm_cp.9_1                             0x00000b3c   Number         4  pt32x0xx_rcc.o(.text.RCC_APBPeriph1ClockCmd)
+    [Anonymous Symbol]                       0x00000b40   Section        0  pt32x0xx_rcc.o(.text.RCC_APBPeriph1ResetCmd)
+    __arm_cp.0_1                             0x00000b80   Number         4  pt32x0xx_rcc.o(.text.RCC_APBPeriph1ResetCmd)
+    [Anonymous Symbol]                       0x00000b84   Section        0  pt32x0xx_rcc.o(.text.RCC_APBPeriph2ClockCmd)
+    __arm_cp.10_2                            0x00000bc4   Number         4  pt32x0xx_rcc.o(.text.RCC_APBPeriph2ClockCmd)
+    [Anonymous Symbol]                       0x00000bc8   Section        0  pt32x0xx_rcc.o(.text.RCC_APBPeriph2ResetCmd)
+    __arm_cp.1_0                             0x00000c04   Number         4  pt32x0xx_rcc.o(.text.RCC_APBPeriph2ResetCmd)
+    __arm_cp.1_2                             0x00000c08   Number         4  pt32x0xx_rcc.o(.text.RCC_APBPeriph2ResetCmd)
+    [Anonymous Symbol]                       0x00000c0c   Section        0  pt32x0xx_rcc.o(.text.RCC_APBPeriph3ClockCmd)
+    __arm_cp.11_2                            0x00000c4c   Number         4  pt32x0xx_rcc.o(.text.RCC_APBPeriph3ClockCmd)
+    [Anonymous Symbol]                       0x00000c50   Section        0  pt32x0xx_rcc.o(.text.RCC_APBPeriph3ResetCmd)
+    __arm_cp.2_0                             0x00000c8c   Number         4  pt32x0xx_rcc.o(.text.RCC_APBPeriph3ResetCmd)
+    __arm_cp.2_2                             0x00000c90   Number         4  pt32x0xx_rcc.o(.text.RCC_APBPeriph3ResetCmd)
+    [Anonymous Symbol]                       0x00000c94   Section        0  pt32x0xx_rcc.o(.text.RCC_HCLKSetPrescaler)
+    __arm_cp.17_1                            0x00000cb8   Number         4  pt32x0xx_rcc.o(.text.RCC_HCLKSetPrescaler)
+    [Anonymous Symbol]                       0x00000cbc   Section        0  pt32x0xx_rcc.o(.text.RCC_PCLKSetPrescaler)
+    __arm_cp.18_1                            0x00000ce0   Number         4  pt32x0xx_rcc.o(.text.RCC_PCLKSetPrescaler)
+    [Anonymous Symbol]                       0x00000ce4   Section        0  pt32x0xx_rcc.o(.text.RCC_SetMCOSource)
+    __arm_cp.19_0                            0x00000d14   Number         4  pt32x0xx_rcc.o(.text.RCC_SetMCOSource)
+    __arm_cp.19_1                            0x00000d18   Number         4  pt32x0xx_rcc.o(.text.RCC_SetMCOSource)
+    __arm_cp.19_2                            0x00000d1c   Number         4  pt32x0xx_rcc.o(.text.RCC_SetMCOSource)
+    [Anonymous Symbol]                       0x00000d20   Section        0  system_ptm280x.o(.text.SystemInit)
+    [Anonymous Symbol]                       0x00000d40   Section        0  pt32x0xx_uart.o(.text.UART_BaudRateConfig)
+    __arm_cp.1_0                             0x00000dcc   Number         4  pt32x0xx_uart.o(.text.UART_BaudRateConfig)
+    __arm_cp.1_1                             0x00000dd0   Number         4  pt32x0xx_uart.o(.text.UART_BaudRateConfig)
+    __arm_cp.1_2                             0x00000dd4   Number         4  pt32x0xx_uart.o(.text.UART_BaudRateConfig)
+    __arm_cp.1_3                             0x00000dd8   Number         4  pt32x0xx_uart.o(.text.UART_BaudRateConfig)
+    __arm_cp.1_4                             0x00000ddc   Number         4  pt32x0xx_uart.o(.text.UART_BaudRateConfig)
+    [Anonymous Symbol]                       0x00000de8   Section        0  pt32x0xx_uart.o(.text.UART_Cmd)
+    [Anonymous Symbol]                       0x00000e3c   Section        0  pt32x0xx_uart.o(.text.UART_Init)
+    __arm_cp.0_2                             0x00000f5c   Number         4  pt32x0xx_uart.o(.text.UART_Init)
+    __arm_cp.0_3                             0x00000f60   Number         4  pt32x0xx_uart.o(.text.UART_Init)
+    __arm_cp.0_4                             0x00000f64   Number         4  pt32x0xx_uart.o(.text.UART_Init)
+    __arm_cp.0_5                             0x00000f68   Number         4  pt32x0xx_uart.o(.text.UART_Init)
+    [Anonymous Symbol]                       0x00000f6c   Section        0  pt32x0xx_uart.o(.text.UART_SendData)
+    __arm_cp.24_0                            0x00000fa4   Number         4  pt32x0xx_uart.o(.text.UART_SendData)
+    __arm_cp.24_2                            0x00000fa8   Number         4  pt32x0xx_uart.o(.text.UART_SendData)
+    __arm_cp.24_3                            0x00000fac   Number         4  pt32x0xx_uart.o(.text.UART_SendData)
+    [Anonymous Symbol]                       0x00000fb0   Section        0  cmix_board.o(.text.assert_failed)
+    [Anonymous Symbol]                       0x00000fb4   Section        0  cmix_main.o(.text.main)
+    __arm_cp.2_0                             0x00000fe8   Number         4  cmix_main.o(.text.main)
+    i.__scatterload_copy                     0x00000fec   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x00000ffa   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x00000ffc   Section       14  handlers.o(i.__scatterload_zeroinit)
+    s_adc_sequence                           0x0000109c   Data          80  cmix_board.o(.rodata.s_adc_sequence)
+    [Anonymous Symbol]                       0x0000109c   Section        0  cmix_board.o(.rodata.s_adc_sequence)
+    [Anonymous Symbol]                       0x000010ec   Section        0  cmix_pinmap.o(.rodata.str1.1)
+    [Anonymous Symbol]                       0x000012fc   Section        0  pt32x0xx_adc.o(.rodata.str1.1)
+    [Anonymous Symbol]                       0x00001331   Section        0  pt32x0xx_gpio.o(.rodata.str1.1)
+    [Anonymous Symbol]                       0x00001367   Section        0  pt32x0xx_i2c.o(.rodata.str1.1)
+    [Anonymous Symbol]                       0x0000139c   Section        0  pt32x0xx_ifmc.o(.rodata.str1.1)
+    [Anonymous Symbol]                       0x000013d2   Section        0  pt32x0xx_rcc.o(.rodata.str1.1)
+    [Anonymous Symbol]                       0x00001407   Section        0  pt32x0xx_uart.o(.rodata.str1.1)
     CMix_I2C_Master_Write.count              0x20000000   Data           4  cmix_i2c.o(.bss.CMix_I2C_Master_Write.count)
     [Anonymous Symbol]                       0x20000000   Section        0  cmix_i2c.o(.bss.CMix_I2C_Master_Write.count)
     i2c_tx_buffer                            0x20000004   Data           8  cmix_i2c.o(.bss.i2c_tx_buffer)
@@ -2021,41 +2047,69 @@ Image Symbol Table
     TIM4_Handler                             0x000000e7   Thumb Code     0  startup_ptm280x.o(.text)
     TIM8_Handler                             0x000000e7   Thumb Code     0  startup_ptm280x.o(.text)
     UART0_Handler                            0x000000e7   Thumb Code     0  startup_ptm280x.o(.text)
-    __scatterload                            0x000000f1   Thumb Code    38  init.o(.text)
-    __scatterload_rt2                        0x000000f1   Thumb Code     0  init.o(.text)
-    CMix_I2C_Master_Write                    0x00000121   Thumb Code   240  cmix_i2c.o(.text.CMix_I2C_Master_Write)
-    CMix_I2C_Proc                            0x00000219   Thumb Code    60  cmix_i2c.o(.text.CMix_I2C_Proc)
-    CMix_InitClocks                          0x00000259   Thumb Code    98  cmix_board.o(.text.CMix_InitClocks)
-    CMix_SystemInit                          0x000002bd   Thumb Code   108  cmix_board.o(.text.CMix_SystemInit)
-    GPIO_DigitalRemapConfig                  0x0000032d   Thumb Code   140  pt32x0xx_gpio.o(.text.GPIO_DigitalRemapConfig)
-    GPIO_Init                                0x000003bd   Thumb Code   128  pt32x0xx_gpio.o(.text.GPIO_Init)
-    GPIO_SetBits                             0x00000469   Thumb Code    48  pt32x0xx_gpio.o(.text.GPIO_SetBits)
-    GPIO_StructInit                          0x000004a5   Thumb Code    10  pt32x0xx_gpio.o(.text.GPIO_StructInit)
-    I2C_Cmd                                  0x000004b1   Thumb Code    44  pt32x0xx_i2c.o(.text.I2C_Cmd)
-    I2C_GenerateEvent                        0x000004e1   Thumb Code   108  pt32x0xx_i2c.o(.text.I2C_GenerateEvent)
-    I2C_GetFlagStatus                        0x0000054d   Thumb Code    44  pt32x0xx_i2c.o(.text.I2C_GetFlagStatus)
-    I2C_Init                                 0x00000579   Thumb Code   120  pt32x0xx_i2c.o(.text.I2C_Init)
-    I2C_SendAddress                          0x000005fd   Thumb Code    32  pt32x0xx_i2c.o(.text.I2C_SendAddress)
-    I2C_SendData                             0x0000061d   Thumb Code    32  pt32x0xx_i2c.o(.text.I2C_SendData)
-    IFMC_SetLatency                          0x00000645   Thumb Code    32  pt32x0xx_ifmc.o(.text.IFMC_SetLatency)
-    RCC_AHBPeriphClockCmd                    0x00000669   Thumb Code    64  pt32x0xx_rcc.o(.text.RCC_AHBPeriphClockCmd)
-    RCC_APBPeriph1ClockCmd                   0x000006b1   Thumb Code    68  pt32x0xx_rcc.o(.text.RCC_APBPeriph1ClockCmd)
-    RCC_APBPeriph1ResetCmd                   0x000006f9   Thumb Code    64  pt32x0xx_rcc.o(.text.RCC_APBPeriph1ResetCmd)
-    RCC_APBPeriph2ClockCmd                   0x0000073d   Thumb Code    64  pt32x0xx_rcc.o(.text.RCC_APBPeriph2ClockCmd)
-    RCC_APBPeriph2ResetCmd                   0x00000781   Thumb Code    60  pt32x0xx_rcc.o(.text.RCC_APBPeriph2ResetCmd)
-    RCC_APBPeriph3ClockCmd                   0x000007c5   Thumb Code    64  pt32x0xx_rcc.o(.text.RCC_APBPeriph3ClockCmd)
-    RCC_APBPeriph3ResetCmd                   0x00000809   Thumb Code    60  pt32x0xx_rcc.o(.text.RCC_APBPeriph3ResetCmd)
-    RCC_HCLKSetPrescaler                     0x0000084d   Thumb Code    36  pt32x0xx_rcc.o(.text.RCC_HCLKSetPrescaler)
-    RCC_PCLKSetPrescaler                     0x00000875   Thumb Code    36  pt32x0xx_rcc.o(.text.RCC_PCLKSetPrescaler)
-    RCC_SetMCOSource                         0x0000089d   Thumb Code    48  pt32x0xx_rcc.o(.text.RCC_SetMCOSource)
-    SystemInit                               0x000008d9   Thumb Code    30  system_ptm280x.o(.text.SystemInit)
-    assert_failed                            0x000008f7   Thumb Code     4  cmix_board.o(.text.assert_failed)
-    main                                     0x000008fb   Thumb Code    40  cmix_main.o(.text.main)
-    __scatterload_copy                       0x00000923   Thumb Code    14  handlers.o(i.__scatterload_copy)
-    __scatterload_null                       0x00000931   Thumb Code     2  handlers.o(i.__scatterload_null)
-    __scatterload_zeroinit                   0x00000933   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
-    Region$$Table$$Base                      0x00000a18   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x00000a28   Number         0  anon$$obj.o(Region$$Table)
+    __aeabi_uidiv                            0x000000f1   Thumb Code     0  uidiv_div0.o(.text)
+    __aeabi_uidivmod                         0x000000f1   Thumb Code    62  uidiv_div0.o(.text)
+    __scatterload                            0x00000131   Thumb Code    38  init.o(.text)
+    __scatterload_rt2                        0x00000131   Thumb Code     0  init.o(.text)
+    ADC_ChannelSetupTimeConfig               0x00000161   Thumb Code    52  pt32x0xx_adc.o(.text.ADC_ChannelSetupTimeConfig)
+    ADC_Cmd                                  0x00000199   Thumb Code    48  pt32x0xx_adc.o(.text.ADC_Cmd)
+    ADC_GetFlagStatus                        0x000001c9   Thumb Code    56  pt32x0xx_adc.o(.text.ADC_GetFlagStatus)
+    ADC_Init                                 0x00000205   Thumb Code   200  pt32x0xx_adc.o(.text.ADC_Init)
+    ADC_RSCNTConfig                          0x000002d9   Thumb Code    20  pt32x0xx_adc.o(.text.ADC_RSCNTConfig)
+    ADC_RegularScanCmd                       0x000002f1   Thumb Code    52  pt32x0xx_adc.o(.text.ADC_RegularScanCmd)
+    ADC_RegularTriggerSource                 0x00000325   Thumb Code    64  pt32x0xx_adc.o(.text.ADC_RegularTriggerSource)
+    ADC_SampleTimeConfig                     0x00000365   Thumb Code    52  pt32x0xx_adc.o(.text.ADC_SampleTimeConfig)
+    ADC_ScanChannelConfig                    0x000003a5   Thumb Code    30  pt32x0xx_adc.o(.text.ADC_ScanChannelConfig)
+    CMix_I2C_Master_Write                    0x000003c5   Thumb Code   240  cmix_i2c.o(.text.CMix_I2C_Master_Write)
+    CMix_I2C_Proc                            0x000004bd   Thumb Code    64  cmix_i2c.o(.text.CMix_I2C_Proc)
+    CMix_InitADCSequence                     0x00000501   Thumb Code   128  cmix_board.o(.text.CMix_InitADCSequence)
+    CMix_InitClocks                          0x0000058d   Thumb Code    98  cmix_board.o(.text.CMix_InitClocks)
+    CMix_SystemInit                          0x000005f1   Thumb Code   248  cmix_board.o(.text.CMix_SystemInit)
+    GPIO_DigitalRemapConfig                  0x000006fd   Thumb Code   140  pt32x0xx_gpio.o(.text.GPIO_DigitalRemapConfig)
+    GPIO_Init                                0x0000078d   Thumb Code   128  pt32x0xx_gpio.o(.text.GPIO_Init)
+    GPIO_SetBits                             0x00000839   Thumb Code    48  pt32x0xx_gpio.o(.text.GPIO_SetBits)
+    GetClockFreq                             0x00000875   Thumb Code    72  system_ptm280x.o(.text.GetClockFreq)
+    I2C_Cmd                                  0x000008f9   Thumb Code    44  pt32x0xx_i2c.o(.text.I2C_Cmd)
+    I2C_GenerateEvent                        0x00000925   Thumb Code   108  pt32x0xx_i2c.o(.text.I2C_GenerateEvent)
+    I2C_GetFlagStatus                        0x00000991   Thumb Code    44  pt32x0xx_i2c.o(.text.I2C_GetFlagStatus)
+    I2C_Init                                 0x000009c1   Thumb Code   120  pt32x0xx_i2c.o(.text.I2C_Init)
+    I2C_SendAddress                          0x00000a45   Thumb Code    32  pt32x0xx_i2c.o(.text.I2C_SendAddress)
+    I2C_SendData                             0x00000a65   Thumb Code    32  pt32x0xx_i2c.o(.text.I2C_SendData)
+    IFMC_SetLatency                          0x00000a8d   Thumb Code    32  pt32x0xx_ifmc.o(.text.IFMC_SetLatency)
+    RCC_AHBPeriphClockCmd                    0x00000ab1   Thumb Code    64  pt32x0xx_rcc.o(.text.RCC_AHBPeriphClockCmd)
+    RCC_APBPeriph1ClockCmd                   0x00000af9   Thumb Code    68  pt32x0xx_rcc.o(.text.RCC_APBPeriph1ClockCmd)
+    RCC_APBPeriph1ResetCmd                   0x00000b41   Thumb Code    64  pt32x0xx_rcc.o(.text.RCC_APBPeriph1ResetCmd)
+    RCC_APBPeriph2ClockCmd                   0x00000b85   Thumb Code    64  pt32x0xx_rcc.o(.text.RCC_APBPeriph2ClockCmd)
+    RCC_APBPeriph2ResetCmd                   0x00000bc9   Thumb Code    60  pt32x0xx_rcc.o(.text.RCC_APBPeriph2ResetCmd)
+    RCC_APBPeriph3ClockCmd                   0x00000c0d   Thumb Code    64  pt32x0xx_rcc.o(.text.RCC_APBPeriph3ClockCmd)
+    RCC_APBPeriph3ResetCmd                   0x00000c51   Thumb Code    60  pt32x0xx_rcc.o(.text.RCC_APBPeriph3ResetCmd)
+    RCC_HCLKSetPrescaler                     0x00000c95   Thumb Code    36  pt32x0xx_rcc.o(.text.RCC_HCLKSetPrescaler)
+    RCC_PCLKSetPrescaler                     0x00000cbd   Thumb Code    36  pt32x0xx_rcc.o(.text.RCC_PCLKSetPrescaler)
+    RCC_SetMCOSource                         0x00000ce5   Thumb Code    48  pt32x0xx_rcc.o(.text.RCC_SetMCOSource)
+    SystemInit                               0x00000d21   Thumb Code    30  system_ptm280x.o(.text.SystemInit)
+    UART_BaudRateConfig                      0x00000d41   Thumb Code   140  pt32x0xx_uart.o(.text.UART_BaudRateConfig)
+    UART_Cmd                                 0x00000de9   Thumb Code    84  pt32x0xx_uart.o(.text.UART_Cmd)
+    UART_Init                                0x00000e3d   Thumb Code   288  pt32x0xx_uart.o(.text.UART_Init)
+    UART_SendData                            0x00000f6d   Thumb Code    56  pt32x0xx_uart.o(.text.UART_SendData)
+    assert_failed                            0x00000fb1   Thumb Code     4  cmix_board.o(.text.assert_failed)
+    main                                     0x00000fb5   Thumb Code    52  cmix_main.o(.text.main)
+    __scatterload_copy                       0x00000fed   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x00000ffb   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x00000ffd   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    CMix_Pin_Cell1_Tap                       0x0000100c   Data          12  cmix_pinmap.o(.rodata.CMix_Pin_Cell1_Tap)
+    CMix_Pin_Cell2_Tap                       0x00001018   Data          12  cmix_pinmap.o(.rodata.CMix_Pin_Cell2_Tap)
+    CMix_Pin_Cell3_Tap                       0x00001024   Data          12  cmix_pinmap.o(.rodata.CMix_Pin_Cell3_Tap)
+    CMix_Pin_IBat_Sense                      0x00001030   Data          12  cmix_pinmap.o(.rodata.CMix_Pin_IBat_Sense)
+    CMix_Pin_IOut_Sense                      0x0000103c   Data          12  cmix_pinmap.o(.rodata.CMix_Pin_IOut_Sense)
+    CMix_Pin_NTC1                            0x00001048   Data          12  cmix_pinmap.o(.rodata.CMix_Pin_NTC1)
+    CMix_Pin_NTC2                            0x00001054   Data          12  cmix_pinmap.o(.rodata.CMix_Pin_NTC2)
+    CMix_Pin_NTC_Mux_Out                     0x00001060   Data          12  cmix_pinmap.o(.rodata.CMix_Pin_NTC_Mux_Out)
+    CMix_Pin_UART_Rx                         0x0000106c   Data          12  cmix_pinmap.o(.rodata.CMix_Pin_UART_Rx)
+    CMix_Pin_UART_Tx                         0x00001078   Data          12  cmix_pinmap.o(.rodata.CMix_Pin_UART_Tx)
+    CMix_Pin_VOut_Bus                        0x00001084   Data          12  cmix_pinmap.o(.rodata.CMix_Pin_VOut_Bus)
+    CMix_Pin_VPack_Total                     0x00001090   Data          12  cmix_pinmap.o(.rodata.CMix_Pin_VPack_Total)
+    Region$$Table$$Base                      0x00001440   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x00001450   Number         0  anon$$obj.o(Region$$Table)
     __initial_sp                             0x20000410   Data           0  startup_ptm280x.o(STACK)
 
 
@@ -2066,9 +2120,9 @@ Memory Map of the image
 
   Image Entry point : 0x000000c1
 
-  Load Region LR_IROM1 (Base: 0x00000000, Size: 0x00000a28, Max: 0x00008000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x00000000, Size: 0x00001450, Max: 0x00008000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x00000a28, Max: 0x00008000, ABSOLUTE)
+    Execution Region ER_IROM1 (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x00001450, Max: 0x00008000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -2083,55 +2137,89 @@ Memory Map of the image
     0x000000d0   0x000000d0   0x00000000   Code   RO          988    .ARM.Collect$$$$0000000F  mc_p.l(entry11a.o)
     0x000000d0   0x000000d0   0x00000004   Code   RO          977    .ARM.Collect$$$$00002712  mc_p.l(entry2.o)
     0x000000d4   0x000000d4   0x0000001c   Code   RO           24    .text               startup_ptm280x.o
-    0x000000f0   0x000000f0   0x00000030   Code   RO         1003    .text               mc_p.l(init.o)
-    0x00000120   0x00000120   0x000000f8   Code   RO          145    .text.CMix_I2C_Master_Write  cmix_i2c.o
-    0x00000218   0x00000218   0x00000040   Code   RO          151    .text.CMix_I2C_Proc  cmix_i2c.o
-    0x00000258   0x00000258   0x00000062   Code   RO           41    .text.CMix_InitClocks  cmix_board.o
-    0x000002ba   0x000002ba   0x00000002   PAD
-    0x000002bc   0x000002bc   0x00000070   Code   RO           39    .text.CMix_SystemInit  cmix_board.o
-    0x0000032c   0x0000032c   0x00000090   Code   RO          454    .text.GPIO_DigitalRemapConfig  pt32x0xx_gpio.o
-    0x000003bc   0x000003bc   0x000000ac   Code   RO          434    .text.GPIO_Init     pt32x0xx_gpio.o
-    0x00000468   0x00000468   0x0000003c   Code   RO          444    .text.GPIO_SetBits  pt32x0xx_gpio.o
-    0x000004a4   0x000004a4   0x0000000a   Code   RO          436    .text.GPIO_StructInit  pt32x0xx_gpio.o
-    0x000004ae   0x000004ae   0x00000002   PAD
-    0x000004b0   0x000004b0   0x00000030   Code   RO          471    .text.I2C_Cmd       pt32x0xx_i2c.o
-    0x000004e0   0x000004e0   0x0000006c   Code   RO          473    .text.I2C_GenerateEvent  pt32x0xx_i2c.o
-    0x0000054c   0x0000054c   0x0000002c   Code   RO          479    .text.I2C_GetFlagStatus  pt32x0xx_i2c.o
-    0x00000578   0x00000578   0x00000084   Code   RO          467    .text.I2C_Init      pt32x0xx_i2c.o
-    0x000005fc   0x000005fc   0x00000020   Code   RO          483    .text.I2C_SendAddress  pt32x0xx_i2c.o
-    0x0000061c   0x0000061c   0x00000028   Code   RO          481    .text.I2C_SendData  pt32x0xx_i2c.o
-    0x00000644   0x00000644   0x00000024   Code   RO          498    .text.IFMC_SetLatency  pt32x0xx_ifmc.o
-    0x00000668   0x00000668   0x00000048   Code   RO          682    .text.RCC_AHBPeriphClockCmd  pt32x0xx_rcc.o
-    0x000006b0   0x000006b0   0x00000048   Code   RO          674    .text.RCC_APBPeriph1ClockCmd  pt32x0xx_rcc.o
-    0x000006f8   0x000006f8   0x00000044   Code   RO          656    .text.RCC_APBPeriph1ResetCmd  pt32x0xx_rcc.o
-    0x0000073c   0x0000073c   0x00000044   Code   RO          676    .text.RCC_APBPeriph2ClockCmd  pt32x0xx_rcc.o
-    0x00000780   0x00000780   0x00000044   Code   RO          658    .text.RCC_APBPeriph2ResetCmd  pt32x0xx_rcc.o
-    0x000007c4   0x000007c4   0x00000044   Code   RO          678    .text.RCC_APBPeriph3ClockCmd  pt32x0xx_rcc.o
-    0x00000808   0x00000808   0x00000044   Code   RO          660    .text.RCC_APBPeriph3ResetCmd  pt32x0xx_rcc.o
-    0x0000084c   0x0000084c   0x00000028   Code   RO          690    .text.RCC_HCLKSetPrescaler  pt32x0xx_rcc.o
-    0x00000874   0x00000874   0x00000028   Code   RO          692    .text.RCC_PCLKSetPrescaler  pt32x0xx_rcc.o
-    0x0000089c   0x0000089c   0x0000003c   Code   RO          694    .text.RCC_SetMCOSource  pt32x0xx_rcc.o
-    0x000008d8   0x000008d8   0x0000001e   Code   RO           12    .text.SystemInit    system_ptm280x.o
-    0x000008f6   0x000008f6   0x00000004   Code   RO           69    .text.assert_failed  cmix_board.o
-    0x000008fa   0x000008fa   0x00000028   Code   RO          105    .text.main          cmix_main.o
-    0x00000922   0x00000922   0x0000000e   Code   RO         1007    i.__scatterload_copy  mc_p.l(handlers.o)
-    0x00000930   0x00000930   0x00000002   Code   RO         1008    i.__scatterload_null  mc_p.l(handlers.o)
-    0x00000932   0x00000932   0x0000000e   Code   RO         1009    i.__scatterload_zeroinit  mc_p.l(handlers.o)
-    0x00000940   0x00000940   0x00000036   Data   RO          458    .rodata.str1.1      pt32x0xx_gpio.o
-    0x00000976   0x00000976   0x00000035   Data   RO          487    .rodata.str1.1      pt32x0xx_i2c.o
-    0x000009ab   0x000009ab   0x00000036   Data   RO          524    .rodata.str1.1      pt32x0xx_ifmc.o
-    0x000009e1   0x000009e1   0x00000035   Data   RO          728    .rodata.str1.1      pt32x0xx_rcc.o
-    0x00000a16   0x00000a16   0x00000002   PAD
-    0x00000a18   0x00000a18   0x00000010   Data   RO         1006    Region$$Table       anon$$obj.o
+    0x000000f0   0x000000f0   0x0000003e   Code   RO          994    .text               mc_p.l(uidiv_div0.o)
+    0x0000012e   0x0000012e   0x00000002   PAD
+    0x00000130   0x00000130   0x00000030   Code   RO         1003    .text               mc_p.l(init.o)
+    0x00000160   0x00000160   0x00000038   Code   RO          250    .text.ADC_ChannelSetupTimeConfig  pt32x0xx_adc.o
+    0x00000198   0x00000198   0x00000030   Code   RO          188    .text.ADC_Cmd       pt32x0xx_adc.o
+    0x000001c8   0x000001c8   0x0000003c   Code   RO          256    .text.ADC_GetFlagStatus  pt32x0xx_adc.o
+    0x00000204   0x00000204   0x000000d4   Code   RO          184    .text.ADC_Init      pt32x0xx_adc.o
+    0x000002d8   0x000002d8   0x00000018   Code   RO          218    .text.ADC_RSCNTConfig  pt32x0xx_adc.o
+    0x000002f0   0x000002f0   0x00000034   Code   RO          210    .text.ADC_RegularScanCmd  pt32x0xx_adc.o
+    0x00000324   0x00000324   0x00000040   Code   RO          204    .text.ADC_RegularTriggerSource  pt32x0xx_adc.o
+    0x00000364   0x00000364   0x00000040   Code   RO          252    .text.ADC_SampleTimeConfig  pt32x0xx_adc.o
+    0x000003a4   0x000003a4   0x0000001e   Code   RO          274    .text.ADC_ScanChannelConfig  pt32x0xx_adc.o
+    0x000003c2   0x000003c2   0x00000002   PAD
+    0x000003c4   0x000003c4   0x000000f8   Code   RO          145    .text.CMix_I2C_Master_Write  cmix_i2c.o
+    0x000004bc   0x000004bc   0x00000044   Code   RO          151    .text.CMix_I2C_Proc  cmix_i2c.o
+    0x00000500   0x00000500   0x0000008c   Code   RO           43    .text.CMix_InitADCSequence  cmix_board.o
+    0x0000058c   0x0000058c   0x00000062   Code   RO           41    .text.CMix_InitClocks  cmix_board.o
+    0x000005ee   0x000005ee   0x00000002   PAD
+    0x000005f0   0x000005f0   0x0000010c   Code   RO           39    .text.CMix_SystemInit  cmix_board.o
+    0x000006fc   0x000006fc   0x00000090   Code   RO          454    .text.GPIO_DigitalRemapConfig  pt32x0xx_gpio.o
+    0x0000078c   0x0000078c   0x000000ac   Code   RO          434    .text.GPIO_Init     pt32x0xx_gpio.o
+    0x00000838   0x00000838   0x0000003c   Code   RO          444    .text.GPIO_SetBits  pt32x0xx_gpio.o
+    0x00000874   0x00000874   0x00000084   Code   RO           10    .text.GetClockFreq  system_ptm280x.o
+    0x000008f8   0x000008f8   0x0000002c   Code   RO          471    .text.I2C_Cmd       pt32x0xx_i2c.o
+    0x00000924   0x00000924   0x0000006c   Code   RO          473    .text.I2C_GenerateEvent  pt32x0xx_i2c.o
+    0x00000990   0x00000990   0x00000030   Code   RO          479    .text.I2C_GetFlagStatus  pt32x0xx_i2c.o
+    0x000009c0   0x000009c0   0x00000084   Code   RO          467    .text.I2C_Init      pt32x0xx_i2c.o
+    0x00000a44   0x00000a44   0x00000020   Code   RO          483    .text.I2C_SendAddress  pt32x0xx_i2c.o
+    0x00000a64   0x00000a64   0x00000028   Code   RO          481    .text.I2C_SendData  pt32x0xx_i2c.o
+    0x00000a8c   0x00000a8c   0x00000024   Code   RO          498    .text.IFMC_SetLatency  pt32x0xx_ifmc.o
+    0x00000ab0   0x00000ab0   0x00000048   Code   RO          682    .text.RCC_AHBPeriphClockCmd  pt32x0xx_rcc.o
+    0x00000af8   0x00000af8   0x00000048   Code   RO          674    .text.RCC_APBPeriph1ClockCmd  pt32x0xx_rcc.o
+    0x00000b40   0x00000b40   0x00000044   Code   RO          656    .text.RCC_APBPeriph1ResetCmd  pt32x0xx_rcc.o
+    0x00000b84   0x00000b84   0x00000044   Code   RO          676    .text.RCC_APBPeriph2ClockCmd  pt32x0xx_rcc.o
+    0x00000bc8   0x00000bc8   0x00000044   Code   RO          658    .text.RCC_APBPeriph2ResetCmd  pt32x0xx_rcc.o
+    0x00000c0c   0x00000c0c   0x00000044   Code   RO          678    .text.RCC_APBPeriph3ClockCmd  pt32x0xx_rcc.o
+    0x00000c50   0x00000c50   0x00000044   Code   RO          660    .text.RCC_APBPeriph3ResetCmd  pt32x0xx_rcc.o
+    0x00000c94   0x00000c94   0x00000028   Code   RO          690    .text.RCC_HCLKSetPrescaler  pt32x0xx_rcc.o
+    0x00000cbc   0x00000cbc   0x00000028   Code   RO          692    .text.RCC_PCLKSetPrescaler  pt32x0xx_rcc.o
+    0x00000ce4   0x00000ce4   0x0000003c   Code   RO          694    .text.RCC_SetMCOSource  pt32x0xx_rcc.o
+    0x00000d20   0x00000d20   0x0000001e   Code   RO           12    .text.SystemInit    system_ptm280x.o
+    0x00000d3e   0x00000d3e   0x00000002   PAD
+    0x00000d40   0x00000d40   0x000000a8   Code   RO          881    .text.UART_BaudRateConfig  pt32x0xx_uart.o
+    0x00000de8   0x00000de8   0x00000054   Code   RO          889    .text.UART_Cmd      pt32x0xx_uart.o
+    0x00000e3c   0x00000e3c   0x00000130   Code   RO          879    .text.UART_Init     pt32x0xx_uart.o
+    0x00000f6c   0x00000f6c   0x00000044   Code   RO          927    .text.UART_SendData  pt32x0xx_uart.o
+    0x00000fb0   0x00000fb0   0x00000004   Code   RO           69    .text.assert_failed  cmix_board.o
+    0x00000fb4   0x00000fb4   0x00000038   Code   RO          105    .text.main          cmix_main.o
+    0x00000fec   0x00000fec   0x0000000e   Code   RO         1007    i.__scatterload_copy  mc_p.l(handlers.o)
+    0x00000ffa   0x00000ffa   0x00000002   Code   RO         1008    i.__scatterload_null  mc_p.l(handlers.o)
+    0x00000ffc   0x00000ffc   0x0000000e   Code   RO         1009    i.__scatterload_zeroinit  mc_p.l(handlers.o)
+    0x0000100a   0x0000100a   0x00000002   PAD
+    0x0000100c   0x0000100c   0x0000000c   Data   RO          124    .rodata.CMix_Pin_Cell1_Tap  cmix_pinmap.o
+    0x00001018   0x00001018   0x0000000c   Data   RO          125    .rodata.CMix_Pin_Cell2_Tap  cmix_pinmap.o
+    0x00001024   0x00001024   0x0000000c   Data   RO          126    .rodata.CMix_Pin_Cell3_Tap  cmix_pinmap.o
+    0x00001030   0x00001030   0x0000000c   Data   RO          122    .rodata.CMix_Pin_IBat_Sense  cmix_pinmap.o
+    0x0000103c   0x0000103c   0x0000000c   Data   RO          123    .rodata.CMix_Pin_IOut_Sense  cmix_pinmap.o
+    0x00001048   0x00001048   0x0000000c   Data   RO          129    .rodata.CMix_Pin_NTC1  cmix_pinmap.o
+    0x00001054   0x00001054   0x0000000c   Data   RO          130    .rodata.CMix_Pin_NTC2  cmix_pinmap.o
+    0x00001060   0x00001060   0x0000000c   Data   RO          132    .rodata.CMix_Pin_NTC_Mux_Out  cmix_pinmap.o
+    0x0000106c   0x0000106c   0x0000000c   Data   RO          134    .rodata.CMix_Pin_UART_Rx  cmix_pinmap.o
+    0x00001078   0x00001078   0x0000000c   Data   RO          133    .rodata.CMix_Pin_UART_Tx  cmix_pinmap.o
+    0x00001084   0x00001084   0x0000000c   Data   RO          127    .rodata.CMix_Pin_VOut_Bus  cmix_pinmap.o
+    0x00001090   0x00001090   0x0000000c   Data   RO          128    .rodata.CMix_Pin_VPack_Total  cmix_pinmap.o
+    0x0000109c   0x0000109c   0x00000050   Data   RO           73    .rodata.s_adc_sequence  cmix_board.o
+    0x000010ec   0x000010ec   0x00000210   Data   RO          116    .rodata.str1.1      cmix_pinmap.o
+    0x000012fc   0x000012fc   0x00000035   Data   RO          282    .rodata.str1.1      pt32x0xx_adc.o
+    0x00001331   0x00001331   0x00000036   Data   RO          458    .rodata.str1.1      pt32x0xx_gpio.o
+    0x00001367   0x00001367   0x00000035   Data   RO          487    .rodata.str1.1      pt32x0xx_i2c.o
+    0x0000139c   0x0000139c   0x00000036   Data   RO          524    .rodata.str1.1      pt32x0xx_ifmc.o
+    0x000013d2   0x000013d2   0x00000035   Data   RO          728    .rodata.str1.1      pt32x0xx_rcc.o
+    0x00001407   0x00001407   0x00000036   Data   RO          941    .rodata.str1.1      pt32x0xx_uart.o
+    0x0000143d   0x0000143d   0x00000003   PAD
+    0x00001440   0x00001440   0x00000010   Data   RO         1006    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x00000a28, Size: 0x00000410, Max: 0x00002000, ABSOLUTE)
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x00001450, Size: 0x00000410, Max: 0x00002000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x20000000        -       0x00000004   Zero   RW          153    .bss.CMix_I2C_Master_Write.count  cmix_i2c.o
     0x20000004        -       0x00000008   Zero   RW          156    .bss.i2c_tx_buffer  cmix_i2c.o
-    0x2000000c   0x00000a28   0x00000004   PAD
+    0x2000000c   0x00001450   0x00000004   PAD
     0x20000010        -       0x00000400   Zero   RW           21    STACK               startup_ptm280x.o
 
 
@@ -2142,20 +2230,23 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-       214          4          0          0          0      12070   cmix_board.o
-       312         12          0          0         12       3317   cmix_i2c.o
-        40          0          0          0          0       2761   cmix_main.o
-       386         60         54          0          0       5088   pt32x0xx_gpio.o
+       510         32         80          0          0      12958   cmix_board.o
+       316         12          0          0         12       3301   cmix_i2c.o
+        56          4          0          0          0       3033   cmix_main.o
+         0          0        672          0          0       2380   cmix_pinmap.o
+       610         36         53          0          0      15335   pt32x0xx_adc.o
+       376         60         54          0          0       5088   pt32x0xx_gpio.o
        404         24         53          0          0       3770   pt32x0xx_i2c.o
         36          4         54          0          0       6069   pt32x0xx_ifmc.o
        624         60         53          0          0      10904   pt32x0xx_rcc.o
+       624         56         54          0          0      12217   pt32x0xx_uart.o
        220        200          0          0       1024       1040   startup_ptm280x.o
-        30          0          0          0          0       2581   system_ptm280x.o
+       162         60          0          0          0       2581   system_ptm280x.o
 
     ----------------------------------------------------------------------
-      2270        364        232          0       1040      47600   Object Totals
+      3944        548       1092          0       1040      78676   Object Totals
          0          0         16          0          0          0   (incl. Generated)
-         4          0          2          0          4          0   (incl. Padding)
+         6          0          3          0          4          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -2171,19 +2262,20 @@ Image component sizes
          8          4          0          0          0          0   entry9a.o
         30          0          0          0          0          0   handlers.o
         48         10          0          0          0         68   init.o
+        62          0          0          0          0         72   uidiv_div0.o
 
     ----------------------------------------------------------------------
-        98         18          0          0          0         68   Library Totals
-         0          0          0          0          0          0   (incl. Padding)
+       164         18          0          0          0        140   Library Totals
+         4          0          0          0          0          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Name
 
-        98         18          0          0          0         68   mc_p.l
+       160         18          0          0          0        140   mc_p.l
 
     ----------------------------------------------------------------------
-        98         18          0          0          0         68   Library Totals
+       164         18          0          0          0        140   Library Totals
 
     ----------------------------------------------------------------------
 
@@ -2192,15 +2284,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      2368        382        232          0       1040      47680   Grand Totals
-      2368        382        232          0       1040      47680   ELF Image Totals
-      2368        382        232          0          0          0   ROM Totals
+      4108        566       1092          0       1040      78788   Grand Totals
+      4108        566       1092          0       1040      78788   ELF Image Totals
+      4108        566       1092          0          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 2600 (   2.54kB)
+    Total RO  Size (Code + RO Data)                 5200 (   5.08kB)
     Total RW  Size (RW Data + ZI Data)              1040 (   1.02kB)
-    Total ROM Size (Code + RO Data + RW Data)       2600 (   2.54kB)
+    Total ROM Size (Code + RO Data + RW Data)       5200 (   5.08kB)
 
 ==============================================================================
 

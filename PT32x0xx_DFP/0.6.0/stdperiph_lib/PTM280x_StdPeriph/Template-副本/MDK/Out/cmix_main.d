@@ -23,4 +23,4 @@
   ..\..\..\Libraries\PT32x0xx_FWLib\inc\PT32x0xx_syscfg.h \
   ..\..\..\Libraries\PT32x0xx_FWLib\inc\PT32x0xx_tim.h \
   ..\..\..\Libraries\PT32x0xx_FWLib\inc\PT32x0xx_uart.h ..\CMix_board.h \
-  ..\CMix_pinmap.h ..\CMix_control.h ..\CMix_i2c.h
+  ..\CMix_pinmap.h ..\CMix_control.h ..\CMix_i2c.h ..\PT32x0xx_conf.h

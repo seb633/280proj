@@ -23,4 +23,4 @@
   ..\..\..\Libraries\PT32x0xx_FWLib\inc\PT32x0xx_syscfg.h \
   ..\..\..\Libraries\PT32x0xx_FWLib\inc\PT32x0xx_tim.h \
   ..\..\..\Libraries\PT32x0xx_FWLib\inc\PT32x0xx_uart.h \
-  ..\PT32x0xx_config.h
+  ..\PT32x0xx_config.h ..\PT32x0xx_conf.h

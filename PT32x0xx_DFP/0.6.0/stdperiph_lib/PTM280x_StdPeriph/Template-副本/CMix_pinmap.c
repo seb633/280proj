@@ -47,10 +47,10 @@ const CMix_PinConfig CMix_Pin_BKIN = {
 
 const CMix_PinConfig CMix_Pin_IBat_Sense = {
     CMIX_PORT_PB,
-    12U,
+    9U,
     CMIX_PERIPH_ADC0,
     CMIX_AF_ANALOG,
-    0U,
+    58U,
     "ADC0_IN0 battery current sense"
 };
 
@@ -91,14 +91,14 @@ const CMix_PinConfig CMix_Pin_Cell3_Tap = {
 };
 
 const CMix_PinConfig CMix_Pin_VOut_Bus = {
-    CMIX_PORT_PA,
-    5U,
+    CMIX_PORT_PB,
+    13U,
     CMIX_PERIPH_ADC0,
     CMIX_AF_ANALOG,
-    5U,
+    1U,
     "ADC0_IN5 boost bus voltage"
 };
-
+//already checked
 const CMix_PinConfig CMix_Pin_VPack_Total = {
     CMIX_PORT_PA,
     6U,
@@ -146,7 +146,7 @@ const CMix_PinConfig CMix_Pin_NTC_Mux_Out = {
 
 const CMix_PinConfig CMix_Pin_UART_Tx = {
     CMIX_PORT_PA,
-    9U,
+    8U,
     CMIX_PERIPH_UART0,
     CMIX_AF_UART0,
     0U,
@@ -154,8 +154,8 @@ const CMix_PinConfig CMix_Pin_UART_Tx = {
 };
 
 const CMix_PinConfig CMix_Pin_UART_Rx = {
-    CMIX_PORT_PA,
-    10U,
+    CMIX_PORT_PB,
+    2U,
     CMIX_PERIPH_UART0,
     CMIX_AF_UART0,
     0U,

@@ -5,6 +5,8 @@
         "pt32x0xx_cmp.h": "c",
         "pt32x0xx_conf.h": "c",
         "pt32x0xx_config.h": "c",
-        "cmix_i2c.h": "c"
+        "cmix_i2c.h": "c",
+        "pt32x0xx_uart.h": "c",
+        "pt32x0xx.h": "c"
     }
 }

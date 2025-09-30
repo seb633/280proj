@@ -12,6 +12,7 @@
 #include "system_PT32x0xx.h"
 #include "PT32x0xx_i2c.h"
 #include "PT32x0xx_config.h"
+#include "PT32x0xx_conf.h"
 
 #define CMIX_PWM_FREQUENCY_HZ        100000U
 #define CMIX_DEADTIME_TICKS          80U
@@ -104,17 +105,17 @@ void CMix_InitIIC(void)
 void CMix_SystemInit(void)
 {
     CMix_InitClocks();
-    CMix_InitGPIO();
+//    CMix_InitGPIO();
     CMix_InitIIC();
 //    CMix_ConfigPwmPins();
 //    CMix_ConfigAdcPins();
-//    CMix_ConfigUartPins();
+    CMix_ConfigUartPins();
 //    CMix_ConfigDebugPins();
 //    CMix_ConfigMuxPins();
 //    CMix_InitPWMTimers();
-//    CMix_InitADCSequence();
+    CMix_InitADCSequence();
 //    CMix_InitNTCMux();
-//    CMix_InitUART(115200U);
+    CMix_InitUART(115200U);
 //    CMix_EnablePWMOutputs(false);
 //    CMix_ScheduleADCConversion();
 }
@@ -297,6 +298,9 @@ void CMix_InitUART(uint32_t baudrate)
     uart_init.UART_SampleRate = UART_SampleRate_8X;
     UART_Init(UART0, &uart_init);
     UART_Cmd(UART0, ENABLE);
+
+    // GPIO_DigitalRemapConfig(UART_TX_PORT, UART_TX_PIN, UART_TX_AFIO,ENABLE);	//UART_TX数字功能复用
+	// GPIO_DigitalRemapConfig(UART_RX_PORT, UART_RX_PIN, UART_RX_AFIO,ENABLE);	//UART_RX数字功能复用
 }
 
 void CMix_InitNTCMux(void)

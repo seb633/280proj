@@ -5,7 +5,7 @@
 #include "CMix_control.h"
 // 新增I2C头文件
 #include "CMix_i2c.h"
-
+#include "PT32x0xx_conf.h"
 static void CMix_MainLoop(CMix_ControlContext *ctx);
 /**
  * @brief
@@ -43,6 +43,7 @@ int main(void)
  //       GPIO_ReverseBits(GPIOA, GPIO_Pin_3);
         
         // 可选：如需支持I2C从机协议处理，可在主循环中调用
+        UART_SendData(UART0,0x09);
          CMix_I2C_Proc();
         CMix_Hardware_Delay_ms(500);
     }

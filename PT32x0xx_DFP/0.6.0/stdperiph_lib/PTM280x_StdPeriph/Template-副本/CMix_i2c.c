@@ -155,10 +155,10 @@ void CMix_I2C_Proc(void)
     // 这里只做协议框架，具体命令和数据处理可根据实际需求扩展
     // 例如：轮询或在中断服务函数中处理I2C_GetFlagStatus和I2C_ReceiveData
     // 用户可根据实际协议补充
-    duty = 20;
+    duty = 160;
     onoff = 1;
-    prd = 160;
-    dead = 0;//1-16
+    prd = 320;
+    dead = 10;//1-16
     i2c_tx_buffer[0] = 0x06;
     i2c_tx_buffer[1] = onoff;
     i2c_tx_buffer[2] = (duty>>8)&0xFF;
