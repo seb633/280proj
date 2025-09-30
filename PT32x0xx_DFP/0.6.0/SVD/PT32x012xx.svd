@@ -1,0 +1,5796 @@
+<?xml version='1.0' encoding='utf-8' standalone='no'?>
+<device schemaVersion="1.0" xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_0.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance">
+ <name>PT32x012xx</name>
+ <version>0.2</version>
+ <description>PT32x012xx</description>
+ <!--Bus Interface Properties-->
+ <!--Cortex-M0 is byte addressable-->
+ <addressUnitBits>8</addressUnitBits>
+ <!--the maximum data bit width accessible within a single transfer-->
+ <width>32</width>
+ <!--Register Default Properties-->
+ <size>0x20</size>
+ <resetValue>0x0</resetValue>
+ <resetMask>0xFFFFFFFF</resetMask>
+ <peripherals>
+  <peripheral>
+   <name>PWR</name>
+   <description>Power control</description>
+   <groupName>PWR</groupName>
+   <baseAddress>0x40020400</baseAddress>
+   <addressBlock>
+    <offset>0x0</offset>
+    <size>0x400</size>
+    <usage>registers</usage>
+   </addressBlock>
+   <registers>
+    <register>
+     <name>CR1</name>
+     <displayName>CR1</displayName>
+     <description>Control Register 1</description>
+     <addressOffset>0x00</addressOffset>
+     <size>0x20</size>
+     <resetValue>0x00000001</resetValue>
+     <fields>
+      <field>
+       <name>PVDE</name>
+       <description>Power voltage detection enable</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>1</bitWidth>
+       <access>read-only</access>
+      </field>
+      <field>
+       <name>PLS</name>
+       <description>PVD level selection</description>
+       <bitOffset>4</bitOffset>
+       <bitWidth>3</bitWidth>
+       <access>read-write</access>
+      </field>
+      <field>
+       <name>KEY</name>
+       <description>Key value</description>
+       <bitOffset>8</bitOffset>
+       <bitWidth>8</bitWidth>
+       <access>write-only</access>
+      </field>
+      <field>
+       <name>PLF</name>
+       <description>PVD level status flag</description>
+       <bitOffset>8</bitOffset>
+       <bitWidth>1</bitWidth>
+       <access>read-only</access>
+      </field>
+     </fields>
+    </register>
+   </registers>
+  </peripheral>
+  <peripheral>
+   <name>RCC</name>
+   <description>Reset and clock control</description>
+   <groupName>RCC</groupName>
+   <baseAddress>0x40020000</baseAddress>
+   <addressBlock>
+    <offset>0x00</offset>
+    <size>0x400</size>
+    <usage>registers</usage>
+   </addressBlock>
+   <registers>
+    <register>
+     <name>RSR</name>
+     <displayName>RSR</displayName>
+     <description>Reset Status Register</description>
+     <addressOffset>0x20</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>POR</name>
+       <description>Power reset flag</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>PVD</name>
+       <description>PVD reset flag</description>
+       <bitOffset>2</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>PIN</name>
+       <description>Pin reset flag</description>
+       <bitOffset>5</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>PLVD</name>
+       <description>Power low voltage detection reset flag</description>
+       <bitOffset>6</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>SFR</name>
+       <description>Software reset flag</description>
+       <bitOffset>12</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>LOCKUP</name>
+       <description>LOCKUP reset flag</description>
+       <bitOffset>13</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IWDG</name>
+       <description>IWDG reset flag</description>
+       <bitOffset>16</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>RELOAD</name>
+       <description>Reload reset flag</description>
+       <bitOffset>25</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>CPU</name>
+       <description>CPU core reset flag</description>
+       <bitOffset>26</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>RCR</name>
+     <displayName>RCR</displayName>
+     <description>Reset Control Register</description>
+     <addressOffset>0x24</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x0001001E</resetValue>
+     <fields>
+      <field>
+       <name>PVDE</name>
+       <description>PVD reset enable</description>
+       <bitOffset>2</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>PLVDE</name>
+       <description>Power low voltage detection reset enable</description>
+       <bitOffset>6</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>LOCKUPE</name>
+       <description>LOCKUP reset enable</description>
+       <bitOffset>13</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IWDGE</name>
+       <description>IWDG reset enable</description>
+       <bitOffset>16</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>ASRCR</name>
+     <displayName>ASRCR</displayName>
+     <description>Advanced Software Reset Control Register</description>
+     <addressOffset>0x28</addressOffset>
+     <size>0x20</size>
+     <access>write-only</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>KEY</name>
+       <description>Key</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>16</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>APBENR1</name>
+     <displayName>APBENR1</displayName>
+     <description>APB Peripheral Clock Enable Register 1</description>
+     <addressOffset>0x30</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000010</resetValue>
+     <fields>
+      <field>
+       <name>TIM4</name>
+       <description>TIM4 clock enable</description>
+       <bitOffset>4</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>TIM20</name>
+       <description>TIM20 clock enable</description>
+       <bitOffset>20</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>TIM21</name>
+       <description>TIM21 clock enable</description>
+       <bitOffset>21</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>TIM22</name>
+       <description>TIM22 clock enable</description>
+       <bitOffset>22</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>APBENR2</name>
+     <displayName>APBENR2</displayName>
+     <description>APB Peripheral Clock Enable Register 2</description>
+     <addressOffset>0x34</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>USART0</name>
+       <description>USART0 clock enable</description>
+       <bitOffset>6</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>LPUART0</name>
+       <description>LPUART0 clock enable</description>
+       <bitOffset>8</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>I2C0</name>
+       <description>I2C0 clock enable</description>
+       <bitOffset>24</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>APBENR3</name>
+     <displayName>APBENR3</displayName>
+     <description>APB Peripheral Clock Enable Register 3</description>
+     <addressOffset>0x38</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>ADC0</name>
+       <description>ADC0 clock enable</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>CMP0</name>
+       <description>CMP0 clock enable</description>
+       <bitOffset>8</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>LDAC</name>
+       <description>LDAC clock enable</description>
+       <bitOffset>17</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>PWM</name>
+       <description>PWM clock enable</description>
+       <bitOffset>25</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>APBENR4</name>
+     <displayName>APBENR4</displayName>
+     <description>APB Peripheral Clock Enable Register 4</description>
+     <addressOffset>0x3C</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000001</resetValue>
+     <fields>
+      <field>
+       <name>IWDG</name>
+       <description>IWDG clock enable</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IFMC</name>
+       <description>IFMC clock enable</description>
+       <bitOffset>16</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>AHBENR</name>
+     <displayName>AHBENR</displayName>
+     <description>AHB Peripheral Clock Enable Register</description>
+     <addressOffset>0x40</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>GPIOA</name>
+       <description>GPIOA clock enable</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>GPIOB</name>
+       <description>GPIOB clock enable</description>
+       <bitOffset>1</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>CFGR</name>
+     <displayName>CFGR</displayName>
+     <description>Clock Configuration Register</description>
+     <addressOffset>0x50</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>SCW</name>
+       <description>System clock switch</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>4</bitWidth>
+      </field>
+      <field>
+       <name>HPRE</name>
+       <description>HCLK prescaler</description>
+       <bitOffset>16</bitOffset>
+       <bitWidth>5</bitWidth>
+      </field>
+      <field>
+       <name>PPRE</name>
+       <description>PCLK prescaler</description>
+       <bitOffset>24</bitOffset>
+       <bitWidth>5</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>MCOR</name>
+     <displayName>MCOR</displayName>
+     <description>MCO Control Register</description>
+     <addressOffset>0x5C</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>COSRC</name>
+       <description>Clock output source</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>4</bitWidth>
+      </field>
+      <field>
+       <name>COPRE</name>
+       <description>Clock output prescaler</description>
+       <bitOffset>4</bitOffset>
+       <bitWidth>4</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>PCSCR1</name>
+     <displayName>PCSCR1</displayName>
+     <description>Peripheral Clock Source Configuration Register 1</description>
+     <addressOffset>0x60</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>IWDG</name>
+       <description>IWDG clock source selection</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>2</bitWidth>
+      </field>
+      <field>
+       <name>TIM4</name>
+       <description>TIM4 clock source selection</description>
+       <bitOffset>2</bitOffset>
+       <bitWidth>2</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>PCSCR2</name>
+     <displayName>PCSCR2</displayName>
+     <description>Peripheral Clock Source Configuration Register 2</description>
+     <addressOffset>0x64</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>LPUART0</name>
+       <description>LPUART0 clock source selection</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>4</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>LSICR</name>
+     <displayName>LSICR</displayName>
+     <description>LSI Control Register</description>
+     <addressOffset>0x74</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000001</resetValue>
+     <fields>
+      <field>
+       <name>EN</name>
+       <description>LSI enable</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>LSECR</name>
+     <displayName>LSECR</displayName>
+     <description>LSE Control Register</description>
+     <addressOffset>0x7C</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>EN</name>
+       <description>Power reset flag</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>ECE</name>
+       <description>External clock enable</description>
+       <bitOffset>1</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>LPFB</name>
+       <description>Low pass filter bypass enable</description>
+       <bitOffset>8</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>CAC</name>
+       <description>Current adjustment control</description>
+       <bitOffset>16</bitOffset>
+       <bitWidth>4</bitWidth>
+      </field>
+      <field>
+       <name>FDR</name>
+       <description>Feedback resistance selection</description>
+       <bitOffset>20</bitOffset>
+       <bitWidth>3</bitWidth>
+      </field>
+      <field>
+       <name>CGC</name>
+       <description>Current gear control</description>
+       <bitOffset>24</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>RDY</name>
+       <description>LSE ready flag</description>
+       <bitOffset>31</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+     </fields>
+    </register>
+   </registers>
+  </peripheral>
+  <peripheral>
+   <name>SYSCFG</name>
+   <description>System Configuration</description>
+   <groupName>SYSCFG</groupName>
+   <baseAddress>0x40020C00</baseAddress>
+   <addressBlock>
+    <offset>0x0</offset>
+    <size>0x400</size>
+    <usage>registers</usage>
+   </addressBlock>
+   <registers>
+    <register>
+     <name>SR1</name>
+     <displayName>SR1</displayName>
+     <description>Status Register 1</description>
+     <addressOffset>0x00</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>IAP</name>
+       <description>IAP enable flag</description>
+       <bitOffset>1</bitOffset>
+       <bitWidth>1</bitWidth>
+       <access>read-only</access>
+      </field>
+      <field>
+       <name>VTOS</name>
+       <description>Interrupt vector table location selection flag</description>
+       <bitOffset>2</bitOffset>
+       <bitWidth>1</bitWidth>
+       <access>read-write</access>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>IAPAR</name>
+     <displayName>IAPAR</displayName>
+     <description>IAP Address Register</description>
+     <addressOffset>0x14</addressOffset>
+     <size>0x20</size>
+     <access>read-only</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>ADDR</name>
+       <description>IAP address</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>32</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>SVTOR</name>
+     <displayName>SVTOR</displayName>
+     <description>SRAM Interrupt Vector Table Address Register</description>
+     <addressOffset>0x18</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>ADDR</name>
+       <description>SRAM interrupt vector table address</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>32</bitWidth>
+      </field>
+     </fields>
+    </register>
+   </registers>
+  </peripheral>
+  <peripheral>
+   <name>GPIOA</name>
+   <description>General purpose I/O</description>
+   <groupName>GPIO</groupName>
+   <baseAddress>0x48000000</baseAddress>
+   <addressBlock>
+    <offset>0x0</offset>
+    <size>0x400</size>
+    <usage>registers</usage>
+   </addressBlock>
+   <registers>
+    <register>
+     <name>DR</name>
+     <displayName>DR</displayName>
+     <description>Port Data Register</description>
+     <addressOffset>0x00</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>DR0</name>
+       <description>Port x pin 0 data</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>DR1</name>
+       <description>Port x pin 1 data</description>
+       <bitOffset>1</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>DR2</name>
+       <description>Port x pin 2 data</description>
+       <bitOffset>2</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>DR3</name>
+       <description>Port x pin 3 data</description>
+       <bitOffset>3</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>DR4</name>
+       <description>Port x pin 4 data</description>
+       <bitOffset>4</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>DR5</name>
+       <description>Port x pin 5 data</description>
+       <bitOffset>5</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>DR6</name>
+       <description>Port x pin 6 data</description>
+       <bitOffset>6</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>DR7</name>
+       <description>Port x pin 7 data</description>
+       <bitOffset>7</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>DR8</name>
+       <description>Port x pin 8 data</description>
+       <bitOffset>8</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>DR9</name>
+       <description>Port x pin 9 data</description>
+       <bitOffset>9</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>DR10</name>
+       <description>Port x pin 10 data</description>
+       <bitOffset>10</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>DR11</name>
+       <description>Port x pin 11 data</description>
+       <bitOffset>11</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>DR12</name>
+       <description>Port x pin 12 data</description>
+       <bitOffset>12</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>DR13</name>
+       <description>Port x pin 13 data</description>
+       <bitOffset>13</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>DR14</name>
+       <description>Port x pin 14 data</description>
+       <bitOffset>14</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>DR15</name>
+       <description>Port x pin 15 data</description>
+       <bitOffset>15</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>BSR</name>
+     <displayName>BSR</displayName>
+     <description>Port Bit Set Register</description>
+     <addressOffset>0x04</addressOffset>
+     <size>0x20</size>
+     <access>write-only</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>IO0</name>
+       <description>Port x set bit 0</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO1</name>
+       <description>Port x set bit 1</description>
+       <bitOffset>1</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO2</name>
+       <description>Port x set bit 2</description>
+       <bitOffset>2</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO3</name>
+       <description>Port x set bit 3</description>
+       <bitOffset>3</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO4</name>
+       <description>Port x set bit 4</description>
+       <bitOffset>4</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO5</name>
+       <description>Port x set bit 5</description>
+       <bitOffset>5</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO6</name>
+       <description>Port x set bit 6</description>
+       <bitOffset>6</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO7</name>
+       <description>Port x set bit 7</description>
+       <bitOffset>7</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO8</name>
+       <description>Port x set bit 8</description>
+       <bitOffset>8</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO9</name>
+       <description>Port x set bit 9</description>
+       <bitOffset>9</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO10</name>
+       <description>Port x set bit 10</description>
+       <bitOffset>10</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO11</name>
+       <description>Port x set bit 11</description>
+       <bitOffset>11</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO12</name>
+       <description>Port x set bit 12</description>
+       <bitOffset>12</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO13</name>
+       <description>Port x set bit 13</description>
+       <bitOffset>13</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO14</name>
+       <description>Port x set bit 14</description>
+       <bitOffset>14</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO15</name>
+       <description>Port x set bit 15</description>
+       <bitOffset>15</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>BRR</name>
+     <displayName>BRR</displayName>
+     <description>Port Bit Reset Register</description>
+     <addressOffset>0x08</addressOffset>
+     <size>0x20</size>
+     <access>write-only</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>IO0</name>
+       <description>Port x reset bit 0</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO1</name>
+       <description>Port x reset bit 1</description>
+       <bitOffset>1</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO2</name>
+       <description>Port x reset bit 2</description>
+       <bitOffset>2</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO3</name>
+       <description>Port x reset bit 3</description>
+       <bitOffset>3</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO4</name>
+       <description>Port x reset bit 4</description>
+       <bitOffset>4</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO5</name>
+       <description>Port x reset bit 5</description>
+       <bitOffset>5</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO6</name>
+       <description>Port x reset bit 6</description>
+       <bitOffset>6</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO7</name>
+       <description>Port x reset bit 7</description>
+       <bitOffset>7</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO8</name>
+       <description>Port x reset bit 8</description>
+       <bitOffset>8</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO9</name>
+       <description>Port x reset bit 9</description>
+       <bitOffset>9</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO10</name>
+       <description>Port x reset bit 10</description>
+       <bitOffset>10</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO11</name>
+       <description>Port x reset bit 11</description>
+       <bitOffset>11</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO12</name>
+       <description>Port x reset bit 12</description>
+       <bitOffset>12</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO13</name>
+       <description>Port x reset bit 13</description>
+       <bitOffset>13</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO14</name>
+       <description>Port x reset bit 14</description>
+       <bitOffset>14</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO15</name>
+       <description>Port x reset bit 15</description>
+       <bitOffset>15</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>OESR</name>
+     <displayName>OESR</displayName>
+     <description>Output Enable Set Register</description>
+     <addressOffset>0x0C</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>IO0</name>
+       <description>Port x pin 0 output enable</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO1</name>
+       <description>Port x pin 1 output enable</description>
+       <bitOffset>1</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO2</name>
+       <description>Port x pin 2 output enable</description>
+       <bitOffset>2</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO3</name>
+       <description>Port x pin 3 output enable</description>
+       <bitOffset>3</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO4</name>
+       <description>Port x pin 4 output enable</description>
+       <bitOffset>4</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO5</name>
+       <description>Port x pin 5 output enable</description>
+       <bitOffset>5</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO6</name>
+       <description>Port x pin 6 output enable</description>
+       <bitOffset>6</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO7</name>
+       <description>Port x pin 7 output enable</description>
+       <bitOffset>7</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO8</name>
+       <description>Port x pin 8 output enable</description>
+       <bitOffset>8</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO9</name>
+       <description>Port x pin 9 output enable</description>
+       <bitOffset>9</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO10</name>
+       <description>Port x pin 10 output enable</description>
+       <bitOffset>10</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO11</name>
+       <description>Port x pin 11 output enable</description>
+       <bitOffset>11</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO12</name>
+       <description>Port x pin 12 output enable</description>
+       <bitOffset>12</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO13</name>
+       <description>Port x pin 13 output enable</description>
+       <bitOffset>13</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO14</name>
+       <description>Port x pin 14 output enable</description>
+       <bitOffset>14</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO15</name>
+       <description>Port x pin 15 output enable</description>
+       <bitOffset>15</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>OECR</name>
+     <displayName>OECR</displayName>
+     <description>Output Enable Clear Register</description>
+     <addressOffset>0x10</addressOffset>
+     <size>0x20</size>
+     <access>write-only</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>IO0</name>
+       <description>Port x pin 0 output disable</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO1</name>
+       <description>Port x pin 1 output disable</description>
+       <bitOffset>1</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO2</name>
+       <description>Port x pin 2 output disable</description>
+       <bitOffset>2</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO3</name>
+       <description>Port x pin 3 output disable</description>
+       <bitOffset>3</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO4</name>
+       <description>Port x pin 4 output disable</description>
+       <bitOffset>4</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO5</name>
+       <description>Port x pin 5 output disable</description>
+       <bitOffset>5</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO6</name>
+       <description>Port x pin 6 output disable</description>
+       <bitOffset>6</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO7</name>
+       <description>Port x pin 7 output disable</description>
+       <bitOffset>7</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO8</name>
+       <description>Port x pin 8 output disable</description>
+       <bitOffset>8</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO9</name>
+       <description>Port x pin 9 output disable</description>
+       <bitOffset>9</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO10</name>
+       <description>Port x pin 10 output disable</description>
+       <bitOffset>10</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO11</name>
+       <description>Port x pin 11 output disable</description>
+       <bitOffset>11</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO12</name>
+       <description>Port x pin 12 output disable</description>
+       <bitOffset>12</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO13</name>
+       <description>Port x pin 13 output disable</description>
+       <bitOffset>13</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO14</name>
+       <description>Port x pin 14 output disable</description>
+       <bitOffset>14</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO15</name>
+       <description>Port x pin 15 output disable</description>
+       <bitOffset>15</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>PUSR</name>
+     <displayName>PUSR</displayName>
+     <description>Pull-Up Set Register</description>
+     <addressOffset>0x14</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>IO0</name>
+       <description>Port x pin 0 input pull-up enable</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO1</name>
+       <description>Port x pin 1 input pull-up enable</description>
+       <bitOffset>1</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO2</name>
+       <description>Port x pin 2 input pull-up enable</description>
+       <bitOffset>2</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO3</name>
+       <description>Port x pin 3 input pull-up enable</description>
+       <bitOffset>3</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO4</name>
+       <description>Port x pin 4 input pull-up enable</description>
+       <bitOffset>4</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO5</name>
+       <description>Port x pin 5 input pull-up enable</description>
+       <bitOffset>5</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO6</name>
+       <description>Port x pin 6 input pull-up enable</description>
+       <bitOffset>6</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO7</name>
+       <description>Port x pin 7 input pull-up enable</description>
+       <bitOffset>7</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO8</name>
+       <description>Port x pin 8 input pull-up enable</description>
+       <bitOffset>8</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO9</name>
+       <description>Port x pin 9 input pull-up enable</description>
+       <bitOffset>9</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO10</name>
+       <description>Port x pin 10 input pull-up enable</description>
+       <bitOffset>10</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO11</name>
+       <description>Port x pin 11 input pull-up enable</description>
+       <bitOffset>11</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO12</name>
+       <description>Port x pin 12 input pull-up enable</description>
+       <bitOffset>12</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO13</name>
+       <description>Port x pin 13 input pull-up enable</description>
+       <bitOffset>13</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO14</name>
+       <description>Port x pin 14 input pull-up enable</description>
+       <bitOffset>14</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO15</name>
+       <description>Port x pin 15 input pull-up enable</description>
+       <bitOffset>15</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>PUCR</name>
+     <displayName>PUCR</displayName>
+     <description>Pull-Up Clear Register</description>
+     <addressOffset>0x18</addressOffset>
+     <size>0x20</size>
+     <access>write-only</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>IO0</name>
+       <description>Port x pin 0 input pull-up disable</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO1</name>
+       <description>Port x pin 1 input pull-up disable</description>
+       <bitOffset>1</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO2</name>
+       <description>Port x pin 2 input pull-up disable</description>
+       <bitOffset>2</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO3</name>
+       <description>Port x pin 3 input pull-up disable</description>
+       <bitOffset>3</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO4</name>
+       <description>Port x pin 4 input pull-up disable</description>
+       <bitOffset>4</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO5</name>
+       <description>Port x pin 5 input pull-up disable</description>
+       <bitOffset>5</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO6</name>
+       <description>Port x pin 6 input pull-up disable</description>
+       <bitOffset>6</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO7</name>
+       <description>Port x pin 7 input pull-up disable</description>
+       <bitOffset>7</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO8</name>
+       <description>Port x pin 8 input pull-up disable</description>
+       <bitOffset>8</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO9</name>
+       <description>Port x pin 9 input pull-up disable</description>
+       <bitOffset>9</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO10</name>
+       <description>Port x pin 10 input pull-up disable</description>
+       <bitOffset>10</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO11</name>
+       <description>Port x pin 11 input pull-up disable</description>
+       <bitOffset>11</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO12</name>
+       <description>Port x pin 12 input pull-up disable</description>
+       <bitOffset>12</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO13</name>
+       <description>Port x pin 13 input pull-up disable</description>
+       <bitOffset>13</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO14</name>
+       <description>Port x pin 14 input pull-up disable</description>
+       <bitOffset>14</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO15</name>
+       <description>Port x pin 15 input pull-up disable</description>
+       <bitOffset>15</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>PDSR</name>
+     <displayName>PDSR</displayName>
+     <description>Pull-Down Set Register</description>
+     <addressOffset>0x1C</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>IO0</name>
+       <description>Port x pin 0 input pull-down enable</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO1</name>
+       <description>Port x pin 1 input pull-down enable</description>
+       <bitOffset>1</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO2</name>
+       <description>Port x pin 2 input pull-down enable</description>
+       <bitOffset>2</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO3</name>
+       <description>Port x pin 3 input pull-down enable</description>
+       <bitOffset>3</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO4</name>
+       <description>Port x pin 4 input pull-down enable</description>
+       <bitOffset>4</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO5</name>
+       <description>Port x pin 5 input pull-down enable</description>
+       <bitOffset>5</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO6</name>
+       <description>Port x pin 6 input pull-down enable</description>
+       <bitOffset>6</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO7</name>
+       <description>Port x pin 7 input pull-down enable</description>
+       <bitOffset>7</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO8</name>
+       <description>Port x pin 8 input pull-down enable</description>
+       <bitOffset>8</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO9</name>
+       <description>Port x pin 9 input pull-down enable</description>
+       <bitOffset>9</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO10</name>
+       <description>Port x pin 10 input pull-down enable</description>
+       <bitOffset>10</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO11</name>
+       <description>Port x pin 11 input pull-down enable</description>
+       <bitOffset>11</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO12</name>
+       <description>Port x pin 12 input pull-down enable</description>
+       <bitOffset>12</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO13</name>
+       <description>Port x pin 13 input pull-down enable</description>
+       <bitOffset>13</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO14</name>
+       <description>Port x pin 14 input pull-down enable</description>
+       <bitOffset>14</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO15</name>
+       <description>Port x pin 15 input pull-down enable</description>
+       <bitOffset>15</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>PDCR</name>
+     <displayName>PDCR</displayName>
+     <description>Pull-Down Clear Register</description>
+     <addressOffset>0x20</addressOffset>
+     <size>0x20</size>
+     <access>write-only</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>IO0</name>
+       <description>Port x pin 0 input pull-down disable</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO1</name>
+       <description>Port x pin 1 input pull-down disable</description>
+       <bitOffset>1</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO2</name>
+       <description>Port x pin 2 input pull-down disable</description>
+       <bitOffset>2</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO3</name>
+       <description>Port x pin 3 input pull-down disable</description>
+       <bitOffset>3</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO4</name>
+       <description>Port x pin 4 input pull-down disable</description>
+       <bitOffset>4</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO5</name>
+       <description>Port x pin 5 input pull-down disable</description>
+       <bitOffset>5</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO6</name>
+       <description>Port x pin 6 input pull-down disable</description>
+       <bitOffset>6</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO7</name>
+       <description>Port x pin 7 input pull-down disable</description>
+       <bitOffset>7</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO8</name>
+       <description>Port x pin 8 input pull-down disable</description>
+       <bitOffset>8</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO9</name>
+       <description>Port x pin 9 input pull-down disable</description>
+       <bitOffset>9</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO10</name>
+       <description>Port x pin 10 input pull-down disable</description>
+       <bitOffset>10</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO11</name>
+       <description>Port x pin 11 input pull-down disable</description>
+       <bitOffset>11</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO12</name>
+       <description>Port x pin 12 input pull-down disable</description>
+       <bitOffset>12</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO13</name>
+       <description>Port x pin 13 input pull-down disable</description>
+       <bitOffset>13</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO14</name>
+       <description>Port x pin 14 input pull-down disable</description>
+       <bitOffset>14</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO15</name>
+       <description>Port x pin 15 input pull-down disable</description>
+       <bitOffset>15</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>ODSR</name>
+     <displayName>ODSR</displayName>
+     <description>Output Open-Drain Set Register</description>
+     <addressOffset>0x24</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>IO0</name>
+       <description>Port x pin 0 output open-drain enable</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO1</name>
+       <description>Port x pin 1 output open-drain enable</description>
+       <bitOffset>1</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO2</name>
+       <description>Port x pin 2 output open-drain enable</description>
+       <bitOffset>2</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO3</name>
+       <description>Port x pin 3 output open-drain enable</description>
+       <bitOffset>3</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO4</name>
+       <description>Port x pin 4 output open-drain enable</description>
+       <bitOffset>4</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO5</name>
+       <description>Port x pin 5 output open-drain enable</description>
+       <bitOffset>5</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO6</name>
+       <description>Port x pin 6 output open-drain enable</description>
+       <bitOffset>6</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO7</name>
+       <description>Port x pin 7 output open-drain enable</description>
+       <bitOffset>7</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO8</name>
+       <description>Port x pin 8 output open-drain enable</description>
+       <bitOffset>8</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO9</name>
+       <description>Port x pin 9 output open-drain enable</description>
+       <bitOffset>9</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO10</name>
+       <description>Port x pin 10 output open-drain enable</description>
+       <bitOffset>10</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO11</name>
+       <description>Port x pin 11 output open-drain enable</description>
+       <bitOffset>11</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO12</name>
+       <description>Port x pin 12 output open-drain enable</description>
+       <bitOffset>12</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO13</name>
+       <description>Port x pin 13 output open-drain enable</description>
+       <bitOffset>13</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO14</name>
+       <description>Port x pin 14 output open-drain enable</description>
+       <bitOffset>14</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO15</name>
+       <description>Port x pin 15 output open-drain enable</description>
+       <bitOffset>15</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>ODCR</name>
+     <displayName>ODCR</displayName>
+     <description>Output Open-Drain Clear Register</description>
+     <addressOffset>0x28</addressOffset>
+     <size>0x20</size>
+     <access>write-only</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>IO0</name>
+       <description>Port x pin 0 output  open-drain disable</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO1</name>
+       <description>Port x pin 1 output  open-drain disable</description>
+       <bitOffset>1</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO2</name>
+       <description>Port x pin 2 output open-drain disable</description>
+       <bitOffset>2</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO3</name>
+       <description>Port x pin 3 output  open-drain disable</description>
+       <bitOffset>3</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO4</name>
+       <description>Port x pin 4 output open-drain disable</description>
+       <bitOffset>4</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO5</name>
+       <description>Port x pin 5 output open-drain disable</description>
+       <bitOffset>5</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO6</name>
+       <description>Port x pin 6 output open-drain disable</description>
+       <bitOffset>6</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO7</name>
+       <description>Port x pin 7 output open-drain disable</description>
+       <bitOffset>7</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO8</name>
+       <description>Port x pin 8 output open-drain disable</description>
+       <bitOffset>8</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO9</name>
+       <description>Port x pin 9 output open-drain disable</description>
+       <bitOffset>9</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO10</name>
+       <description>Port x pin 10 output open-drain disable</description>
+       <bitOffset>10</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO11</name>
+       <description>Port x pin 11 output open-drain disable</description>
+       <bitOffset>11</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO12</name>
+       <description>Port x pin 12 output open-drain disable</description>
+       <bitOffset>12</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO13</name>
+       <description>Port x pin 13 output open-drain disable</description>
+       <bitOffset>13</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO14</name>
+       <description>Port x pin 14 output open-drain disable</description>
+       <bitOffset>14</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO15</name>
+       <description>Port x pin 15 output open-drain disable</description>
+       <bitOffset>15</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>SCSR</name>
+     <displayName>SCSR</displayName>
+     <description>Input Schmitt Set Register</description>
+     <addressOffset>0x2C</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x0000FFFF</resetValue>
+     <fields>
+      <field>
+       <name>IO0</name>
+       <description>Port x pin 0 input Schmitt trigger enable</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO1</name>
+       <description>Port x pin 1 input Schmitt trigger enable</description>
+       <bitOffset>1</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO2</name>
+       <description>Port x pin 2 input Schmitt trigger enable</description>
+       <bitOffset>2</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO3</name>
+       <description>Port x pin 3 input Schmitt trigger enable</description>
+       <bitOffset>3</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO4</name>
+       <description>Port x pin 4 input Schmitt trigger enable</description>
+       <bitOffset>4</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO5</name>
+       <description>Port x pin 5 input Schmitt trigger enable</description>
+       <bitOffset>5</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO6</name>
+       <description>Port x pin 6 input Schmitt trigger enable</description>
+       <bitOffset>6</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO7</name>
+       <description>Port x pin 7 input Schmitt trigger enable</description>
+       <bitOffset>7</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO8</name>
+       <description>Port x pin 8 input Schmitt trigger enable</description>
+       <bitOffset>8</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO9</name>
+       <description>Port x pin 9 input Schmitt trigger enable</description>
+       <bitOffset>9</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO10</name>
+       <description>Port x pin 10 input Schmitt trigger enable</description>
+       <bitOffset>10</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO11</name>
+       <description>Port x pin 11 input Schmitt trigger enable</description>
+       <bitOffset>11</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO12</name>
+       <description>Port x pin 12 input Schmitt trigger enable</description>
+       <bitOffset>12</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO13</name>
+       <description>Port x pin 13 input Schmitt trigger enable</description>
+       <bitOffset>13</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO14</name>
+       <description>Port x pin 14 input Schmitt trigger enable</description>
+       <bitOffset>14</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO15</name>
+       <description>Port x pin 15 input Schmitt trigger enable</description>
+       <bitOffset>15</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>SCCR</name>
+     <displayName>SCCR</displayName>
+     <description>Input Schmitt Clear Register</description>
+     <addressOffset>0x30</addressOffset>
+     <size>0x20</size>
+     <access>write-only</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>IO0</name>
+       <description>Port x pin 0 input Schmitt trigger disable</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO1</name>
+       <description>Port x pin 1 input Schmitt trigger disable</description>
+       <bitOffset>1</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO2</name>
+       <description>Port x pin 2 input Schmitt trigger disable</description>
+       <bitOffset>2</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO3</name>
+       <description>Port x pin 3 input Schmitt trigger disable</description>
+       <bitOffset>3</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO4</name>
+       <description>Port x pin 4 input Schmitt trigger disable</description>
+       <bitOffset>4</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO5</name>
+       <description>Port x pin 5 input Schmitt trigger disable</description>
+       <bitOffset>5</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO6</name>
+       <description>Port x pin 6 input Schmitt trigger disable</description>
+       <bitOffset>6</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO7</name>
+       <description>Port x pin 7 input Schmitt trigger disable</description>
+       <bitOffset>7</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO8</name>
+       <description>Port x pin 8 input Schmitt trigger disable</description>
+       <bitOffset>8</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO9</name>
+       <description>Port x pin 9 input Schmitt trigger disable</description>
+       <bitOffset>9</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO10</name>
+       <description>Port x pin 10 input Schmitt trigger disable</description>
+       <bitOffset>10</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO11</name>
+       <description>Port x pin 11 input Schmitt trigger disable</description>
+       <bitOffset>11</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO12</name>
+       <description>Port x pin 12 input Schmitt trigger disable</description>
+       <bitOffset>12</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO13</name>
+       <description>Port x pin 13 input Schmitt trigger disable</description>
+       <bitOffset>13</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO14</name>
+       <description>Port x pin 14 input Schmitt trigger disable</description>
+       <bitOffset>14</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO15</name>
+       <description>Port x pin 15 input Schmitt trigger disable</description>
+       <bitOffset>15</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+     </fields>
+    </register>
+   </registers>
+  </peripheral>
+  <peripheral derivedFrom="GPIOA">
+   <name>GPIOB</name>
+   <baseAddress>0x48001000</baseAddress>
+  </peripheral>
+  <peripheral>
+   <name>AFIOA</name>
+   <description>Alternate function</description>
+   <groupName>AFIO</groupName>
+   <baseAddress>0x48000100</baseAddress>
+   <addressBlock>
+    <offset>0x0</offset>
+    <size>0x400</size>
+    <usage>registers</usage>
+   </addressBlock>
+   <registers>
+    <register>
+     <name>AFSR1</name>
+     <displayName>AFSR1</displayName>
+     <description>Digtal Alternate Function Set Register 1</description>
+     <addressOffset>0x00</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>IO0</name>
+       <description>Port x pin 0 digtal alternate function</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>4</bitWidth>
+      </field>
+      <field>
+       <name>IO1</name>
+       <description>Port x pin 1 digtal alternate function</description>
+       <bitOffset>4</bitOffset>
+       <bitWidth>4</bitWidth>
+      </field>
+      <field>
+       <name>IO2</name>
+       <description>Port x pin 2 digtal alternate function</description>
+       <bitOffset>8</bitOffset>
+       <bitWidth>4</bitWidth>
+      </field>
+      <field>
+       <name>IO3</name>
+       <description>Port x pin 3 digtal alternate function</description>
+       <bitOffset>12</bitOffset>
+       <bitWidth>4</bitWidth>
+      </field>
+      <field>
+       <name>IO4</name>
+       <description>Port x pin 4 digtal alternate function</description>
+       <bitOffset>16</bitOffset>
+       <bitWidth>4</bitWidth>
+      </field>
+      <field>
+       <name>IO5</name>
+       <description>Port x pin 5 digtal alternate function</description>
+       <bitOffset>20</bitOffset>
+       <bitWidth>4</bitWidth>
+      </field>
+      <field>
+       <name>IO6</name>
+       <description>Port x pin 6 digtal alternate function</description>
+       <bitOffset>24</bitOffset>
+       <bitWidth>4</bitWidth>
+      </field>
+      <field>
+       <name>IO7</name>
+       <description>Port x pin 7 digtal alternate function</description>
+       <bitOffset>28</bitOffset>
+       <bitWidth>4</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>AFSR2</name>
+     <displayName>AFSR2</displayName>
+     <description>Digtal Alternate Function Set Register 2</description>
+     <addressOffset>0x04</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>IO8</name>
+       <description>Port x pin 8 digtal alternate function</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>4</bitWidth>
+      </field>
+      <field>
+       <name>IO9</name>
+       <description>Port x pin 9 digtal alternate function</description>
+       <bitOffset>4</bitOffset>
+       <bitWidth>4</bitWidth>
+      </field>
+      <field>
+       <name>IO10</name>
+       <description>Port x pin 10 digtal alternate function</description>
+       <bitOffset>8</bitOffset>
+       <bitWidth>4</bitWidth>
+      </field>
+      <field>
+       <name>IO11</name>
+       <description>Port x pin 11 digtal alternate function</description>
+       <bitOffset>12</bitOffset>
+       <bitWidth>4</bitWidth>
+      </field>
+      <field>
+       <name>IO12</name>
+       <description>Port x pin 12 digtal alternate function</description>
+       <bitOffset>16</bitOffset>
+       <bitWidth>4</bitWidth>
+      </field>
+      <field>
+       <name>IO13</name>
+       <description>Port x pin 13 digtal alternate function</description>
+       <bitOffset>20</bitOffset>
+       <bitWidth>4</bitWidth>
+      </field>
+      <field>
+       <name>IO14</name>
+       <description>Port x pin 14 digtal alternate function</description>
+       <bitOffset>24</bitOffset>
+       <bitWidth>4</bitWidth>
+      </field>
+      <field>
+       <name>IO15</name>
+       <description>Port x pin 15 digtal alternate function</description>
+       <bitOffset>28</bitOffset>
+       <bitWidth>4</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>AFCR</name>
+     <displayName>AFCR</displayName>
+     <description>Digtal Alternate Function Clear Register</description>
+     <addressOffset>0x08</addressOffset>
+     <size>0x20</size>
+     <access>write-only</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>IO0</name>
+       <description>Port x pin 0 digtal alternate function clear</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO1</name>
+       <description>Port x pin 1 digtal alternate function clear</description>
+       <bitOffset>1</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO2</name>
+       <description>Port x pin 2 digtal alternate function clear</description>
+       <bitOffset>2</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO3</name>
+       <description>Port x pin 3 digtal alternate function clear</description>
+       <bitOffset>3</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO4</name>
+       <description>Port x pin 4 digtal alternate function clear</description>
+       <bitOffset>4</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO5</name>
+       <description>Port x pin 5 digtal alternate function clear</description>
+       <bitOffset>5</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO6</name>
+       <description>Port x pin 6 digtal alternate function clear</description>
+       <bitOffset>6</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO7</name>
+       <description>Port x pin 7 digtal alternate function clear</description>
+       <bitOffset>7</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO8</name>
+       <description>Port x pin 8 digtal alternate function clear</description>
+       <bitOffset>8</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO9</name>
+       <description>Port x pin 9 digtal alternate function clear</description>
+       <bitOffset>9</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO10</name>
+       <description>Port x pin 10 digtal alternate function clear</description>
+       <bitOffset>10</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO11</name>
+       <description>Port x pin 11 digtal alternate function clear</description>
+       <bitOffset>11</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO12</name>
+       <description>Port x pin 12 digtal alternate function clear</description>
+       <bitOffset>12</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO13</name>
+       <description>Port x pin 13 digtal alternate function clear</description>
+       <bitOffset>13</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO14</name>
+       <description>Port x pin 14 digtal alternate function clear</description>
+       <bitOffset>14</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO15</name>
+       <description>Port x pin 15 digtal alternate function clear</description>
+       <bitOffset>15</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>ANASR</name>
+     <displayName>ANASR</displayName>
+     <description>Analog Alternate Function Set Register</description>
+     <addressOffset>0x0C</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>IO0</name>
+       <description>Port x pin 0 analog alternate function</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO1</name>
+       <description>Port x pin 1 analog alternate function</description>
+       <bitOffset>1</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO2</name>
+       <description>Port x pin 2 analog alternate function</description>
+       <bitOffset>2</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO3</name>
+       <description>Port x pin 3 analog alternate function</description>
+       <bitOffset>3</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO4</name>
+       <description>Port x pin 4 analog alternate function</description>
+       <bitOffset>4</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO5</name>
+       <description>Port x pin 5 analog alternate function</description>
+       <bitOffset>5</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO6</name>
+       <description>Port x pin 6 analog alternate function</description>
+       <bitOffset>6</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO7</name>
+       <description>Port x pin 7 analog alternate function</description>
+       <bitOffset>7</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO8</name>
+       <description>Port x pin 8 analog alternate function</description>
+       <bitOffset>8</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO9</name>
+       <description>Port x pin 9 analog alternate function</description>
+       <bitOffset>9</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO10</name>
+       <description>Port x pin 10 analog alternate function</description>
+       <bitOffset>10</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO11</name>
+       <description>Port x pin 11 analog alternate function</description>
+       <bitOffset>11</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO12</name>
+       <description>Port x pin 12 analog alternate function</description>
+       <bitOffset>12</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO13</name>
+       <description>Port x pin 13 analog alternate function</description>
+       <bitOffset>13</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO14</name>
+       <description>Port x pin 14 analog alternate function</description>
+       <bitOffset>14</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO15</name>
+       <description>Port x pin 15 analog alternate function</description>
+       <bitOffset>15</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>ANACR</name>
+     <displayName>ANACR</displayName>
+     <description>Analog Alternate Function Clear Register</description>
+     <addressOffset>0x10</addressOffset>
+     <size>0x20</size>
+     <access>write-only</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>IO0</name>
+       <description>Port x pin 0 analog alternate function clear</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO1</name>
+       <description>Port x pin 1 analog alternate function clear</description>
+       <bitOffset>1</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO2</name>
+       <description>Port x pin 2 analog alternate function clear</description>
+       <bitOffset>2</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO3</name>
+       <description>Port x pin 3 analog alternate function clear</description>
+       <bitOffset>3</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO4</name>
+       <description>Port x pin 4 analog alternate function clear</description>
+       <bitOffset>4</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO5</name>
+       <description>Port x pin 5 analog alternate function clear</description>
+       <bitOffset>5</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO6</name>
+       <description>Port x pin 6 analog alternate function clear</description>
+       <bitOffset>6</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO7</name>
+       <description>Port x pin 7 analog alternate function clear</description>
+       <bitOffset>7</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO8</name>
+       <description>Port x pin 8 analog alternate function clear</description>
+       <bitOffset>8</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO9</name>
+       <description>Port x pin 9 analog alternate function clear</description>
+       <bitOffset>9</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO10</name>
+       <description>Port x pin 10 analog alternate function clear</description>
+       <bitOffset>10</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO11</name>
+       <description>Port x pin 11 analog alternate function clear</description>
+       <bitOffset>11</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO12</name>
+       <description>Port x pin 12 analog alternate function clear</description>
+       <bitOffset>12</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO13</name>
+       <description>Port x pin 13 analog alternate function clear</description>
+       <bitOffset>13</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO14</name>
+       <description>Port x pin 14 analog alternate function clear</description>
+       <bitOffset>14</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IO15</name>
+       <description>Port x pin 15 analog alternate function clear</description>
+       <bitOffset>15</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+     </fields>
+    </register>
+   </registers>
+  </peripheral>
+  <peripheral derivedFrom="AFIOA">
+   <name>AFIOB</name>
+   <baseAddress>0x48001100</baseAddress>
+  </peripheral>
+  <peripheral>
+   <name>EXTIA</name>
+   <description>External interrupt</description>
+   <groupName>EXTI</groupName>
+   <baseAddress>0x48000200</baseAddress>
+   <addressBlock>
+    <offset>0x0</offset>
+    <size>0x400</size>
+    <usage>registers</usage>
+   </addressBlock>
+   <registers>
+    <register>
+     <name>IER</name>
+     <displayName>IER</displayName>
+     <description>Interrupt Enable Register</description>
+     <addressOffset>0x00</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>IE0</name>
+       <description>port x pin 0 input interrupt enable</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IE1</name>
+       <description>port x pin 1 input interrupt enable</description>
+       <bitOffset>1</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IE2</name>
+       <description>port x pin 2 input interrupt enable</description>
+       <bitOffset>2</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IE3</name>
+       <description>port x pin 3 input interrupt enable</description>
+       <bitOffset>3</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IE4</name>
+       <description>port x pin 4 input interrupt enable</description>
+       <bitOffset>4</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IE5</name>
+       <description>port x pin 5 input interrupt enable</description>
+       <bitOffset>5</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IE6</name>
+       <description>port x pin 6 input interrupt enable</description>
+       <bitOffset>6</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IE7</name>
+       <description>port x pin 7 input interrupt enable</description>
+       <bitOffset>7</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IE8</name>
+       <description>port x pin 8 input interrupt enable</description>
+       <bitOffset>8</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IE9</name>
+       <description>port x pin 9 input interrupt enable</description>
+       <bitOffset>9</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IE10</name>
+       <description>port x pin 10 input interrupt enable</description>
+       <bitOffset>10</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IE11</name>
+       <description>port x pin 11 input interrupt enable</description>
+       <bitOffset>11</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IE12</name>
+       <description>port x pin 12 input interrupt enable</description>
+       <bitOffset>12</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IE13</name>
+       <description>port x pin 13 input interrupt enable</description>
+       <bitOffset>13</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IE14</name>
+       <description>port x pin 14 input interrupt enable</description>
+       <bitOffset>14</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IE15</name>
+       <description>port x pin 15 input interrupt enable</description>
+       <bitOffset>15</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>IDR</name>
+     <displayName>IDR</displayName>
+     <description>Interrupt Disable Register</description>
+     <addressOffset>0x04</addressOffset>
+     <size>0x20</size>
+     <access>write-only</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>IE0</name>
+       <description>port x pin 0 input interrupt disable</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IE1</name>
+       <description>port x pin 1 input interrupt disable</description>
+       <bitOffset>1</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IE2</name>
+       <description>port x pin 2 input interrupt disable</description>
+       <bitOffset>2</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IE3</name>
+       <description>port x pin 3 input interrupt disable</description>
+       <bitOffset>3</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IE4</name>
+       <description>port x pin 4 input interrupt disable</description>
+       <bitOffset>4</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IE5</name>
+       <description>port x pin 5 input interrupt disable</description>
+       <bitOffset>5</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IE6</name>
+       <description>port x pin 6 input interrupt disable</description>
+       <bitOffset>6</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IE7</name>
+       <description>port x pin 7 input interrupt disable</description>
+       <bitOffset>7</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IE8</name>
+       <description>port x pin 8 input interrupt disable</description>
+       <bitOffset>8</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IE9</name>
+       <description>port x pin 9 input interrupt disable</description>
+       <bitOffset>9</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IE10</name>
+       <description>port x pin 10 input interrupt disable</description>
+       <bitOffset>10</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IE11</name>
+       <description>port x pin 11 input interrupt disable</description>
+       <bitOffset>11</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IE12</name>
+       <description>port x pin 12 input interrupt disable</description>
+       <bitOffset>12</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IE13</name>
+       <description>port x pin 13 input interrupt disable</description>
+       <bitOffset>13</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IE14</name>
+       <description>port x pin 14 input interrupt disable</description>
+       <bitOffset>14</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IE15</name>
+       <description>port x pin 15 input interrupt disable</description>
+       <bitOffset>15</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>CFGR1</name>
+     <displayName>CFGR1</displayName>
+     <description>Interrupt Type Configuration Register 1</description>
+     <addressOffset>0x08</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>IT0</name>
+       <description>port x pin 0 input interrupt type</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>3</bitWidth>
+      </field>
+      <field>
+       <name>IT1</name>
+       <description>port x pin 1 input interrupt type</description>
+       <bitOffset>4</bitOffset>
+       <bitWidth>3</bitWidth>
+      </field>
+      <field>
+       <name>IT2</name>
+       <description>port x pin 2 input interrupt type</description>
+       <bitOffset>8</bitOffset>
+       <bitWidth>3</bitWidth>
+      </field>
+      <field>
+       <name>IT3</name>
+       <description>port x pin 3 input interrupt type</description>
+       <bitOffset>12</bitOffset>
+       <bitWidth>3</bitWidth>
+      </field>
+      <field>
+       <name>IT4</name>
+       <description>port x pin 4 input interrupt type</description>
+       <bitOffset>16</bitOffset>
+       <bitWidth>3</bitWidth>
+      </field>
+      <field>
+       <name>IT5</name>
+       <description>port x pin 5 input interrupt type</description>
+       <bitOffset>20</bitOffset>
+       <bitWidth>3</bitWidth>
+      </field>
+      <field>
+       <name>IT6</name>
+       <description>port x pin 6 input interrupt type</description>
+       <bitOffset>24</bitOffset>
+       <bitWidth>3</bitWidth>
+      </field>
+      <field>
+       <name>IT7</name>
+       <description>port x pin 7 input interrupt type</description>
+       <bitOffset>28</bitOffset>
+       <bitWidth>3</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>CFGR2</name>
+     <displayName>CFGR2</displayName>
+     <description>Interrupt Type Configuration Register2</description>
+     <addressOffset>0x0C</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>IT8</name>
+       <description>port x pin 8 input interrupt type</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>3</bitWidth>
+      </field>
+      <field>
+       <name>IT9</name>
+       <description>port x pin 9 input interrupt type</description>
+       <bitOffset>4</bitOffset>
+       <bitWidth>3</bitWidth>
+      </field>
+      <field>
+       <name>IT10</name>
+       <description>port x pin 10 input interrupt type</description>
+       <bitOffset>8</bitOffset>
+       <bitWidth>3</bitWidth>
+      </field>
+      <field>
+       <name>IT11</name>
+       <description>port x pin 11 input interrupt type</description>
+       <bitOffset>12</bitOffset>
+       <bitWidth>3</bitWidth>
+      </field>
+      <field>
+       <name>IT12</name>
+       <description>port x pin 12 input interrupt type</description>
+       <bitOffset>16</bitOffset>
+       <bitWidth>3</bitWidth>
+      </field>
+      <field>
+       <name>IT13</name>
+       <description>port x pin 13 input interrupt type</description>
+       <bitOffset>20</bitOffset>
+       <bitWidth>3</bitWidth>
+      </field>
+      <field>
+       <name>IT14</name>
+       <description>port x pin 14 input interrupt type</description>
+       <bitOffset>24</bitOffset>
+       <bitWidth>3</bitWidth>
+      </field>
+      <field>
+       <name>IT15</name>
+       <description>port x pin 15 input interrupt type</description>
+       <bitOffset>28</bitOffset>
+       <bitWidth>3</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>SR</name>
+     <displayName>SR</displayName>
+     <description>Interrupt Status Register</description>
+     <addressOffset>0x10</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>IF0</name>
+       <description>port x pin 0 input interrupt flag</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IF1</name>
+       <description>port x pin 1 input interrupt flag</description>
+       <bitOffset>1</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IF2</name>
+       <description>port x pin 2 input interrupt flag</description>
+       <bitOffset>2</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IF3</name>
+       <description>port x pin 3 input interrupt flag</description>
+       <bitOffset>3</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IF4</name>
+       <description>port x pin 4 input interrupt flag</description>
+       <bitOffset>4</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IF5</name>
+       <description>port x pin 5 input interrupt flag</description>
+       <bitOffset>5</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IF6</name>
+       <description>port x pin 6 input interrupt flag</description>
+       <bitOffset>6</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IF7</name>
+       <description>port x pin 7 input interrupt flag</description>
+       <bitOffset>7</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IF8</name>
+       <description>port x pin 8 input interrupt flag</description>
+       <bitOffset>8</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IF9</name>
+       <description>port x pin 9 input interrupt flag</description>
+       <bitOffset>9</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IF10</name>
+       <description>port x pin 10 input interrupt flag</description>
+       <bitOffset>10</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IF11</name>
+       <description>port x pin 11 input interrupt flag</description>
+       <bitOffset>11</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IF12</name>
+       <description>port x pin 12 input interrupt flag</description>
+       <bitOffset>12</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IF13</name>
+       <description>port x pin 13 input interrupt flag</description>
+       <bitOffset>13</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IF14</name>
+       <description>port x pin 14 input interrupt flag</description>
+       <bitOffset>14</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IF15</name>
+       <description>port x pin 15 input interrupt flag</description>
+       <bitOffset>15</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+     </fields>
+    </register>
+   </registers>
+  </peripheral>
+  <peripheral derivedFrom="EXTIA">
+   <name>EXTIB</name>
+   <baseAddress>0x48001200</baseAddress>
+  </peripheral>
+  <peripheral>
+   <name>ADC</name>
+   <description>Analog-to-digital converters</description>
+   <groupName>ADC</groupName>
+   <baseAddress>0x40012400</baseAddress>
+   <addressBlock>
+    <offset>0x00</offset>
+    <size>0x400</size>
+    <usage>registers</usage>
+   </addressBlock>
+   <registers>
+    <register>
+     <name>CR1</name>
+     <displayName>CR1</displayName>
+     <description>Control Register 1</description>
+     <addressOffset>0x00</addressOffset>
+     <size>0x20</size>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>EN</name>
+       <description>ADC enable</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>1</bitWidth>
+       <access>read-write</access>
+      </field>
+      <field>
+       <name>SOC</name>
+       <description>ADC start on control</description>
+       <bitOffset>4</bitOffset>
+       <bitWidth>1</bitWidth>
+       <access>write-only</access>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>CR2</name>
+     <displayName>CR2</displayName>
+     <description>Control Register 2</description>
+     <addressOffset>0x04</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>MODE</name>
+       <description>ADC regular conversion mode</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>CONV</name>
+       <description>ADC conversion control</description>
+       <bitOffset>8</bitOffset>
+       <bitWidth>2</bitWidth>
+      </field>
+      <field>
+       <name>SCCNT</name>
+       <description>Single conversion count control</description>
+       <bitOffset>12</bitOffset>
+       <bitWidth>3</bitWidth>
+      </field>
+      <field>
+       <name>TRIGS</name>
+       <description>ADC regular trigger source selection</description>
+       <bitOffset>16</bitOffset>
+       <bitWidth>4</bitWidth>
+      </field>
+      <field>
+       <name>TIMS</name>
+       <description>ADC regular timer trigger source selection</description>
+       <bitOffset>20</bitOffset>
+       <bitWidth>5</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>CFGR1</name>
+     <displayName>CFGR1</displayName>
+     <description>Configuration Register 1</description>
+     <addressOffset>0x10</addressOffset>
+     <size>0x20</size>
+     <resetValue>0x10100000</resetValue>
+     <fields>
+      <field>
+       <name>RVSPS</name>
+       <description>Reference voltage source positive selection</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>2</bitWidth>
+       <access>read-write</access>
+      </field>
+      <field>
+       <name>BGS</name>
+       <description>BGREF source selection</description>
+       <bitOffset>5</bitOffset>
+       <bitWidth>1</bitWidth>
+       <access>read-only</access>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>CFGR2</name>
+     <displayName>CFGR2</displayName>
+     <description>Configuration Register 2</description>
+     <addressOffset>0x14</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>CHS</name>
+       <description>ADC channel selection</description>
+       <bitOffset>16</bitOffset>
+       <bitWidth>6</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>CFGR3</name>
+     <displayName>CFGR3</displayName>
+     <description>Configuration Register 3</description>
+     <addressOffset>0x18</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>PSC</name>
+       <description>ADC prescaler</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>8</bitWidth>
+      </field>
+      <field>
+       <name>SMP</name>
+       <description>ADC sample time</description>
+       <bitOffset>24</bitOffset>
+       <bitWidth>8</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>IER</name>
+     <displayName>IER</displayName>
+     <description>Interrupt Enable Register</description>
+     <addressOffset>0x1C</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>EOCIE</name>
+       <description>ADC end of conversion interrupt enable</description>
+       <bitOffset>1</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>SR</name>
+     <displayName>SR</displayName>
+     <description>Status Register</description>
+     <addressOffset>0x20</addressOffset>
+     <size>0x20</size>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>RDY</name>
+       <description>ADC ready</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>1</bitWidth>
+       <access>read-only</access>
+      </field>
+      <field>
+       <name>EOC</name>
+       <description>ADC end of conversion</description>
+       <bitOffset>1</bitOffset>
+       <bitWidth>1</bitWidth>
+       <access>read-only</access>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>DR</name>
+     <displayName>DR</displayName>
+     <description>Data Register</description>
+     <addressOffset>0x30</addressOffset>
+     <size>0x20</size>
+     <access>read-only</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>DATA</name>
+       <description>ADC data</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>16</bitWidth>
+      </field>
+     </fields>
+    </register>
+   </registers>
+  </peripheral>
+  <peripheral>
+   <name>TIM20</name>
+   <description>Advanced timer</description>
+   <groupName>TIM</groupName>
+   <baseAddress>0x40007400</baseAddress>
+   <addressBlock>
+    <offset>0x0</offset>
+    <size>0x400</size>
+    <usage>registers</usage>
+   </addressBlock>
+   <registers>
+    <register>
+     <name>CR</name>
+     <displayName>CR</displayName>
+     <description>Control Register</description>
+     <addressOffset>0x00</addressOffset>
+     <size>0x20</size>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>EN</name>
+       <description>TIM enable</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>1</bitWidth>
+       <access>read-write</access>
+      </field>
+      <field>
+       <name>UG</name>
+       <description>Update generation</description>
+       <bitOffset>1</bitOffset>
+       <bitWidth>1</bitWidth>
+       <access>write-only</access>
+      </field>
+      <field>
+       <name>OPM</name>
+       <description>One-pulse mode</description>
+       <bitOffset>2</bitOffset>
+       <bitWidth>1</bitWidth>
+       <access>read-write</access>
+      </field>
+      <field>
+       <name>DIR</name>
+       <description>Direction</description>
+       <bitOffset>16</bitOffset>
+       <bitWidth>1</bitWidth>
+       <access>read-write</access>
+      </field>
+      <field>
+       <name>CMS</name>
+       <description>Center-aligned mode selection</description>
+       <bitOffset>17</bitOffset>
+       <bitWidth>2</bitWidth>
+       <access>read-write</access>
+      </field>
+      <field>
+       <name>DBGE</name>
+       <description>TIM debug</description>
+       <bitOffset>31</bitOffset>
+       <bitWidth>1</bitWidth>
+       <access>read-write</access>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>PCR</name>
+     <displayName>PCR</displayName>
+     <description>Polarity Control Register</description>
+     <addressOffset>0x0C</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>CC1P</name>
+       <description>Capture/Compare 1 output polarity</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>C1NP</name>
+       <description>Compare 1 complementary output polarity</description>
+       <bitOffset>1</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>CC2P</name>
+       <description>Capture/Compare 2 output polarity</description>
+       <bitOffset>4</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>C2NP</name>
+       <description>Compare 2 complementary output polarity</description>
+       <bitOffset>5</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>CC3P</name>
+       <description>Capture/Compare 3 output polarity</description>
+       <bitOffset>8</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>C3NP</name>
+       <description>Compare 3 complementary output polarity</description>
+       <bitOffset>9</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>OCMR</name>
+     <displayName>OCMR</displayName>
+     <description>Output Compare Mode Register</description>
+     <addressOffset>0x20</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>OC1M</name>
+       <description>output compare 1 mode</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>3</bitWidth>
+      </field>
+      <field>
+       <name>OC2M</name>
+       <description>output compare 2 mode</description>
+       <bitOffset>4</bitOffset>
+       <bitWidth>3</bitWidth>
+      </field>
+      <field>
+       <name>OC3M</name>
+       <description>output compare 3 mode</description>
+       <bitOffset>8</bitOffset>
+       <bitWidth>3</bitWidth>
+      </field>
+      <field>
+       <name>OIS1</name>
+       <description>Output Idle state 1</description>
+       <bitOffset>16</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>OIS2</name>
+       <description>Output Idle state 2</description>
+       <bitOffset>17</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>OIS3</name>
+       <description>Output Idle state 3</description>
+       <bitOffset>18</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>OIS1N</name>
+       <description>Output Idle state 1 complementary</description>
+       <bitOffset>20</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>OIS2N</name>
+       <description>Output Idle state 2 complementary</description>
+       <bitOffset>21</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>OIS3N</name>
+       <description>Output Idle state 3 complementary</description>
+       <bitOffset>22</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>OC1NE</name>
+       <description>Compare output 1 complementary output enable</description>
+       <bitOffset>24</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>OC2NE</name>
+       <description>Compare output 2 complementary output enable</description>
+       <bitOffset>25</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>OC3NE</name>
+       <description>Compare output 3 complementary output enable</description>
+       <bitOffset>26</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>OC1E</name>
+       <description>Compare output 1 output enable</description>
+       <bitOffset>28</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>OC2E</name>
+       <description>Compare output 2 output enable</description>
+       <bitOffset>29</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>OC3E</name>
+       <description>Compare output 3 output enable</description>
+       <bitOffset>30</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>BKICR</name>
+     <displayName>BKICR</displayName>
+     <description>Break Input Control Register</description>
+     <addressOffset>0x28</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>BKE</name>
+       <description>Break enable</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>BKP</name>
+       <description>Break polarity</description>
+       <bitOffset>1</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>BKIC</name>
+       <description>break input control</description>
+       <bitOffset>2</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>BKSC</name>
+       <description>Break software control enable</description>
+       <bitOffset>4</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>BKINFR</name>
+       <description>BKIN Input filter</description>
+       <bitOffset>8</bitOffset>
+       <bitWidth>3</bitWidth>
+      </field>
+      <field>
+       <name>LOCKUPE</name>
+       <description>LOCKUP break input enable</description>
+       <bitOffset>16</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>SWE</name>
+       <description>SW Break input enable</description>
+       <bitOffset>20</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>BKINE</name>
+       <description>BKIN Break input enable</description>
+       <bitOffset>21</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>CMP0E</name>
+       <description>CMP0 Break input enable</description>
+       <bitOffset>24</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>DTCR</name>
+     <displayName>DTCR</displayName>
+     <description>Dead Time Control Register</description>
+     <addressOffset>0x2C</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>DT</name>
+       <description>Dead-time value</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>12</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>TACR</name>
+     <displayName>TACR</displayName>
+     <description>Regular Trigger ADC Control Register</description>
+     <addressOffset>0x38</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>UOAE</name>
+       <description>UpOVF trigger ADC enable</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>DOAE</name>
+       <description>DownOVF trigger ADC enable</description>
+       <bitOffset>1</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>OC1UE</name>
+       <description>OC1U trigger ADC enable</description>
+       <bitOffset>2</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>OC1DE</name>
+       <description>OC1D trigger ADC enable</description>
+       <bitOffset>3</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>OC2UE</name>
+       <description>OC2U trigger ADC enable</description>
+       <bitOffset>4</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>OC2DE</name>
+       <description>OC2D trigger ADC enable</description>
+       <bitOffset>5</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>OC3UE</name>
+       <description>OC3U trigger ADC enable</description>
+       <bitOffset>6</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>OC3DE</name>
+       <description>OC3D trigger ADC enable</description>
+       <bitOffset>7</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>SR1</name>
+     <displayName>SR1</displayName>
+     <description>Status Register 1</description>
+     <addressOffset>0x40</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>ARF</name>
+       <description>Auto reload flag</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>OC1F</name>
+       <description>Output compare 1 flag</description>
+       <bitOffset>1</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>OC2F</name>
+       <description>Output compare 2 flag</description>
+       <bitOffset>2</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>OC3F</name>
+       <description>Output compare 3 flag</description>
+       <bitOffset>3</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>SR2</name>
+     <displayName>SR2</displayName>
+     <description>Status Register 2</description>
+     <addressOffset>0x44</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>BIF</name>
+       <description>Break input flag</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>UF</name>
+       <description>update flag</description>
+       <bitOffset>2</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>IER1</name>
+     <displayName>IER1</displayName>
+     <description>Interrupt Enable Register 1</description>
+     <addressOffset>0x48</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>ARIE</name>
+       <description>Auto reload interrupt enable</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>OC1IE</name>
+       <description>output compare 1 interrupt enable</description>
+       <bitOffset>1</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>OC2IE</name>
+       <description>output compare 2 interrupt enable</description>
+       <bitOffset>2</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>OC3IE</name>
+       <description>output compare 3 interrupt enable</description>
+       <bitOffset>3</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>IER2</name>
+     <displayName>IER2</displayName>
+     <description>Interrupt Enable Register 2</description>
+     <addressOffset>0x4C</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>BKIE</name>
+       <description>Break interrupt enable</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>UIE</name>
+       <description>Update interrupt enable</description>
+       <bitOffset>2</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>ITARR</name>
+     <displayName>ITARR</displayName>
+     <description>Interrupt Auto Reload Register</description>
+     <addressOffset>0x50</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>ITARR</name>
+       <description>TIM interrupt auto reload</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>4</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>ITCNTR</name>
+     <displayName>ITCNTR</displayName>
+     <description>Interrupt Counter Register</description>
+     <addressOffset>0x54</addressOffset>
+     <size>0x20</size>
+     <access>read-only</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>ITCNT</name>
+       <description>TIM interrupt counter value</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>4</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>PSCR</name>
+     <displayName>PSCR</displayName>
+     <description>Prescaler Register</description>
+     <addressOffset>0x58</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>PSC</name>
+       <description>Prescaler value</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>16</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>CNTR</name>
+     <displayName>CNTR</displayName>
+     <description>Counter Register</description>
+     <addressOffset>0x60</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>CNT</name>
+       <description>Counter value</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>16</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>ARR</name>
+     <displayName>ARR</displayName>
+     <description>Auto Reload Register</description>
+     <addressOffset>0x64</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>ARR</name>
+       <description>Auto reload value</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>16</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>OCR1</name>
+     <displayName>OCR1</displayName>
+     <description>Output Compare Register 1</description>
+     <addressOffset>0x68</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>OCR</name>
+       <description>output compare value</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>16</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>OCR2</name>
+     <displayName>OCR2</displayName>
+     <description>Output Compare Register 2</description>
+     <addressOffset>0x6C</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>OCR</name>
+       <description>output compare value</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>16</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>OCR3</name>
+     <displayName>OCR3</displayName>
+     <description>Output Compare Register 3</description>
+     <addressOffset>0x70</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>OCR</name>
+       <description>output compare value</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>16</bitWidth>
+      </field>
+     </fields>
+    </register>
+   </registers>
+  </peripheral>
+  <peripheral derivedFrom="TIM20">
+   <name>TIM22</name>
+   <baseAddress>0x40007C00</baseAddress>
+  </peripheral>
+  <peripheral>
+   <name>TIM21</name>
+   <description>Advanced timer</description>
+   <groupName>TIM</groupName>
+   <baseAddress>0x40007800</baseAddress>
+   <addressBlock>
+    <offset>0x0</offset>
+    <size>0x400</size>
+    <usage>registers</usage>
+   </addressBlock>
+   <registers>
+    <register>
+     <name>CR</name>
+     <displayName>CR</displayName>
+     <description>Control Register</description>
+     <addressOffset>0x00</addressOffset>
+     <size>0x20</size>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>EN</name>
+       <description>TIM enable</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>1</bitWidth>
+       <access>read-write</access>
+      </field>
+      <field>
+       <name>UG</name>
+       <description>Update generation</description>
+       <bitOffset>1</bitOffset>
+       <bitWidth>1</bitWidth>
+       <access>write-only</access>
+      </field>
+      <field>
+       <name>OPM</name>
+       <description>One-pulse mode</description>
+       <bitOffset>2</bitOffset>
+       <bitWidth>1</bitWidth>
+       <access>read-write</access>
+      </field>
+      <field>
+       <name>CKD</name>
+       <description>Sampling clock division</description>
+       <bitOffset>8</bitOffset>
+       <bitWidth>3</bitWidth>
+       <access>read-write</access>
+      </field>
+      <field>
+       <name>DIR</name>
+       <description>Direction</description>
+       <bitOffset>16</bitOffset>
+       <bitWidth>1</bitWidth>
+       <access>read-write</access>
+      </field>
+      <field>
+       <name>DBGE</name>
+       <description>TIM debug</description>
+       <bitOffset>31</bitOffset>
+       <bitWidth>1</bitWidth>
+       <access>read-write</access>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>PCR</name>
+     <displayName>PCR</displayName>
+     <description>Polarity Control Register</description>
+     <addressOffset>0x0C</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>CC1P</name>
+       <description>Capture/Compare 1 output polarity</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>1</bitWidth>
+       <access>read-write</access>
+      </field>
+      <field>
+       <name>CC2P</name>
+       <description>Capture/Compare 2 output polarity</description>
+       <bitOffset>4</bitOffset>
+       <bitWidth>1</bitWidth>
+       <access>read-write</access>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>CAPR1</name>
+     <displayName>CAPR1</displayName>
+     <description>Capture Configuration Register 1</description>
+     <addressOffset>0x10</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>1C1R</name>
+       <description>input capture 1 rising capture enable</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IC1F</name>
+       <description>input capture 1 falling capture enable</description>
+       <bitOffset>1</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IC1PSC</name>
+       <description>Input capture 1 prescaler</description>
+       <bitOffset>4</bitOffset>
+       <bitWidth>2</bitWidth>
+      </field>
+      <field>
+       <name>IC1FR</name>
+       <description>Input capture 1 filter</description>
+       <bitOffset>12</bitOffset>
+       <bitWidth>3</bitWidth>
+      </field>
+      <field>
+       <name>IC2R</name>
+       <description>input capture 2 rising capture enable</description>
+       <bitOffset>16</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IC2F</name>
+       <description>input capture 2 falling capture enable</description>
+       <bitOffset>17</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IC2PSC</name>
+       <description>Input capture 2 prescaler</description>
+       <bitOffset>20</bitOffset>
+       <bitWidth>2</bitWidth>
+      </field>
+      <field>
+       <name>IC2FR</name>
+       <description>Input capture 2 filter</description>
+       <bitOffset>28</bitOffset>
+       <bitWidth>3</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>SR1</name>
+     <displayName>SR1</displayName>
+     <description>Status Register 1</description>
+     <addressOffset>0x40</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>ARF</name>
+       <description>Auto reload flag</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IC1R</name>
+       <description>input capture 1 rising edge flag</description>
+       <bitOffset>16</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IC1F</name>
+       <description>input capture 1 falling edge flag</description>
+       <bitOffset>17</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IC2R</name>
+       <description>input capture 2 rising edge flag</description>
+       <bitOffset>18</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IC2F</name>
+       <description>input capture 2 falling edge flag</description>
+       <bitOffset>19</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>SR2</name>
+     <displayName>SR2</displayName>
+     <description>Status Register 2</description>
+     <addressOffset>0x44</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>UF</name>
+       <description>update flag</description>
+       <bitOffset>2</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>IER1</name>
+     <displayName>IER1</displayName>
+     <description>Interrupt Enable Register 1</description>
+     <addressOffset>0x48</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>ARIE</name>
+       <description>Auto reload interrupt enable</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IC1IE</name>
+       <description>input capture 1 interrupt enable</description>
+       <bitOffset>8</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IC2IE</name>
+       <description>input capture 2 interrupt enable</description>
+       <bitOffset>9</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>IER2</name>
+     <displayName>IER2</displayName>
+     <description>Interrupt Enable Register 2</description>
+     <addressOffset>0x4C</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>UIE</name>
+       <description>Update interrupt enable</description>
+       <bitOffset>2</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>PSCR</name>
+     <displayName>PSCR</displayName>
+     <description>Prescaler Register</description>
+     <addressOffset>0x58</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>PSC</name>
+       <description>Prescaler value</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>16</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>CNTR</name>
+     <displayName>CNTR</displayName>
+     <description>Counter Register</description>
+     <addressOffset>0x60</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>CNT</name>
+       <description>Counter value</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>16</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>ARR</name>
+     <displayName>ARR</displayName>
+     <description>Auto Reload Register</description>
+     <addressOffset>0x64</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>ARR</name>
+       <description>Auto reload value</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>16</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>ICR1</name>
+     <displayName>ICR1</displayName>
+     <description>Input Capture Register 1</description>
+     <addressOffset>0x78</addressOffset>
+     <size>0x20</size>
+     <access>read-only</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>ICR</name>
+       <description>input capture value</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>16</bitWidth>
+      </field>
+      <field>
+       <name>STS</name>
+       <description>input capture status</description>
+       <bitOffset>16</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>ICR2</name>
+     <displayName>ICR2</displayName>
+     <description>Input Capture Register 2</description>
+     <addressOffset>0x7C</addressOffset>
+     <size>0x20</size>
+     <access>read-only</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>ICR</name>
+       <description>input capture value</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>16</bitWidth>
+      </field>
+      <field>
+       <name>STS</name>
+       <description>input capture status</description>
+       <bitOffset>16</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+     </fields>
+    </register>
+   </registers>
+  </peripheral>
+  <peripheral>
+   <name>TIM4</name>
+   <description>Low power timer</description>
+   <groupName>TIM</groupName>
+   <baseAddress>0x40001C00</baseAddress>
+   <addressBlock>
+    <offset>0x00</offset>
+    <size>0x400</size>
+    <usage>registers</usage>
+   </addressBlock>
+   <registers>
+    <register>
+     <name>CR</name>
+     <displayName>CR</displayName>
+     <description>Control Register</description>
+     <addressOffset>0x00</addressOffset>
+     <size>0x20</size>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>EN</name>
+       <description>Counter enable</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>1</bitWidth>
+       <access>read-write</access>
+      </field>
+      <field>
+       <name>UG</name>
+       <description>Counter Update generation</description>
+       <bitOffset>1</bitOffset>
+       <bitWidth>1</bitWidth>
+       <access>write-only</access>
+      </field>
+      <field>
+       <name>DBGE</name>
+       <description>TIM debug</description>
+       <bitOffset>31</bitOffset>
+       <bitWidth>1</bitWidth>
+       <access>read-write</access>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>SR1</name>
+     <displayName>SR1</displayName>
+     <description>Status Register 1</description>
+     <addressOffset>0x40</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>ARF</name>
+       <description>auto reload flag</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>IER1</name>
+     <displayName>IER1</displayName>
+     <description>Interrupt Enable Register 1</description>
+     <addressOffset>0x48</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>ARIE</name>
+       <description>Auto reload interrupt enable</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>PSCR</name>
+     <displayName>PSCR</displayName>
+     <description>Prescaler Register</description>
+     <addressOffset>0x58</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>PSC</name>
+       <description>Prescaler value</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>16</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>CNTR</name>
+     <displayName>CNTR</displayName>
+     <description>Counter Register</description>
+     <addressOffset>0x60</addressOffset>
+     <size>0x20</size>
+     <access>read-only</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>CNT</name>
+       <description>Counter value</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>16</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>ARR</name>
+     <displayName>ARR</displayName>
+     <description>Auto Reload Register</description>
+     <addressOffset>0x64</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>ARR</name>
+       <description>Auto reload value</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>16</bitWidth>
+      </field>
+     </fields>
+    </register>
+   </registers>
+  </peripheral>
+  <peripheral>
+   <name>IWDG</name>
+   <description>Independent Watchdog</description>
+   <groupName>IWDG</groupName>
+   <baseAddress>0x40003000</baseAddress>
+   <addressBlock>
+    <offset>0x00</offset>
+    <size>0x400</size>
+    <usage>registers</usage>
+   </addressBlock>
+   <registers>
+    <register>
+     <name>RLR</name>
+     <displayName>RLR</displayName>
+     <description>Reload Register</description>
+     <addressOffset>0x00</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0xFFFFFFFF</resetValue>
+     <fields>
+      <field>
+       <name>RL</name>
+       <description>Reload value</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>32</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>CNTR</name>
+     <displayName>CNTR</displayName>
+     <description>Counter Register</description>
+     <addressOffset>0x04</addressOffset>
+     <size>0x20</size>
+     <access>read-only</access>
+     <resetValue>0xFFFFFFFF</resetValue>
+     <fields>
+      <field>
+       <name>CNT</name>
+       <description>Counter value</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>32</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>CR</name>
+     <displayName>CR</displayName>
+     <description>Control Register</description>
+     <addressOffset>0x08</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>EN</name>
+       <description>enable</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>DBGE</name>
+       <description>IWDG debug control</description>
+       <bitOffset>31</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>KR</name>
+     <displayName>KR</displayName>
+     <description>Key Register</description>
+     <addressOffset>0x0C</addressOffset>
+     <size>0x20</size>
+     <access>write-only</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>KEY</name>
+       <description>key value</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>32</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>SR</name>
+     <displayName>SR</displayName>
+     <description>Status Register</description>
+     <addressOffset>0x10</addressOffset>
+     <size>0x20</size>
+     <access>read-only</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>HDF</name>
+       <description>hungry dog flag</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>LR</name>
+     <displayName>LR</displayName>
+     <description>Lock Register</description>
+     <addressOffset>0x3FC</addressOffset>
+     <size>0x20</size>
+     <resetValue>0x00000001</resetValue>
+     <fields>
+      <field>
+       <name>KEY</name>
+       <description>lock key</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>32</bitWidth>
+       <access>write-only</access>
+      </field>
+      <field>
+       <name>LOCK</name>
+       <description>lock status</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>1</bitWidth>
+       <access>read-only</access>
+      </field>
+     </fields>
+    </register>
+   </registers>
+  </peripheral>
+  <peripheral>
+   <name>I2C0</name>
+   <description>Inter Integrated Circuit</description>
+   <groupName>I2C</groupName>
+   <baseAddress>0x40005400</baseAddress>
+   <addressBlock>
+    <offset>0x00</offset>
+    <size>0x400</size>
+    <usage>registers</usage>
+   </addressBlock>
+   <registers>
+    <register>
+     <name>CR</name>
+     <displayName>CR</displayName>
+     <description>Control Register</description>
+     <addressOffset>0x0</addressOffset>
+     <size>0x20</size>
+     <resetValue>0x00080C00</resetValue>
+     <fields>
+      <field>
+       <name>EN</name>
+       <description>I2C enable</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>1</bitWidth>
+       <access>read-write</access>
+      </field>
+      <field>
+       <name>ACK</name>
+       <description>Acknowledge enable</description>
+       <bitOffset>2</bitOffset>
+       <bitWidth>1</bitWidth>
+       <access>read-write</access>
+      </field>
+      <field>
+       <name>SI</name>
+       <description>I2C status flag</description>
+       <bitOffset>3</bitOffset>
+       <bitWidth>1</bitWidth>
+       <access>read-only</access>
+      </field>
+      <field>
+       <name>STOP</name>
+       <description>Stop generation</description>
+       <bitOffset>4</bitOffset>
+       <bitWidth>1</bitWidth>
+       <access>read-write</access>
+      </field>
+      <field>
+       <name>START</name>
+       <description>Start generation</description>
+       <bitOffset>5</bitOffset>
+       <bitWidth>1</bitWidth>
+       <access>read-write</access>
+      </field>
+      <field>
+       <name>HCT</name>
+       <description>High level detection coefficient of time</description>
+       <bitOffset>8</bitOffset>
+       <bitWidth>8</bitWidth>
+       <access>read-write</access>
+      </field>
+      <field>
+       <name>PSC</name>
+       <description>Baud rate control</description>
+       <bitOffset>16</bitOffset>
+       <bitWidth>10</bitWidth>
+       <access>read-write</access>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>SR</name>
+     <displayName>SR</displayName>
+     <description>Status Register</description>
+     <addressOffset>0x04</addressOffset>
+     <size>0x20</size>
+     <access>read-only</access>
+     <resetValue>0x0000001F</resetValue>
+     <fields>
+      <field>
+       <name>SR</name>
+       <description>I2C bus status</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>5</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>DR</name>
+     <displayName>DR</displayName>
+     <description>Data Register</description>
+     <addressOffset>0x08</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>DR</name>
+       <description>I2C data</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>8</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>OAR</name>
+     <displayName>OAR</displayName>
+     <description>Own Address Register</description>
+     <addressOffset>0x0C</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>BC</name>
+       <description>Broadcast response control</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>ADDR</name>
+       <description>I2C addr</description>
+       <bitOffset>1</bitOffset>
+       <bitWidth>7</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>CCR</name>
+     <displayName>CCR</displayName>
+     <description>Control Clear Register</description>
+     <addressOffset>0x18</addressOffset>
+     <size>0x20</size>
+     <access>write-only</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>EN</name>
+       <description>I2C disable</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>ACK</name>
+       <description>Clear Acknowledge control</description>
+       <bitOffset>2</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>SI</name>
+       <description>Clear I2C interrupt flag</description>
+       <bitOffset>3</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>STOP</name>
+       <description>Clear stop generation</description>
+       <bitOffset>4</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>START</name>
+       <description>Clear start generation</description>
+       <bitOffset>5</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>HCT</name>
+       <description>Clear high level detection time</description>
+       <bitOffset>8</bitOffset>
+       <bitWidth>8</bitWidth>
+      </field>
+      <field>
+       <name>PSC</name>
+       <description>Clear prescaler</description>
+       <bitOffset>16</bitOffset>
+       <bitWidth>10</bitWidth>
+      </field>
+     </fields>
+    </register>
+   </registers>
+  </peripheral>
+  <peripheral>
+   <name>LPUART0</name>
+   <description>Low power Asynchronous Receiver Transmitter</description>
+   <groupName>LPUART</groupName>
+   <baseAddress>0x40004000</baseAddress>
+   <addressBlock>
+    <offset>0x0</offset>
+    <size>0x400</size>
+    <usage>registers</usage>
+   </addressBlock>
+   <registers>
+    <register>
+     <name>CR</name>
+     <displayName>CR</displayName>
+     <description>Control Register</description>
+     <addressOffset>0x00</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>EN</name>
+       <description>LPUART enable</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>RE</name>
+       <description>Receive enable</description>
+       <bitOffset>1</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>WP</name>
+       <description>Word length and parity config</description>
+       <bitOffset>4</bitOffset>
+       <bitWidth>3</bitWidth>
+      </field>
+      <field>
+       <name>STOP</name>
+       <description>Stop bit length</description>
+       <bitOffset>8</bitOffset>
+       <bitWidth>2</bitWidth>
+      </field>
+      <field>
+       <name>RXP</name>
+       <description>Receiver polarity control</description>
+       <bitOffset>16</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>TXP</name>
+       <description>Transmitter polarity control</description>
+       <bitOffset>17</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>SLME</name>
+       <description>Single-line mode enable</description>
+       <bitOffset>20</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>SLDS</name>
+       <description>Single-line direction setting</description>
+       <bitOffset>21</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>LBM</name>
+       <description>loopback mode</description>
+       <bitOffset>31</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>BRR</name>
+     <displayName>BRR</displayName>
+     <description>Baud Rate Register</description>
+     <addressOffset>0x08</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000001</resetValue>
+     <fields>
+      <field>
+       <name>BR</name>
+       <description>Baud rate control</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>16</bitWidth>
+      </field>
+      <field>
+       <name>SR</name>
+       <description>Sample rate</description>
+       <bitOffset>16</bitOffset>
+       <bitWidth>2</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>IER</name>
+     <displayName>IER</displayName>
+     <description>Interrupt Enable Register</description>
+     <addressOffset>0x10</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>RXNE</name>
+       <description>Receive/Receive-FIFO not empty interrupt enable</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IDLE</name>
+       <description>Idle timeout interrupt enable</description>
+       <bitOffset>4</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>PE</name>
+       <description>parity error interrupt enable</description>
+       <bitOffset>5</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>FE</name>
+       <description>frame error interrupt enable</description>
+       <bitOffset>6</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>TXE</name>
+       <description>Transmit FIFO empty interrupt enable</description>
+       <bitOffset>8</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>TXC</name>
+       <description>Transmit complete interrupt enable</description>
+       <bitOffset>11</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>LPWU</name>
+       <description>Low power wakeup interrupt enable</description>
+       <bitOffset>13</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>SR</name>
+     <displayName>SR</displayName>
+     <description>Status Register</description>
+     <addressOffset>0x14</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000310</resetValue>
+     <fields>
+      <field>
+       <name>RXNE</name>
+       <description>Receive/Receive-FIFO not empty flag</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>1</bitWidth>
+       <access>read-only</access>
+      </field>
+      <field>
+       <name>IDLE</name>
+       <description>Idle overtime interrupt enable</description>
+       <bitOffset>4</bitOffset>
+       <bitWidth>1</bitWidth>
+       <access>read-write</access>
+      </field>
+      <field>
+       <name>PE</name>
+       <description>Parity error flag</description>
+       <bitOffset>5</bitOffset>
+       <bitWidth>1</bitWidth>
+       <access>read-write</access>
+      </field>
+      <field>
+       <name>FE</name>
+       <description>Frame error flag</description>
+       <bitOffset>6</bitOffset>
+       <bitWidth>1</bitWidth>
+       <access>read-write</access>
+      </field>
+      <field>
+       <name>TXE</name>
+       <description>Transmit/Transmit-FIFO empty flag</description>
+       <bitOffset>8</bitOffset>
+       <bitWidth>1</bitWidth>
+       <access>read-only</access>
+      </field>
+      <field>
+       <name>TXC</name>
+       <description>Transmit complete flag</description>
+       <bitOffset>11</bitOffset>
+       <bitWidth>1</bitWidth>
+       <access>read-write</access>
+      </field>
+      <field>
+       <name>LPWU</name>
+       <description>Low power wakeup flag</description>
+       <bitOffset>13</bitOffset>
+       <bitWidth>1</bitWidth>
+       <access>read-write</access>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>DR</name>
+     <displayName>DR</displayName>
+     <description>Data Register</description>
+     <addressOffset>0x18</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>DR</name>
+       <description>LPUART data</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>9</bitWidth>
+      </field>
+     </fields>
+    </register>
+   </registers>
+  </peripheral>
+  <peripheral>
+   <name>USART0</name>
+   <description>Universal Synchronous Asynchronous Transceiver</description>
+   <groupName>USART</groupName>
+   <baseAddress>0x40010000</baseAddress>
+   <addressBlock>
+    <offset>0x0</offset>
+    <size>0x400</size>
+    <usage>registers</usage>
+   </addressBlock>
+   <registers>
+    <register>
+     <name>CR1</name>
+     <displayName>CR1</displayName>
+     <description>Control Register 1</description>
+     <addressOffset>0x00</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>EN</name>
+       <description>USART  enable</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>RE</name>
+       <description>Receive enable</description>
+       <bitOffset>1</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>CPOL</name>
+       <description>Clock polarity</description>
+       <bitOffset>4</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>CPHA</name>
+       <description>Clock phase</description>
+       <bitOffset>5</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>MODE</name>
+       <description>Mode selection</description>
+       <bitOffset>7</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>STOP</name>
+       <description>Stop bit length</description>
+       <bitOffset>8</bitOffset>
+       <bitWidth>2</bitWidth>
+      </field>
+      <field>
+       <name>RXP</name>
+       <description>Receiver polarity control</description>
+       <bitOffset>16</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>TXP</name>
+       <description>Transmitter polarity control</description>
+       <bitOffset>17</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>SLME</name>
+       <description>Single-line mode enable</description>
+       <bitOffset>20</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>SLDS</name>
+       <description>Single-line direction setting</description>
+       <bitOffset>21</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>MSM</name>
+       <description>master-slave mode</description>
+       <bitOffset>24</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>FF</name>
+       <description>Frame format</description>
+       <bitOffset>25</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>LBM</name>
+       <description>loopback mode</description>
+       <bitOffset>31</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>BRR</name>
+     <displayName>BRR</displayName>
+     <description>Baud Rate Register</description>
+     <addressOffset>0x08</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000001</resetValue>
+     <fields>
+      <field>
+       <name>BR</name>
+       <description>Baud rate control</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>16</bitWidth>
+      </field>
+      <field>
+       <name>SR</name>
+       <description>Sample rate</description>
+       <bitOffset>16</bitOffset>
+       <bitWidth>3</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>IER</name>
+     <displayName>IER</displayName>
+     <description>Interrupt Enable Register</description>
+     <addressOffset>0x10</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>RXNE</name>
+       <description>Receive/Receive-FIFO not empty interrupt enable</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>IDLE</name>
+       <description>Idle timeout interrupt enable</description>
+       <bitOffset>4</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>PE</name>
+       <description>parity error interrupt enable</description>
+       <bitOffset>5</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>FE</name>
+       <description>frame error interrupt enable</description>
+       <bitOffset>6</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>TXE</name>
+       <description>Transmit FIFO empty interrupt enable</description>
+       <bitOffset>8</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>TXC</name>
+       <description>Transmit complete interrupt enable</description>
+       <bitOffset>11</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>SR</name>
+     <displayName>SR</displayName>
+     <description>Status Register</description>
+     <addressOffset>0x14</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000310</resetValue>
+     <fields>
+      <field>
+       <name>RXNE</name>
+       <description>Receive/Receive-FIFO not empty flag</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>1</bitWidth>
+       <access>read-only</access>
+      </field>
+      <field>
+       <name>IDLE</name>
+       <description>Idle overtime interrupt enable</description>
+       <bitOffset>4</bitOffset>
+       <bitWidth>1</bitWidth>
+       <access>read-write</access>
+      </field>
+      <field>
+       <name>PE</name>
+       <description>Parity error flag</description>
+       <bitOffset>5</bitOffset>
+       <bitWidth>1</bitWidth>
+       <access>read-write</access>
+      </field>
+      <field>
+       <name>FE</name>
+       <description>Frame error flag</description>
+       <bitOffset>6</bitOffset>
+       <bitWidth>1</bitWidth>
+       <access>read-write</access>
+      </field>
+      <field>
+       <name>TXE</name>
+       <description>Transmit/Transmit-FIFO empty flag</description>
+       <bitOffset>8</bitOffset>
+       <bitWidth>1</bitWidth>
+       <access>read-only</access>
+      </field>
+      <field>
+       <name>TXC</name>
+       <description>Transmit complete flag</description>
+       <bitOffset>11</bitOffset>
+       <bitWidth>1</bitWidth>
+       <access>read-write</access>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>DR</name>
+     <displayName>DR</displayName>
+     <description>Data Register</description>
+     <addressOffset>0x18</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>DR</name>
+       <description>LPUART data</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>9</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>CR3</name>
+     <displayName>CR3</displayName>
+     <description>Control Register 3</description>
+     <addressOffset>0x1C</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>CNT</name>
+       <description>Number of SCK clocks</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>24</bitWidth>
+      </field>
+     </fields>
+    </register>
+   </registers>
+  </peripheral>
+  <peripheral>
+   <name>CMP0</name>
+   <description>CMP0</description>
+   <groupName>CMP</groupName>
+   <baseAddress>0x40000800</baseAddress>
+   <addressBlock>
+    <offset>0x00</offset>
+    <size>0x400</size>
+    <usage>registers</usage>
+   </addressBlock>
+   <registers>
+    <register>
+     <name>CR1</name>
+     <displayName>CR1</displayName>
+     <description>Control Register 1</description>
+     <addressOffset>0x00</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00002300</resetValue>
+     <fields>
+      <field>
+       <name>EN</name>
+       <description>Comparator enable</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>CMPS</name>
+       <description>Comparator power mode selection</description>
+       <bitOffset>1</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>OPC</name>
+       <description>Comparator output polarity control</description>
+       <bitOffset>2</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>CNS</name>
+       <description>Comparator negative intput selection</description>
+       <bitOffset>4</bitOffset>
+       <bitWidth>3</bitWidth>
+      </field>
+      <field>
+       <name>DFC</name>
+       <description>Digital filter configuration</description>
+       <bitOffset>8</bitOffset>
+       <bitWidth>3</bitWidth>
+      </field>
+      <field>
+       <name>CPS</name>
+       <description>Comparator positive intput selection</description>
+       <bitOffset>16</bitOffset>
+       <bitWidth>3</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>IER</name>
+     <displayName>IER</displayName>
+     <description>Interrupt Enable Register</description>
+     <addressOffset>0x04</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>COF</name>
+       <description>Comparator output falling edge interrupt enable</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>COR</name>
+       <description>Comparator output rising edge interrupt enable</description>
+       <bitOffset>1</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>SR</name>
+     <displayName>SR</displayName>
+     <description>Status Register</description>
+     <addressOffset>0x08</addressOffset>
+     <size>0x20</size>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>COF</name>
+       <description>Comparator output falling edge flag</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>1</bitWidth>
+       <access>read-write</access>
+      </field>
+      <field>
+       <name>COR</name>
+       <description>Comparator output rising edge flag</description>
+       <bitOffset>1</bitOffset>
+       <bitWidth>1</bitWidth>
+       <access>read-write</access>
+      </field>
+      <field>
+       <name>CRS</name>
+       <description>Comparator result</description>
+       <bitOffset>16</bitOffset>
+       <bitWidth>1</bitWidth>
+       <access>read-only</access>
+      </field>
+      <field>
+       <name>CPS</name>
+       <description>Current comparator positive intput</description>
+       <bitOffset>24</bitOffset>
+       <bitWidth>3</bitWidth>
+       <access>read-only</access>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>CR2</name>
+     <displayName>CR2</displayName>
+     <description>Control Register 2</description>
+     <addressOffset>0x0C</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000280</resetValue>
+     <fields>
+      <field>
+       <name>DELAY</name>
+       <description>Comparator Initialization delay time</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>11</bitWidth>
+      </field>
+      <field>
+       <name>CKD</name>
+       <description>Sampling clock division</description>
+       <bitOffset>24</bitOffset>
+       <bitWidth>8</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>CR3</name>
+     <displayName>CR3</displayName>
+     <description>Control Register 3</description>
+     <addressOffset>0x10</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>P0E</name>
+       <description>Comparator 0 positive intput y scan enable</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>P1E</name>
+       <description>Comparator 1 positive intput y scan enable</description>
+       <bitOffset>1</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>P2E</name>
+       <description>Comparator 2 positive intput y scan enable</description>
+       <bitOffset>2</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>P3E</name>
+       <description>Comparator 3 positive intput y scan enable</description>
+       <bitOffset>3</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>P4E</name>
+       <description>Comparator 4 positive intput y scan enable</description>
+       <bitOffset>4</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>P5E</name>
+       <description>Comparator 5 positive intput y scan enable</description>
+       <bitOffset>5</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>P6E</name>
+       <description>Comparator 6 positive intput y scan enable</description>
+       <bitOffset>6</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>SCAN</name>
+       <description>Comparator positive intput Scan Time</description>
+       <bitOffset>8</bitOffset>
+       <bitWidth>8</bitWidth>
+      </field>
+     </fields>
+    </register>
+   </registers>
+  </peripheral>
+  <peripheral>
+   <name>LDAC</name>
+   <description>LDAC</description>
+   <groupName>LDAC</groupName>
+   <baseAddress>0x40014000</baseAddress>
+   <addressBlock>
+    <offset>0x00</offset>
+    <size>0x400</size>
+    <usage>registers</usage>
+   </addressBlock>
+   <registers>
+    <register>
+     <name>CR</name>
+     <displayName>CR</displayName>
+     <description>Control Register</description>
+     <addressOffset>0x00</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>EN</name>
+       <description>LDAC enable</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>RVSPS</name>
+       <description>Reference voltage source positive selection</description>
+       <bitOffset>4</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>PM</name>
+       <description>Power mode</description>
+       <bitOffset>16</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>DR</name>
+     <displayName>DR</displayName>
+     <description>Data Register</description>
+     <addressOffset>0x04</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>DATA</name>
+       <description>LDAC data</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>5</bitWidth>
+      </field>
+     </fields>
+    </register>
+   </registers>
+  </peripheral>
+  <peripheral>
+   <name>PWM</name>
+   <description>PWM Controller</description>
+   <groupName>PWM</groupName>
+   <baseAddress>0x4000F800</baseAddress>
+   <addressBlock>
+    <offset>0x0</offset>
+    <size>0x400</size>
+    <usage>registers</usage>
+   </addressBlock>
+   <registers>
+    <register>
+     <name>CR1</name>
+     <displayName>CR1</displayName>
+     <description>Control Register 1</description>
+     <addressOffset>0x00</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>EN</name>
+       <description>PWM enable</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>CR2</name>
+     <displayName>CR2</displayName>
+     <description>Control Register 2</description>
+     <addressOffset>0x04</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>DUTY0</name>
+       <description>code 0 positive duty</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>8</bitWidth>
+      </field>
+      <field>
+       <name>DUTY1</name>
+       <description>code 1 positive duty</description>
+       <bitOffset>8</bitOffset>
+       <bitWidth>8</bitWidth>
+      </field>
+      <field>
+       <name>CYCLE</name>
+       <description>PWM cycle</description>
+       <bitOffset>16</bitOffset>
+       <bitWidth>8</bitWidth>
+      </field>
+      <field>
+       <name>RCD</name>
+       <description>Reset code duration</description>
+       <bitOffset>24</bitOffset>
+       <bitWidth>8</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>DR</name>
+     <displayName>DR</displayName>
+     <description>Data Register</description>
+     <addressOffset>0x08</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>DATA</name>
+       <description>code data</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>24</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>IER</name>
+     <displayName>IER</displayName>
+     <description>Interrupt Enable Register</description>
+     <addressOffset>0x0C</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>DTXE</name>
+       <description>Data code Transmit empty interrupt enable</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>RTXC</name>
+       <description>Reset code Transmit completed interrupt enable</description>
+       <bitOffset>1</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>SR</name>
+     <displayName>SR</displayName>
+     <description>Status Register</description>
+     <addressOffset>0x10</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>DTXE</name>
+       <description>Data code Transmit empty flag</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>RTXC</name>
+       <description>Reset code Transmit completed flag</description>
+       <bitOffset>1</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+     </fields>
+    </register>
+   </registers>
+  </peripheral>
+  <peripheral>
+   <name>IFMC</name>
+   <description>On-chip flash memory controller</description>
+   <groupName>IFMC</groupName>
+   <baseAddress>0x40000000</baseAddress>
+   <addressBlock>
+    <offset>0x0</offset>
+    <size>0x800</size>
+    <usage>registers</usage>
+   </addressBlock>
+   <registers>
+    <register>
+     <name>CR1</name>
+     <displayName>CR1</displayName>
+     <description>Control Register 1</description>
+     <addressOffset>0x00</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000002</resetValue>
+     <fields>
+      <field>
+       <name>WAIT</name>
+       <description>instruction fetch wait cycle</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>3</bitWidth>
+      </field>
+      <field>
+       <name>AINC</name>
+       <description>Address auto increment control</description>
+       <bitOffset>4</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>CR2</name>
+     <displayName>CR2</displayName>
+     <description>Control Register 2</description>
+     <addressOffset>0x04</addressOffset>
+     <size>0x20</size>
+     <access>write-only</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>PG</name>
+       <description>Programming</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>PER</name>
+       <description>Pageerase</description>
+       <bitOffset>1</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>MER</name>
+       <description>Mass erase</description>
+       <bitOffset>2</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>KR1</name>
+     <displayName>KR1</displayName>
+     <description>Key Register 1</description>
+     <addressOffset>0x0C</addressOffset>
+     <size>0x20</size>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>KEY</name>
+       <description>IFMC key</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>16</bitWidth>
+       <access>write-only</access>
+      </field>
+      <field>
+       <name>AREA</name>
+       <description>IFMC operation area</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>3</bitWidth>
+       <access>read-only</access>
+      </field>
+      <field>
+       <name>UKEY</name>
+       <description>Register unlock key</description>
+       <bitOffset>16</bitOffset>
+       <bitWidth>16</bitWidth>
+       <access>write-only</access>
+      </field>
+      <field>
+       <name>LOCK</name>
+       <description>Register lock status</description>
+       <bitOffset>16</bitOffset>
+       <bitWidth>1</bitWidth>
+       <access>read-only</access>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>KR2</name>
+     <displayName>KR2</displayName>
+     <description>Key Register 2</description>
+     <addressOffset>0x10</addressOffset>
+     <size>0x20</size>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>KEY</name>
+       <description>IFMC key</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>16</bitWidth>
+       <access>write-only</access>
+      </field>
+      <field>
+       <name>LOCK1</name>
+       <description>Register lock status 1</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>1</bitWidth>
+       <access>read-only</access>
+      </field>
+      <field>
+       <name>UKEY</name>
+       <description>Register unlock key</description>
+       <bitOffset>16</bitOffset>
+       <bitWidth>16</bitWidth>
+       <access>write-only</access>
+      </field>
+      <field>
+       <name>LOCK2</name>
+       <description>Register lock status 2</description>
+       <bitOffset>16</bitOffset>
+       <bitWidth>1</bitWidth>
+       <access>read-only</access>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>IER</name>
+     <displayName>IER</displayName>
+     <description>Interrupt Enable Register</description>
+     <addressOffset>0x14</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>WCIE</name>
+       <description>Write operation complete interrupt enable</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>PECIE</name>
+       <description>Page erase operation complete interrupt enable</description>
+       <bitOffset>1</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>MECIE</name>
+       <description>Mass erase operation complete interrupt enable</description>
+       <bitOffset>2</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>CERIE</name>
+       <description>Operation command error interrupt enable</description>
+       <bitOffset>4</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>AERIE</name>
+       <description>Address error interrupt enable</description>
+       <bitOffset>5</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>KERIE</name>
+       <description>Key error interrupt enable</description>
+       <bitOffset>6</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>SR1</name>
+     <displayName>SR1</displayName>
+     <description>Status Register 1</description>
+     <addressOffset>0x18</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>WC</name>
+       <description>Write operation complete</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>PEC</name>
+       <description>Page erase operation complete</description>
+       <bitOffset>1</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>MEC</name>
+       <description>Mass erase operation complete</description>
+       <bitOffset>2</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>CERR</name>
+       <description>Operation command error</description>
+       <bitOffset>4</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>AERR</name>
+       <description>Address error</description>
+       <bitOffset>5</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+      <field>
+       <name>KERR</name>
+       <description>Key error</description>
+       <bitOffset>6</bitOffset>
+       <bitWidth>1</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>AR</name>
+     <displayName>AR</displayName>
+     <description>Address Register</description>
+     <addressOffset>0x20</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0xFFFFFFFF</resetValue>
+     <fields>
+      <field>
+       <name>AR</name>
+       <description>IFMC words addr</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>32</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>DR1</name>
+     <displayName>DR1</displayName>
+     <description>Data Register 1</description>
+     <addressOffset>0x24</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>DR</name>
+       <description>IFMC data</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>32</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>OPTCR</name>
+     <displayName>OPTCR</displayName>
+     <description>Option Control Register</description>
+     <addressOffset>0x30</addressOffset>
+     <size>0x20</size>
+     <resetValue>0x000000AA</resetValue>
+     <fields>
+      <field>
+       <name>RDP</name>
+       <description>Read protect</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>8</bitWidth>
+       <access>read-write</access>
+      </field>
+      <field>
+       <name>KEY</name>
+       <description>Key value</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>32</bitWidth>
+       <access>write-only</access>
+      </field>
+     </fields>
+    </register>
+   </registers>
+  </peripheral>
+  <peripheral>
+   <name>ES</name>
+   <description>Device Electronic Signature</description>
+   <groupName>ES</groupName>
+   <baseAddress>0x40020800</baseAddress>
+   <addressBlock>
+    <offset>0x0</offset>
+    <size>0x400</size>
+    <usage>registers</usage>
+   </addressBlock>
+   <registers>
+    <register>
+     <name>CIR</name>
+     <displayName>CIR</displayName>
+     <description>Chip Information Register</description>
+     <addressOffset>0x00</addressOffset>
+     <size>0x20</size>
+     <access>read-only</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>FSIZE</name>
+       <description>Size of flash memory</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>4</bitWidth>
+      </field>
+      <field>
+       <name>SSIZE</name>
+       <description>Size of sram memory</description>
+       <bitOffset>4</bitOffset>
+       <bitWidth>4</bitWidth>
+      </field>
+      <field>
+       <name>PACK</name>
+       <description>Package</description>
+       <bitOffset>12</bitOffset>
+       <bitWidth>4</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>CIDR1</name>
+     <displayName>CIDR1</displayName>
+     <description>Chip ID Register 1</description>
+     <addressOffset>0x0C</addressOffset>
+     <size>0x20</size>
+     <access>read-only</access>
+     <resetValue>0xFFFFFFFF</resetValue>
+     <fields>
+      <field>
+       <name>CID</name>
+       <description>Chip ID</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>32</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>CIDR2</name>
+     <displayName>CIDR2</displayName>
+     <description>Chip ID Register 2</description>
+     <addressOffset>0x10</addressOffset>
+     <size>0x20</size>
+     <access>read-only</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>CID</name>
+       <description>Chip ID</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>32</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>CIDR3</name>
+     <displayName>CIDR3</displayName>
+     <description>Chip ID Register 3</description>
+     <addressOffset>0x14</addressOffset>
+     <size>0x20</size>
+     <access>read-only</access>
+     <resetValue>0x00000000</resetValue>
+     <fields>
+      <field>
+       <name>CID</name>
+       <description>Chip ID</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>32</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>UDIR1</name>
+     <displayName>UDIR1</displayName>
+     <description>User-Defined Information Register 1</description>
+     <addressOffset>0x18</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0xFFFFFFFF</resetValue>
+     <fields>
+      <field>
+       <name>INFO</name>
+       <description>User-defined information</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>32</bitWidth>
+      </field>
+     </fields>
+    </register>
+    <register>
+     <name>UDIR2</name>
+     <displayName>UDIR2</displayName>
+     <description>User-Defined Information Register 2</description>
+     <addressOffset>0x1C</addressOffset>
+     <size>0x20</size>
+     <access>read-write</access>
+     <resetValue>0xFFFFFFFF</resetValue>
+     <fields>
+      <field>
+       <name>INFO</name>
+       <description>User-defined information</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>32</bitWidth>
+      </field>
+     </fields>
+    </register>
+   </registers>
+  </peripheral>
+ </peripherals>
+</device>

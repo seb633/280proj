@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<package schemaVersion="1.3" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="PACK.xsd">
+  <vendor>PAI-IC</vendor>
+  <name>PT32x0xx_DFP</name>
+  <description>PT32x0xx ARM Cortex-M0 Device Family Pack</description>
+  <url></url>
+  <supportContact>https://www.pai-ic.com</supportContact>
+  
+  <releases>
+    <release version="0.6.0" date="2025-7-2">
+	Initial version
+    </release>
+  </releases>
+
+  <keywords>
+    <!-- keywords for indexing -->
+	<keyword>168</keyword>
+  <keyword>Xiamen PengPai Microelectronics</keyword>
+	<keyword>PT32x0xx Series</keyword>
+	<keyword>Device Family Package PengpaiMicroelectronics</keyword>
+  </keywords>
+
+  <!-- apis section (optional - for Application Programming Interface descriptions) -->
+  <!-- 
+  <apis>
+  </apis>
+  -->
+
+
+<!--<boards>
+</boards>   -->
+  
+  
+<devices>
+  <family  Dfamily="PT32x0xx Series" Dvendor="PengpaiMicroelectronics:166">
+	<file          category="doc"       name="readme.txt"       />
+	<file          category="include"   name="stdperiph_lib/"     />
+	<processor Dcore="Cortex-M0" DcoreVersion="r0p0" Dfpu="0" Dmpu="0" Dendian="Little-endian"/>
+	
+	<!-- ************************  Subfamily 'PT32L060xx'  **************************** -->
+	  <subFamily DsubFamily="PT32L060xx">
+       <processor  Dclock="48000000"/>
+		<description>
+Operating conditions
+Core
+- ARM 32-bit Cortex-M0 CPU 
+		</description>
+		<!-- *************************  Device 'PT32L060x8x6'  ***************************** -->
+		<device Dname="PT32L060x8x6">
+		<compile       header="stdperiph_lib/Libraries/PT32x0xx_FWLib/inc/PT32x0xx.h" define="PT32L060x8x6"/>
+		<debug         svd="SVD/PT32x060xx.svd"/>
+	    <algorithm     name="Flash/PT32x0xx_32bit.FLM"    start="0x00000000"    size="0x10000"               default="1"/>
+		<memory        name="IROM"    access="rx"        start="0x00000000"    size="0x10000"   startup="1" default="1"/>
+		<memory        name="IRAM1"    access="rw"        start="0x20000000"    size="0x1000"   init="0"  default="1"/>
+		</device>
+		<!-- *************************  Device 'PT32L060xBx6'  ***************************** -->
+		<device Dname="PT32L060xBx6">
+		<compile       header="stdperiph_lib/Libraries/PT32x0xx_FWLib/inc/PT32x0xx.h" define="PT32L060xBx6"/>
+		<debug         svd="SVD/PT32x060xx.svd"/>
+	    <algorithm     name="Flash/PT32x0xx_32bit.FLM"    start="0x00000000"    size="0x20000"              default="1"/>
+		<memory        name="IROM"    access="rx"        start="0x00000000"    size="0x20000"  startup="1" default="1"/>
+		<memory        name="IRAM1"    access="rw"        start="0x20000000"    size="0x2000"  init="0" default="1"/>
+		</device>
+	</subFamily>
+	
+	<!-- ************************  Subfamily 'PT32L063xx'  **************************** -->
+	  <subFamily DsubFamily="PT32L063xx">
+       <processor  Dclock="48000000"/>
+		<description>
+Operating conditions
+Core
+- ARM 32-bit Cortex-M0 CPU 
+		</description>
+		<!-- *************************  Device 'PT32L063x8x7'  ***************************** -->
+		<device Dname="PT32L063x8x7">		
+		<compile       header="stdperiph_lib/Libraries/PT32x0xx_FWLib/inc/PT32x0xx.h" define="PT32L063x8x7"/>
+		<debug         svd="SVD/PT32x063xx.svd"/>
+	    <algorithm     name="Flash/PT32x0xx_32bit.FLM"   start="0x00000000"    size="0x10000"               default="1"/>
+		<memory        name="IROM"    access="rx"        start="0x00000000"    size="0x10000"   startup="1" default="1"/>
+		<memory        name="IRAM1"    access="rw"        start="0x20000000"    size="0x1000"   init="0"  default="1"/>
+		</device>
+		<!-- *************************  Device 'PT32L063xBx7'  ***************************** -->
+		<device Dname="PT32L063xBx7">
+		<compile       header="stdperiph_lib/Libraries/PT32x0xx_FWLib/inc/PT32x0xx.h" define="PT32L063xBx7"/>
+		<debug         svd="SVD/PT32x063xx.svd"/>
+	    <algorithm     name="Flash/PT32x0xx_32bit.FLM"   start="0x00000000"    size="0x20000"              default="1"/>
+		<memory        name="IROM"    access="rx"        start="0x00000000"    size="0x20000"  startup="1" default="1"/>
+		<memory        name="IRAM1"    access="rw"        start="0x20000000"    size="0x2000"  init="0" default="1"/>
+		</device>
+	</subFamily>
+	<!-- ************************  Subfamily 'PT32L066xx'  **************************** -->
+	  <subFamily DsubFamily="PT32L066xx">
+       <processor  Dclock="48000000"/>
+		<description>
+Operating conditions
+Core
+- ARM 32-bit Cortex-M0 CPU 
+		</description>
+		<!-- *************************  Device 'PT32L066x8x6'  ***************************** -->
+		<device Dname="PT32L066x8x6">
+		<compile       header="stdperiph_lib/Libraries/PT32x0xx_FWLib/inc/PT32x0xx.h" define="PT32L066x8x6"/>
+		<debug         svd="SVD/PT32x066xx.svd"/>
+	    <algorithm     name="Flash/PT32x0xx_32bit.FLM"   start="0x00000000"    size="0x10000"               default="1"/>
+		<memory        name="IROM"    access="rx"        start="0x00000000"    size="0x10000"   startup="1" default="1"/>
+		<memory        name="IRAM1"    access="rw"        start="0x20000000"    size="0xC00"   init="0"  default="1"/>
+		<memory        name="IRAM2"    access="rw"        start="0x20000C00"    size="0x400"   init="0"  default="1"/>
+		</device>
+		<!-- *************************  Device 'PT32L066xBx6'  ***************************** -->
+		<device Dname="PT32L066xBx6">
+		<compile       header="stdperiph_lib/Libraries/PT32x0xx_FWLib/inc/PT32x0xx.h" define="PT32L066xBx6"/>
+		<debug         svd="SVD/PT32x066xx.svd"/>
+	    <algorithm     name="Flash/PT32x0xx_32bit.FLM"   start="0x00000000"    size="0x20000"              default="1"/>
+		<memory        name="IROM"    access="rx"        start="0x00000000"    size="0x20000"  startup="1" default="1"/>
+		<memory        name="IRAM1"    access="rw"        start="0x20000000"    size="0x1C00"  init="0" default="1"/>
+		<memory        name="IRAM2"    access="rw"        start="0x20001C00"    size="0x400"   init="0" default="1"/>
+		</device>
+	</subFamily>
+		<!-- ************************  Subfamily 'PT32G031xx'  **************************** -->
+	  <subFamily DsubFamily="PT32G031xx">
+       <processor  Dclock="64000000"/>
+		<description>
+Operating conditions
+Core
+- ARM 32-bit Cortex-M0 CPU (64 MHz max)
+Memories
+- 32Kbytes of Flash memory
+- 4Kbytes of SRAM
+Clock , reset and power management
+- Voltage range: 2.2 V to 5.5 V
+- Power-on reset (POR)/Power-down reset (PDR)
+- Programmable voltage detector (PVD)
+- Factory-trimmed Internal 64 MHz RC oscillator
+- Factory-trimmed Internal 32 kHz RC oscillator
+Low Power
+- Sleep/Deepsleep status
+ONE 12-bit ADC , 0.5us conversion time (up to 15 channels）
+- Conversion range: 0V to VDDA
+- Independent programming channel establishment time
+- Independently programmable sampling time
+DMA , 2-channel DMA controller
+- Support for TIM/ADC/SPI/UART
+- Peripheral-to-memory, memory-to-peripheral, memory-to-memory transfer
+Up to 30 High-Speed GPIOs
+- Multifunctional digital/analog AFIO
+- All IO can be mappable on external interrupts vectors
+TWO Operational amplifiers (OPA)
+TWO Comparators (CMP)
+ONE 5-bit Low-precision digital-to-analog converter
+Up to 6 timers
+- one 16-bit TIM1 with dead zone control and emergency braking for motor control
+- one 16-bit TIM8 with dead zone-free control and emergency braking which is used to assist motor control
+- one 16-bit basic timer
+- one 32-bit basic timer
+- one 16-bit low power timer
+- one independent watchdog timer
+Up to 3 communication interfaces
+- one UART interface
+- one I2C interface
+- one SPI interface
+ALU module (Divider)
+IAP function
+Debug mode
+- Serial debugging interface (SWD)
+96-bit chip unique code
+		</description>
+		<!-- *************************  Device 'PT32G031x4x7'  ***************************** -->
+		<device Dname="PT32G031x4x7">
+		<compile       header="stdperiph_lib/Libraries/PT32x0xx_FWLib/inc/PT32x0xx.h" define="PT32G031x4x7"/>
+		<debug         svd="SVD/PT32G031xx.svd"/>
+	    <algorithm     name="Flash/PT32x0xx_32bit.FLM"   start="0x00000000"    size="0x8000"               default="1"/>
+		<memory        name="IROM"    access="rx"        start="0x00000000"    size="0x8000"   startup="1" default="1"/>
+		<memory        name="IRAM1"    access="rw"        start="0x20000000"    size="0x1000"   init="0"  default="1"/>
+		</device>
+	</subFamily>
+	<!-- ************************  Subfamily 'PT32L012xx'  **************************** -->
+	  <subFamily DsubFamily="PT32L012xx">
+       <processor  Dclock="48000000"/>
+		<description>
+Operating conditions
+Core
+- ARM 32-bit Cortex-M0 CPU (48 MHz max)
+- Operating temperature range: -40 °C to 105 °C
+Memories
+- 32Kbytes of Flash memory
+- 3Kbytes of SRAM
+Clock , reset and power management
+- Voltage range: 1.8 V to 5.5 V
+- Power-on reset (POR)/Power-down reset (PDR)
+- Programmable voltage detector (PVD)
+- Factory-trimmed Internal 48 MHz RC oscillator
+- Factory-trimmed Internal 38.4 kHz RC oscillator
+- Support for 32.768 kHz External low-speed crystal oscillator
+Low Power
+- Sleep/Deepsleep status
+ONE 12-bit ADC , 2us conversion time (up to 16 channels）
+- Conversion range: 0V to VDDA
+- Independently programmable sampling time
+ONE 5-bit Low-precision digital-to-analog converter
+Up to 6 timers
+- one 16-bit timer with dead zone control and emergency braking, and three complementary PWM output timers for motor control
+- one 16-bit timer with dead zone control and emergency braking, and three PWM output timers for motor control
+- one 16-bit ordinary timer (with two capture channels)
+- one 16-bit basic timer
+- one 16-bit low power timer
+- one independent watchdog timer
+Up to 22 High-Speed GPIOs
+- Multifunctional digital/analog AFIO
+- All IO can be mappable on external interrupts vectors
+Up to 4 communication interfaces
+- one I2C interface
+- one USART interface
+- one LPUART interface
+- one LEDPWM interface (supporting WS2812 and QED3210 protocol)
+Comparator (CMP)
+- One 5-channel analog comparator
+- Supports function of automatic channel scanning
+ONE Infrared Interface (IRTIM)
+IAP function
+96-bit chip unique code
+Debug mode
+- Serial Debug Interface (SWD)
+		</description>
+		<!-- *************************  Device 'PT32L012x6x7'  ***************************** -->
+		<device Dname="PT32L012x6x7">
+		<compile       header="stdperiph_lib/Libraries/PT32x0xx_FWLib/inc/PT32x0xx.h" define="PT32x012x6x7"/>
+		<debug         svd="SVD/PT32x012xx.svd"/>
+	    <algorithm     name="Flash/PT32x0xx_32bit.FLM"   start="0x00000000"    size="0x8000"               default="1"/>
+		<memory        name="IROM"    access="rx"        start="0x00000000"    size="0x8000"   startup="1" default="1"/>
+		<memory        name="IRAM1"    access="rw"        start="0x20000000"    size="0xC00"   init="0"  default="1"/>
+		</device>
+	</subFamily>
+	<!-- ************************  Subfamily 'PT32L002xx'  **************************** -->
+	  <subFamily DsubFamily="PT32L002xx">
+       <processor  Dclock="48000000"/>
+		<description>
+Operating conditions
+Core
+- ARM 32-bit Cortex-M0 CPU (48 MHz max)
+- Operating temperature range: -40 °C to 105 °C
+Memories
+- 32Kbytes of Flash memory
+- 3Kbytes of SRAM
+Clock , reset and power management
+- Voltage range: 1.8 V to 5.5 V
+- Power-on reset (POR)/Power-down reset (PDR)
+- Programmable voltage detector (PVD)
+- Factory-trimmed Internal 48 MHz RC oscillator
+- Factory-trimmed Internal 38.4 kHz RC oscillator
+- Support for 32.768 kHz External low-speed crystal oscillator
+Low Power
+- Sleep/Deepsleep status
+ONE 12-bit ADC , 2us conversion time (up to 16 channels）
+- Conversion range: 0V to VDDA
+- Independently programmable sampling time
+ONE 5-bit Low-precision digital-to-analog converter
+Up to 6 timers
+- one 16-bit timer with dead zone control and emergency braking, and three complementary PWM output timers for motor control
+- one 16-bit timer with dead zone control and emergency braking, and three PWM output timers for motor control
+- one 16-bit ordinary timer (with two capture channels)
+- one 16-bit basic timer
+- one 16-bit low power timer
+- one independent watchdog timer
+Up to 18 High-Speed GPIOs
+- Multifunctional digital/analog AFIO
+- All IO can be mappable on external interrupts vectors
+Up to 4 communication interfaces
+- one I2C interface
+- one USART interface
+- one LPUART interface
+- one LEDPWM interface (supporting WS2812 and QED3210 protocol)
+Comparator (CMP)
+- One 5-channel analog comparator
+- Supports function of automatic channel scanning
+ONE Infrared Interface (IRTIM)
+IAP function
+96-bit chip unique code
+Debug mode
+- Serial Debug Interface (SWD)
+		</description>
+		<!-- *************************  Device 'PT32L002x6x7'  ***************************** -->
+		<device Dname="PT32L002x6x7">
+		<compile       header="stdperiph_lib/Libraries/PT32x0xx_FWLib/inc/PT32x0xx.h" define="PT32x002x6x7"/>
+		<debug         svd="SVD/PT32x002xx.svd"/>
+	    <algorithm     name="Flash/PT32x0xx_32bit.FLM"   start="0x00000000"    size="0x8000"               default="1"/>
+		<memory        name="IROM"    access="rx"        start="0x00000000"    size="0x8000"   startup="1" default="1"/>
+		<memory        name="IRAM1"    access="rw"        start="0x20000000"    size="0xC00"   init="0"  default="1"/>
+		</device>
+	</subFamily>
+<!-- ************************  Subfamily 'PTM280xx'  **************************** -->
+	  <subFamily DsubFamily="PTM280xx">
+       <processor  Dclock="64000000"/>
+		<description>
+Operating conditions
+Core
+- ARM 32-bit Cortex-M0 CPU (64 MHz max)
+Memories
+- 32Kbytes of Flash memory
+- 8Kbytes of SRAM
+Clock , reset and power management
+- Voltage range: 2.2 V to 5.5 V
+- Power-on reset (POR)/Power-down reset (PDR)
+- Programmable voltage detector (PVD)
+- Factory-trimmed Internal 64 MHz RC oscillator
+- Factory-trimmed Internal 32 kHz RC oscillator
+Low Power
+- Sleep/Deepsleep status
+ONE 12-bit ADC , 0.5us conversion time (up to 15 channels）
+- Conversion range: 0V to VDDA
+- Independent programming channel establishment time
+- Independently programmable sampling time
+DMA , 2-channel DMA controller
+- Support for TIM/ADC/SPI/UART
+- Peripheral-to-memory, memory-to-peripheral, memory-to-memory transfer
+Up to 30 High-Speed GPIOs
+- Multifunctional digital/analog AFIO
+- All IO can be mappable on external interrupts vectors
+TWO Operational amplifiers (OPA)
+TWO Comparators (CMP)
+ONE 5-bit Low-precision digital-to-analog converter
+Up to 6 timers
+- one 16-bit TIM1 with dead zone control and emergency braking for motor control
+- one 16-bit TIM8 with dead zone-free control and emergency braking which is used to assist motor control
+- one 16-bit basic timer
+- one 32-bit basic timer
+- one 16-bit low power timer
+- one independent watchdog timer
+Up to 3 communication interfaces
+- one UART interface
+- one I2C interface
+- one SPI interface
+ALU module (Divider)
+IAP function
+Debug mode
+- Serial debugging interface (SWD)
+96-bit chip unique code
+		</description>
+		<!-- *************************  Device 'PTM280x6x7'  ***************************** -->
+		<device Dname="PTM280x6x7">
+		<compile       header="stdperiph_lib/Libraries/PT32x0xx_FWLib/inc/PT32x0xx.h" define="PTM280x6x7"/>
+		<debug         svd="SVD/PTM280xx.svd"/>
+	    <algorithm     name="Flash/PT32x0xx_32bit.FLM"    start="0x00000000"    size="0x8000"               default="1"/>
+		<memory        name="IROM"    access="rx"        start="0x00000000"    size="0x8000"   startup="1" default="1"/>
+		<memory        name="IRAM1"    access="rw"        start="0x20000000"    size="0x2000"   init="0"  default="1"/>
+		</device>
+	</subFamily>
+	
+	<!-- ************************  Subfamily 'PTM160xx'  **************************** -->
+	  <subFamily DsubFamily="PTM160xx">
+       <processor  Dclock="48000000"/>
+		<description>
+Operating conditions
+Core
+- ARM 32-bit Cortex-M0 CPU (48 MHz max)
+- Operating temperature range: -40 °C to 105 °C
+Memories
+- 32Kbytes of Flash memory
+- 3Kbytes of SRAM
+Clock , reset and power management
+- Voltage range: 1.8 V to 5.5 V
+- Power-on reset (POR)/Power-down reset (PDR)
+- Programmable voltage detector (PVD)
+- Factory-trimmed Internal 48 MHz RC oscillator
+- Factory-trimmed Internal 38.4 kHz RC oscillator
+- Support for 32.768 kHz External low-speed crystal oscillator
+Low Power
+- Sleep/Deepsleep status
+ONE 12-bit ADC , 2us conversion time (up to 16 channels）
+- Conversion range: 0V to VDDA
+- Independently programmable sampling time
+ONE 5-bit Low-precision digital-to-analog converter
+Up to 6 timers
+- one 16-bit timer with dead zone control and emergency braking, and three complementary PWM output timers for motor control
+- one 16-bit timer with dead zone control and emergency braking, and three PWM output timers for motor control
+- one 16-bit ordinary timer (with two capture channels)
+- one 16-bit basic timer
+- one 16-bit low power timer
+- one independent watchdog timer
+Up to 22 High-Speed GPIOs
+- Multifunctional digital/analog AFIO
+- All IO can be mappable on external interrupts vectors
+Up to 4 communication interfaces
+- one I2C interface
+- one USART interface
+- one LPUART interface
+- one LEDPWM interface (supporting WS2812 and QED3210 protocol)
+Comparator (CMP)
+- One 5-channel analog comparator
+- Supports function of automatic channel scanning
+TWO Operational amplifiers (OPA)
+ONE Infrared Interface (IRTIM)
+IAP function
+96-bit chip unique code
+Debug mode
+- Serial Debug Interface (SWD)
+		</description>
+		<!-- *************************  Device 'PTM160x6x7'  ***************************** -->
+		<device Dname="PTM160x6x7">
+		<compile       header="stdperiph_lib/Libraries/PT32x0xx_FWLib/inc/PT32x0xx.h" define="PTM160x6x7"/>
+		<debug         svd="SVD/PTM160xx.svd"/>
+	    <algorithm     name="Flash/PT32x0xx_32bit.FLM"    start="0x00000000"    size="0x8000"               default="1"/>
+		<memory        name="IROM"    access="rx"        start="0x00000000"    size="0x8000"   startup="1" default="1"/>
+		<memory        name="IRAM1"    access="rw"        start="0x20000000"    size="0xC00"   init="0"  default="1"/>
+		</device>
+	</subFamily>
+	
+    </family>
+</devices>
+
+  <!-- examples section (optional for all Software Packs)-->
+  <!--
+  <examples>
+  </examples>
+  -->
+  
+  <!-- conditions section (optional for all Software Packs)-->
+  <!--
+  <conditions>
+  </conditions>
+  -->
+  
+  <!--  <components>
+ </components>
+-->
+
+  
+  <!-- optional taxonomy section for defining new component Class and Group names -->
+  <!--
+  <taxonomy>
+  </taxonomy>
+  -->
+  
+</package>

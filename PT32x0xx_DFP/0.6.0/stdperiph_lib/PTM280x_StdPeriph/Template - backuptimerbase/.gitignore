@@ -1,0 +1,128 @@
+# CMix DCDC Controller - .gitignore
+
+# ========================= Build Outputs =========================
+# Object files
+*.o
+*.obj
+*.elf
+*.bin
+*.hex
+*.map
+*.lst
+*.lss
+*.sym
+*.d
+
+# Executable files
+*.exe
+*.out
+*.app
+
+# ========================= IDE and Toolchain =========================
+# Keil MDK-ARM
+*.uvopt
+*.uvproj
+*.uvgui.*
+*.bak
+*.dep
+*.ini
+*.plg
+*.tra
+*.htm
+*.sct
+*.axf
+*.crf
+*.iex
+*.asm
+Objects/
+Listings/
+DebugConfig/
+EventRecorderStub.scvd
+
+# IAR EWARM
+*.ewd
+*.ewp
+*.eww
+*.ewt
+*.dep
+Debug/
+Release/
+settings/
+
+# STM32CubeIDE / Eclipse
+.metadata/
+.project
+.cproject
+.settings/
+Debug/
+Release/
+
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# ========================= Documentation =========================
+# Temporary documentation files
+*.tmp
+*~
+
+# ========================= System Files =========================
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msm
+*.msp
+*.lnk
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# ========================= Backup Files =========================
+*.bak
+*.backup
+*.old
+*.orig
+
+# ========================= Log Files =========================
+*.log
+
+# ========================= Compressed Files =========================
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# ========================= CMix Project Specific =========================
+# Build directories
+build/
+Build/
+output/
+Output/
+
+# Project-specific temporary files
+*.tmp
+*.temp
+
+# Documentation build outputs
+doc/html/
+doc/latex/
+doc/xml/
+
+# Keep these important files
+!README.md
+!*.md
+!*.h
+!*.c
+!*.s
+!*.ld
+!Makefile

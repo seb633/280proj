@@ -1,0 +1,28 @@
+--cpu Cortex-M0
+".\out\system_ptm280x.o"
+".\out\startup_ptm280x.o"
+".\out\main.o"
+".\out\pt32x0xx_retarget.o"
+".\out\pt32x0xx_adc.o"
+".\out\pt32x0xx_cmp.o"
+".\out\pt32x0xx_crc.o"
+".\out\pt32x0xx_dma.o"
+".\out\pt32x0xx_es.o"
+".\out\pt32x0xx_exti.o"
+".\out\pt32x0xx_gpio.o"
+".\out\pt32x0xx_i2c.o"
+".\out\pt32x0xx_ifmc.o"
+".\out\pt32x0xx_iwdg.o"
+".\out\pt32x0xx_ldac.o"
+".\out\pt32x0xx_nvic.o"
+".\out\pt32x0xx_opa.o"
+".\out\pt32x0xx_pwr.o"
+".\out\pt32x0xx_rcc.o"
+".\out\pt32x0xx_spi.o"
+".\out\pt32x0xx_syscfg.o"
+".\out\pt32x0xx_tim.o"
+".\out\pt32x0xx_uart.o"
+--library_type=microlib --strict --scatter ".\Out\Project.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\List\Project.map" -o .\Out\Project.axf

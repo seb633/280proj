@@ -1,0 +1,26 @@
+./out/pt32x0xx_adc.o: \
+  ..\..\..\Libraries\PT32x0xx_FWLib\src\PT32x0xx_adc.c \
+  ..\..\..\Libraries\PT32x0xx_FWLib\inc\PT32x0xx_adc.h \
+  ..\..\..\Libraries\PT32x0xx_FWLib\inc\PT32x0xx.h \
+  ..\..\..\Libraries\CMSIS\core_cm0.h \
+  ..\..\..\Libraries\PT32x0xx_FWLib\inc\PT32_Type.h \
+  ..\..\..\Libraries\SYSTEM\system_PT32x0xx.h \
+  ..\..\Template\PT32x0xx_conf.h \
+  ..\..\..\Libraries\PT32x0xx_FWLib\inc\PT32x0xx_cmp.h \
+  ..\..\..\Libraries\PT32x0xx_FWLib\inc\PT32x0xx_crc.h \
+  ..\..\..\Libraries\PT32x0xx_FWLib\inc\PT32x0xx_dma.h \
+  ..\..\..\Libraries\PT32x0xx_FWLib\inc\PT32x0xx_es.h \
+  ..\..\..\Libraries\PT32x0xx_FWLib\inc\PT32x0xx_exti.h \
+  ..\..\..\Libraries\PT32x0xx_FWLib\inc\PT32x0xx_gpio.h \
+  ..\..\..\Libraries\PT32x0xx_FWLib\inc\PT32x0xx_i2c.h \
+  ..\..\..\Libraries\PT32x0xx_FWLib\inc\PT32x0xx_ifmc.h \
+  ..\..\..\Libraries\PT32x0xx_FWLib\inc\PT32x0xx_iwdg.h \
+  ..\..\..\Libraries\PT32x0xx_FWLib\inc\PT32x0xx_ldac.h \
+  ..\..\..\Libraries\PT32x0xx_FWLib\inc\PT32x0xx_nvic.h \
+  ..\..\..\Libraries\PT32x0xx_FWLib\inc\PT32x0xx_opa.h \
+  ..\..\..\Libraries\PT32x0xx_FWLib\inc\PT32x0xx_pwr.h \
+  ..\..\..\Libraries\PT32x0xx_FWLib\inc\PT32x0xx_rcc.h \
+  ..\..\..\Libraries\PT32x0xx_FWLib\inc\PT32x0xx_spi.h \
+  ..\..\..\Libraries\PT32x0xx_FWLib\inc\PT32x0xx_syscfg.h \
+  ..\..\..\Libraries\PT32x0xx_FWLib\inc\PT32x0xx_tim.h \
+  ..\..\..\Libraries\PT32x0xx_FWLib\inc\PT32x0xx_uart.h
