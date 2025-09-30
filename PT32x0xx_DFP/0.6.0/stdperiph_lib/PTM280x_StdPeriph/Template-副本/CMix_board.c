@@ -94,7 +94,7 @@ void I2C_Mode_Config(I2C_TypeDef *I2Cx)
 	I2C_InitStruct.I2C_Acknowledge = I2C_Acknowledge_Disable;
 	I2C_InitStruct.I2C_Broadcast = I2C_Broadcast_Enable;
 	I2C_InitStruct.I2C_OwnAddress = 0x00;
-	I2C_InitStruct.I2C_Prescaler = 4096;
+	I2C_InitStruct.I2C_Prescaler = 3072;
 	I2C_Init(I2Cx,&I2C_InitStruct);   
 }
 void CMix_InitIIC(void)
