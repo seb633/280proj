@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="2400" height="1000" viewBox="0 0 2400 1000" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .h1{font:700 22px Arial, sans-serif; fill:#111}
+      .title{font:700 18px Arial, sans-serif; fill:#000}
+      .text{font:14px/1.45 Arial, sans-serif; fill:#111}
+      .signal{font:14px Arial, sans-serif; fill:#000; text-anchor:middle}
+      .chip{stroke:#333; stroke-width:2; rx:10; ry:10; fill:#fff}
+      .board{stroke:#777; stroke-width:2; stroke-dasharray:7 5; rx:12; ry:12; fill-opacity:0.06}
+      .port{fill:#fff; stroke:#333; stroke-width:2; rx:6; ry:6}
+      .footer{font:600 14px Arial, sans-serif; fill:#666}
+    </style>
+  </defs>
+
+  <!-- BMS板 -->
+  <g transform="translate(100,200)">
+    <rect class="board" width="320" height="380" fill="#4a90e2"/>
+    <text x="10" y="-15" class="h1">BMS板</text>
+    <g transform="translate(25,40)">
+      <rect class="chip" width="270" height="260" fill="#CFE2F3"/>
+      <text x="16" y="26" class="title">280B 芯片（IIC 从机）</text>
+      <text x="16" y="56" class="text">• 监控：每电芯电压与温度</text>
+      <text x="16" y="78" class="text">• 主动均衡（板载 B02 芯片）</text>
+      <text x="16" y="100" class="text">• PWM 输出 → DCDC：充电电流控制</text>
+      <text x="16" y="122" class="text">• IIC 从机 → CAT1：上传电芯电压 </text>
+	<text x="22" y="144" class="text"> 温度 / 均衡状态</text>
+    </g>
+    <g transform="translate(190,250)">
+      <rect class="chip" width="100" height="80" fill="#D9EAD3"/>
+      <text x="50" y="32" text-anchor="middle" class="title">B02</text>
+      <text x="50" y="55" text-anchor="middle" class="text">主动均衡</text>
+    </g>
+  </g>
+
+  <!-- BMS → DCDC 信号说明 -->
+  <g transform="translate(500,300)">
+    <text class="signal" x="0" y="0">PWM：充电电流控制</text>
+    <text class="signal" x="30" y="30">IIC 从机 → CAT1：电芯状态上传</text>
+  </g>
+
+  <!-- DCDC板 -->
+  <g transform="translate(750,150)">
+    <rect class="board" width="480" height="500" fill="#f5a623"/>
+    <text x="10" y="-15" class="h1">DCDC板</text>
+    <g transform="translate(-50,210)">
+      <rect class="port" width="30" height="100"/>
+      <text x="-15" y="50" class="text" transform="rotate(-90 -15,50)">🔋 电池接口</text>
+    </g>
+    <g transform="translate(30,40)">
+      <rect class="chip" width="320" height="230" fill="#FFF2CC"/>
+      <text x="16" y="26" class="title">280D 芯片（主控）</text>
+      <text x="16" y="56" class="text">• 双向 DCDC 控制（升/降压）</text>
+      <text x="16" y="76" class="text">• 高/低压侧电压电流采样</text>
+      <text x="16" y="96" class="text">• SOC / SOH 计算与能量管理</text>
+      <text x="16" y="116" class="text">• 接收 BMS PWM → 控制充电</text>
+      <text x="16" y="136" class="text">• 串口数据 → CAT1（接口板）</text>
+    </g>
+    <g transform="translate(370,40)">
+      <rect class="chip" width="80" height="230" fill="#D9EAD3"/>
+      <text x="40" y="28" text-anchor="middle" class="title">B02</text>
+      <text x="40" y="60" text-anchor="middle" class="text">发波控制</text>
+      <text x="40" y="85" text-anchor="middle" class="text">占空比/使能</text>
+      <text x="40" y="110" text-anchor="middle" class="text">状态反馈</text>
+    </g>
+  </g>
+
+  <!-- DCDC → 接口板 信号说明 -->
+  <g transform="translate(1300,270)">
+    <text class="signal" x="20" y="0">串口：DCDC 状态 → CAT1</text>
+  </g>
+
+  <!-- 接口板 -->
+  <g transform="translate(1500,180)">
+    <rect class="board" width="440" height="550" fill="#f8a27e"/>
+    <text x="10" y="-15" class="h1">接口板</text>
+    <g transform="translate(440,210)">
+      <rect class="port" width="30" height="120"/>
+      <text x="40" y="60" class="text" transform="rotate(90 40,60)">⚡ 充放电接口</text>
+    </g>
+    <g transform="translate(30,40)">
+      <rect class="chip" width="260" height="190" fill="#FFD9B3"/>
+      <text x="16" y="26" class="title">280A 芯片（IIC 从机）</text>
+      <text x="16" y="52" class="text">• 高压侧电流采样 / 过流检测</text>
+      <text x="16" y="72" class="text">• 提供接口状态至 CAT1 主机</text>
+      <text x="16" y="92" class="text">• 作为 IIC 从机连接 CAT1</text>
+    </g>
+    <g transform="translate(30,260)">
+      <rect class="chip" width="350" height="250" fill="#D9E1F2"/>
+      <text x="16" y="26" class="title">CAT1 通信模块（IIC 主机）</text>
+      <text x="16" y="52" class="text">【IIC 主机功能】</text>
+      <text x="30" y="72" class="text">• 读取 BMS 280B（电芯电压 / 温度 / 均衡状态）</text>
+      <text x="30" y="92" class="text">• 读取 接口板 280A（电流 / 状态）</text>
+      <text x="16" y="112" class="text">【串口功能】</text>
+      <text x="30" y="132" class="text">• 接收 280D（DCDC） 状态数据</text>
+      <text x="16" y="152" class="text">【上报至云端（4G / NB-IoT）】</text>
+      <text x="30" y="172" class="text">• 电芯电压 / 温度 / 均衡 / SOC / SOH</text>
+      <text x="30" y="192" class="text">• 功率、电流、电压、告警事件</text>
+      <text x="30" y="212" class="text">• 远程参数查询、配置与升级</text>
+    </g>
+  </g>
+
+  <!-- 接口 → 云端 信号说明 -->
+  <g transform="translate(2000,320)">
+    <text class="signal" x="40" y="0">4G / NB-IoT：数据上传至云端</text>
+  </g>
+
+  <!-- 云端 -->
+  <g transform="translate(2150,260)">
+    <rect class="chip" width="280" height="200" fill="#F4CCCC"/>
+    <text x="16" y="26" class="title">ThingsBoard 云端</text>
+    <text x="16" y="52" class="text">• 接收 CAT1 上报信息</text>
+    <text x="16" y="72" class="text">• 显示仪表盘、历史记录、告警</text>
+    <text x="16" y="92" class="text">• 远程参数管理 / 策略下发</text>
+  </g>
+
+  <!-- IIC总线说明 -->
+  <g transform="translate(100,900)">
+    <text class="signal" x="1050" y="0">IIC 主机（CAT1） ⇄ 从机（BMS 280B、接口板 280A）</text>
+  </g>
+
+  <!-- 页脚 -->
+  <text x="2350" y="960" text-anchor="end" class="footer">CNTL_DC_V6.3</text>
+</svg>

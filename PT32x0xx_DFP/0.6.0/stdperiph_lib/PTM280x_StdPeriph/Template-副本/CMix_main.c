@@ -35,7 +35,7 @@ int main(void)
     CMix_ControlContext control_ctx;
 
     CMix_SystemInit();
-    GPIO_SetBits(GPIOA, GPIO_Pin_3);
+    GPIO_SetBits(GPIOB, GPIO_Pin_3);
     //    GPIO_ResetBits(GPIOA, GPIO_Pin_3);
     //    CMix_ControlInit(&control_ctx);
     while (1)
@@ -43,11 +43,12 @@ int main(void)
  //       GPIO_ReverseBits(GPIOA, GPIO_Pin_3);
         
         // 可选：如需支持I2C从机协议处理，可在主循环中调用
-        UART_SendData(UART0,0x09);
-         CMix_I2C_Proc();
+//        UART_SendData(UART0,0x09);
+ //       printf("I2C_Proc\r\n");
+        CMix_I2C_Proc();
         CMix_Hardware_Delay_ms(500);
     }
-    //    CMix_MainLoop(&control_ctx);
+    CMix_MainLoop(&control_ctx);
 
     return 0;
 }

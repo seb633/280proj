@@ -55,40 +55,40 @@ const CMix_PinConfig CMix_Pin_IBat_Sense = {
 };
 
 const CMix_PinConfig CMix_Pin_IOut_Sense = {
-    CMIX_PORT_PB,
-    13U,
+    CMIX_PORT_PA,
+    5U,
     CMIX_PERIPH_ADC0,
     CMIX_AF_ANALOG,
-    1U,
+    5U,
     "ADC0_IN1 output current sense"
 };
 
-const CMix_PinConfig CMix_Pin_Cell1_Tap = {
-    CMIX_PORT_PA,
-    2U,
-    CMIX_PERIPH_ADC0,
-    CMIX_AF_ANALOG,
-    2U,
-    "ADC0_IN2 cell1 voltage"
-};
+// const CMix_PinConfig CMix_Pin_Cell1_Tap = {
+//     CMIX_PORT_PA,
+//     2U,
+//     CMIX_PERIPH_ADC0,
+//     CMIX_AF_ANALOG,
+//     2U,
+//     "ADC0_IN2 cell1 voltage"
+// };
 
-const CMix_PinConfig CMix_Pin_Cell2_Tap = {
-    CMIX_PORT_PA,
-    3U,
-    CMIX_PERIPH_ADC0,
-    CMIX_AF_ANALOG,
-    3U,
-    "ADC0_IN3 cell2 voltage"
-};
+// const CMix_PinConfig CMix_Pin_Cell2_Tap = {
+//     CMIX_PORT_PA,
+//     3U,
+//     CMIX_PERIPH_ADC0,
+//     CMIX_AF_ANALOG,
+//     3U,
+//     "ADC0_IN3 cell2 voltage"
+// };
 
-const CMix_PinConfig CMix_Pin_Cell3_Tap = {
-    CMIX_PORT_PA,
-    4U,
-    CMIX_PERIPH_ADC0,
-    CMIX_AF_ANALOG,
-    4U,
-    "ADC0_IN4 cell3 voltage"
-};
+// const CMix_PinConfig CMix_Pin_Cell3_Tap = {
+//     CMIX_PORT_PA,
+//     4U,
+//     CMIX_PERIPH_ADC0,
+//     CMIX_AF_ANALOG,
+//     4U,
+//     "ADC0_IN4 cell3 voltage"
+// };
 
 const CMix_PinConfig CMix_Pin_VOut_Bus = {
     CMIX_PORT_PB,
@@ -135,7 +135,7 @@ const CMix_PinConfig CMix_Pin_NTC3_Gpio = {
     "GPIO selector for NTC3/NTC4 mux"
 };
 
-const CMix_PinConfig CMix_Pin_NTC_Mux_Out = {
+const CMix_PinConfig CMix_Pin_NTC3 = {
     CMIX_PORT_PB,
     6U,
     CMIX_PERIPH_ADC0,

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="2400" height="1500" viewBox="0 0 2400 1500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .layer-title{font:700 24px Arial; fill:#333}
+      .title{font:700 18px Arial; fill:#000}
+      .text{font:14px/1.4 Arial; fill:#111}
+      .arrow{stroke-width:3; fill:none; marker-end:url(#arrowhead)}
+      .footer{font:600 14px Arial; fill:#666}
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="black" />
+    </marker>
+  </defs>
+
+  <!-- 顶层：云端 -->
+  <rect x="100" y="80" width="2200" height="220" fill="#FCE5CD" stroke="#E69138" stroke-width="2" rx="10" ry="10"/>
+  <text x="120" y="110" class="layer-title">🟥 云端层（ThingsBoard）</text>
+  <text x="140" y="150" class="text">• 接收 CAT1 上传的数据（电芯状态、SOC/SOH、功率、告警）</text>
+  <text x="140" y="170" class="text">• 下发策略、参数配置，实现远程控制与监测</text>
+
+  <!-- 中层：通信与控制中枢（含 CAT1 + 接口板280A + 外部设备） -->
+  <rect x="100" y="370" width="2200" height="480" fill="#FFF2CC" stroke="#B45F06" stroke-width="2" rx="10" ry="10"/>
+  <text x="120" y="400" class="layer-title">🟧 通信与控制中枢层（CAT1 核心 + 接口板）</text>
+
+  <!-- CAT1 模块 -->
+  <rect x="260" y="450" width="900" height="300" fill="#D9E1F2" stroke="#6C8EBF" stroke-width="2" rx="12" ry="12"/>
+  <text x="285" y="480" class="title">CAT1 通信模块（IIC 主机 / 串口 / RS-485 / 4G）</text>
+  <text x="285" y="510" class="text">• IIC 主机：读取 BMS(280B) 与 接口板(280A) 数据</text>
+  <text x="285" y="530" class="text">• 串口：接收 DCDC(280D) 状态</text>
+  <text x="285" y="550" class="text">• RS-485：对接 AC/DC、小动力主机（握手决定充/放电）</text>
+  <text x="285" y="570" class="text">• 4G / NB-IoT：上传系统状态至云端</text>
+
+  <!-- 接口板 280A（现在位于中层） -->
+  <rect x="1250" y="450" width="500" height="300" fill="#FCE5CD" stroke="#B45F06" stroke-width="2" rx="12" ry="12"/>
+  <text x="1275" y="480" class="title">接口板（280A / IIC 从机）</text>
+  <text x="1275" y="510" class="text">• 监测高压接口电流 / 电压 / 状态</text>
+  <text x="1275" y="530" class="text">• IIC 从机 → CAT1：上传接口状态</text>
+  <text x="1275" y="550" class="text">• 参与外部设备接入判定（与 CAT1 协同）</text>
+
+  <!-- 外部设备（与 CAT1 经 RS-485 握手） -->
+  <rect x="1780" y="450" width="460" height="300" fill="#E2F0D9" stroke="#6AA84F" stroke-width="2" rx="12" ry="12"/>
+  <text x="1805" y="480" class="title">外部设备（RS-485）</text>
+  <text x="1805" y="510" class="text">• AC/DC 适配器：握手成功 → 启动充电</text>
+  <text x="1805" y="530" class="text">• 小动力主机：握手成功 → 启动放电</text>
+
+  <!-- 中层箭头：CAT1 → 云端（4G/NB-IoT） -->
+  <line x1="1000" y1="450" x2="1000" y2="320" stroke="#2986CC" class="arrow"/>
+  <text x="1020" y="380" fill="#2986CC" font-size="14">4G / NB-IoT 上传</text>
+
+  <!-- 中层箭头：CAT1 ↔ 外部设备（RS-485） -->
+  <line x1="1160" y1="600" x2="1780" y2="600" stroke="#6AA84F" class="arrow"/>
+  <text x="1470" y="585" fill="#38761D" font-size="14">RS-485 握手通信</text>
+
+  <!-- 中层箭头：CAT1 ↔ 接口板（IIC） -->
+  <line x1="1160" y1="520" x2="1250" y2="520" stroke="#2986CC" class="arrow"/>
+  <text x="1200" y="505" fill="#2986CC" font-size="14" text-anchor="middle">IIC（从机：280A）</text>
+
+  <!-- 底层：能量控制与执行（仅 BMS + DCDC） -->
+  <rect x="100" y="900" width="2200" height="460" fill="#EAD1DC" stroke="#A64D79" stroke-width="2" rx="10" ry="10"/>
+  <text x="120" y="930" class="layer-title">🟨 能量控制与执行层</text>
+
+  <!-- BMS模块 -->
+  <rect x="260" y="980" width="420" height="300" fill="#CFE2F3" stroke="#3C78D8" stroke-width="2" rx="12" ry="12"/>
+  <text x="285" y="1010" class="title">BMS板（280B / IIC 从机）</text>
+  <text x="285" y="1040" class="text">• 每电芯电压 / 温度监控</text>
+  <text x="285" y="1060" class="text">• 主动均衡（B02）</text>
+  <text x="285" y="1080" class="text">• PWM → DCDC：调节充放电电流</text>
+  <text x="285" y="1100" class="text">• IIC 从机 → CAT1：上传电芯状态</text>
+
+  <!-- DCDC模块 -->
+  <rect x="1080" y="980" width="460" height="300" fill="#FFF2CC" stroke="#E69138" stroke-width="2" rx="12" ry="12"/>
+  <text x="1105" y="1010" class="title">DCDC板（280D / 主控）</text>
+  <text x="1105" y="1040" class="text">• 升压 / 降压双向控制</text>
+  <text x="1105" y="1060" class="text">• 接收 PWM 调节电流</text>
+  <text x="1105" y="1080" class="text">• 采样电压/电流，计算 SOC / SOH</text>
+  <text x="1105" y="1100" class="text">• 串口 → CAT1：传输功率与状态</text>
+
+  <!-- 逻辑箭头：BMS → DCDC（PWM 红色） -->
+  <line x1="680" y1="1130" x2="1080" y2="1130" stroke="#E74C3C" class="arrow"/>
+  <text x="880" y="1115" fill="#E74C3C" font-size="14">PWM 控制充放电电流</text>
+
+  <!-- 通信箭头：BMS → CAT1（IIC 蓝色，上行至中层） -->
+  <line x1="470" y1="980" x2="710" y2="720" stroke="#2986CC" class="arrow"/>
+  <text x="600" y="835" fill="#2986CC" font-size="14">IIC（从机：280B）</text>
+
+  <!-- 通信箭头：DCDC → CAT1（串口 蓝色，上行至中层） -->
+  <line x1="1310" y1="980" x2="900" y2="720" stroke="#2986CC" class="arrow"/>
+  <text x="1100" y="835" fill="#2986CC" font-size="14">串口（DCDC → CAT1）</text>
+
+  <!-- 底部能量流箭头（说明物理能量路径包含接口板与外部设备，接口板现位于中层） -->
+  <line x1="180" y1="1360" x2="2180" y2="1360" stroke="#E69138" stroke-width="5" marker-end="url(#arrowhead)"/>
+  <text x="1100" y="1340" fill="#E69138" font-size="16">🔋 能量流：电池 → DCDC → 接口板（中层） → 外部设备</text>
+
+  <!-- 页脚 -->
+  <text x="2350" y="1470" text-anchor="end" class="footer">CNTL_DC_V6.6</text>
+</svg>

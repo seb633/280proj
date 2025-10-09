@@ -55,33 +55,33 @@ void CMix_ControlUpdate(CMix_ControlContext *ctx)
     }
 
     CMix_ReadAnalogMeasurements(&ctx->measurements);
-    CMix_UpdateBoardStatus(&ctx->board_status);
+    // CMix_UpdateBoardStatus(&ctx->board_status);
 
-    if (ctx->board_status.fault_bkin_triggered || ctx->board_status.fault_over_temperature)
-    {
-        ctx->state = CMIX_STATE_FAULT;
-    }
+    // if (ctx->board_status.fault_bkin_triggered || ctx->board_status.fault_over_temperature)
+    // {
+    //     ctx->state = CMIX_STATE_FAULT;
+    // }
 
-    switch (ctx->state)
-    {
-        case CMIX_STATE_IDLE:
-            CMix_ControlHandleIdle(ctx);
-            break;
-        case CMIX_STATE_PRECHARGE:
-            CMix_ControlHandlePrecharge(ctx);
-            break;
-        case CMIX_STATE_ACTIVE:
-            CMix_ControlHandleActive(ctx);
-            break;
-        case CMIX_STATE_FAULT:
-        default:
-            CMix_ControlHandleFault(ctx);
-            break;
-    }
+    // switch (ctx->state)
+    // {
+    //     case CMIX_STATE_IDLE:
+    //         CMix_ControlHandleIdle(ctx);
+    //         break;
+    //     case CMIX_STATE_PRECHARGE:
+    //         CMix_ControlHandlePrecharge(ctx);
+    //         break;
+    //     case CMIX_STATE_ACTIVE:
+    //         CMix_ControlHandleActive(ctx);
+    //         break;
+    //     case CMIX_STATE_FAULT:
+    //     default:
+    //         CMix_ControlHandleFault(ctx);
+    //         break;
+    // }
 
-    CMix_ProcessFaults();
-    CMix_ControlApplyDuty(ctx);
-    CMix_ScheduleADCConversion();
+    // CMix_ProcessFaults();
+    // CMix_ControlApplyDuty(ctx);
+     CMix_ScheduleADCConversion();
 }
 
 void CMix_ControlNotifyFault(CMix_ControlContext *ctx)

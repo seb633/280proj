@@ -208,7 +208,7 @@
 
 #define 	I2C_SDA_CLOCK				RCC_AHBPeriph_GPIOA
 #define 	I2C_SDA_AFIO				AFIOA
-#define 	I2C_SDA_PIN					GPIO_Pin_12
+#define 	I2C_SDA_PIN					GPIO_Pin_10
 
 #define 	I2C_SCL_CLOCK				RCC_AHBPeriph_GPIOA
 #define 	I2C_SCL_AFIO				AFIOA

@@ -29,16 +29,16 @@ typedef struct
 
 static const CMix_AdcSequenceEntry s_adc_sequence[] =
 {
-    { &CMix_Pin_IBat_Sense,   ADC_Channel_0 },
-    { &CMix_Pin_IOut_Sense,   ADC_Channel_1 },
-    { &CMix_Pin_Cell1_Tap,    ADC_Channel_2 },
-    { &CMix_Pin_Cell2_Tap,    ADC_Channel_3 },
-    { &CMix_Pin_Cell3_Tap,    ADC_Channel_4 },
-    { &CMix_Pin_VOut_Bus,     ADC_Channel_5 },
+    { &CMix_Pin_IBat_Sense,   ADC_Channel_58 },
+    { &CMix_Pin_IOut_Sense,   ADC_Channel_5 },
+    // { &CMix_Pin_Cell1_Tap,    ADC_Channel_2 },
+    // { &CMix_Pin_Cell2_Tap,    ADC_Channel_3 },
+    // { &CMix_Pin_Cell3_Tap,    ADC_Channel_4 },
+    { &CMix_Pin_VOut_Bus,     ADC_Channel_1 },
     { &CMix_Pin_VPack_Total,  ADC_Channel_6 },
-    { &CMix_Pin_NTC1,         ADC_Channel_9 },
-    { &CMix_Pin_NTC2,         ADC_Channel_8 },
-    { &CMix_Pin_NTC_Mux_Out,  ADC_Channel_10 }
+    // { &CMix_Pin_NTC1,         ADC_Channel_9 },
+    // { &CMix_Pin_NTC2,         ADC_Channel_8 },
+    // { &CMix_Pin_NTC3,  ADC_Channel_10 }
 };
 
 static uint16_t s_pwm_period_ticks = 0;
@@ -105,10 +105,10 @@ void CMix_InitIIC(void)
 void CMix_SystemInit(void)
 {
     CMix_InitClocks();
-//    CMix_InitGPIO();
+    CMix_InitGPIO();
     CMix_InitIIC();
 //    CMix_ConfigPwmPins();
-//    CMix_ConfigAdcPins();
+    CMix_ConfigAdcPins();
     CMix_ConfigUartPins();
 //    CMix_ConfigDebugPins();
 //    CMix_ConfigMuxPins();
@@ -144,8 +144,8 @@ void CMix_InitGPIO(void)
     init.GPIO_Pin = GPIO_Pin_3;
     init.GPIO_Mode = GPIO_Mode_OutPP;
     init.GPIO_Pull = GPIO_Pull_NoPull;
-    GPIO_Init(GPIOA, &init);
- //   GPIO_Init(GPIOB, &init);
+//    GPIO_Init(GPIOA, &init);
+    GPIO_Init(GPIOB, &init);
 }
 
 void CMix_InitPWMTimers(void)
